@@ -13,6 +13,7 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.node = None
+        self.length = 0
 
     def add(self, data):
         if not isinstance(data, Node):
@@ -25,13 +26,20 @@ class LinkedList:
             while current.next is not None:
                 current = current.next
             current.next = data
+        self.length += 1
 
     def __iter__(self):
         for each in self.__dict__.keys():
             yield self.__getattribute__(each)
 
+    def __str__(self):
+        return f"{self.node}"
+
+    def __len__(self):
+        return self.length
+
     def print(self):
         current = self.node
-        while(current is not None):
+        while current is not None:
             print(current.data)
             current = current.next
