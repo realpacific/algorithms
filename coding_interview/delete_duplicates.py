@@ -1,6 +1,5 @@
-import os
-import sys
-from shared.linked_list import Node, LinkedList
+from shared import Node, LinkedList, RLinkedList
+
 
 
 def delete_duplicates(linkedlist):

@@ -1,6 +1,4 @@
-import os
-import sys
-from shared.linked_list import Node, LinkedList
+from shared import Node, LinkedList
 
 
 def kth_to_last(linked, k):

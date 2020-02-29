@@ -1,7 +1,7 @@
 from shared.node import Node
 from shared.base_linked_list import BaseLinkedList
 
-class LinkedList(BaseLinkedList):
+class RLinkedList(BaseLinkedList):
     def __init__(self):
         self.node = None
         self.length = 0
@@ -13,8 +13,6 @@ class LinkedList(BaseLinkedList):
         if self.node is None:
             self.node = data
         else:
-            current = self.node
-            while current.next is not None:
-                current = current.next
-            current.next = data
+            data.next = self.node
+            self.node = data
         self.length += 1

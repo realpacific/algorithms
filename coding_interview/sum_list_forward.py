@@ -1,39 +1,7 @@
 import os
 import sys
 from shared.linked_list import Node
-
-
-class RLinkedList:
-    def __init__(self):
-        self.node = None
-        self.length = 0
-
-    def add(self, data):
-        if not isinstance(data, Node):
-            raise TypeError()
-
-        if self.node is None:
-            self.node = data
-        else:
-            data.next = self.node
-            self.node = data
-        self.length += 1
-
-    def __iter__(self):
-        for each in self.__dict__.keys():
-            yield self.__getattribute__(each)
-
-    def __str__(self):
-        return f"{self.node}"
-
-    def __len__(self):
-        return self.length
-
-    def print(self):
-        current = self.node
-        while current is not None:
-            print(current.data)
-            current = current.next
+from shared.reversed_linked_list import RLinkedList
 
 
 def pad_zero(l, times):
@@ -50,7 +18,7 @@ def add(l1, l2):
     if l1.next is None and l2.next is None:
         sum = (l1.data + l2.data)
         return (1 if sum > 9 else 0, Node(sum % 10))
-    
+
      # Recurse here
     carry, node = add(l1.next, l2.next)
     value = carry
