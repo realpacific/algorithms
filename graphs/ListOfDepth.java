@@ -12,7 +12,7 @@ import commons.Tree;
  */
 class ListOfDepth {
     public static void main(final String[] args) {
-        final int[] array = new int[10];
+        final int[] array = new int[20];
         for (int i = 0; i < array.length; i++) {
             array[i] = i;
         }
