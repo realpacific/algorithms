@@ -38,6 +38,7 @@ class BuildOrder {
         vC.edges.add(new Graph.Edge(vC, vA));
 
         vD.edges.add(new Graph.Edge(vD, vG));
+        // vH.edges.add(new Graph.Edge(vH, vF));
 
         List<Graph.Vertex> listOfVertices = Arrays.asList(vA, vB, vC, vD, vE, vF, vG);
         graph.vertices.addAll(listOfVertices);
@@ -71,9 +72,13 @@ class BuildOrder {
 
         // Visit all its edges but in DFS manner
         for (int i = 0; i < v.edges.size(); i++) {
+            // Check for cycles
+            if(v.edges.get(i).end.state == State.VISITING) {
+                System.out.println("HAS CYCLES");
+                throw new RuntimeException("HAS CYCLES");
+            }
             // Ignore if already visited
-            // TODO: if visiting, might have circular dependencies
-            if (v.edges.get(i).end.state == State.VISITED || v.edges.get(i).end.state == State.VISITING) {
+            if (v.edges.get(i).end.state == State.VISITED) {
                 continue;
             }
             v.edges.get(i).end.state = State.VISITING;
