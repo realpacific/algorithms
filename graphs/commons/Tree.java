@@ -13,4 +13,8 @@ public class Tree {
     public String toString() {
         return String.format("Node(%s, l=%s, r=%s)", data, left, right);
     }
+
+    public void printNode() {
+        System.out.println(String.format("Node(%s)", data));
+    }
 }
