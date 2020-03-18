@@ -1,4 +1,6 @@
-import commons.Tree;
+package graphs;
+
+import graphs.commons.Tree;
 
 class CheckBalanced {
     public static void main(String[] args) {

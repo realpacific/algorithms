@@ -1,4 +1,6 @@
-import commons.BidirectionalTree;
+package graphs;
+
+import graphs.commons.BidirectionalTree;
 
 class FirstCommonAncestor {
     public static void main(final String[] args) {

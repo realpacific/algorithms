@@ -1,10 +1,12 @@
+package graphs;
+
+import graphs.commons.Node;
+import graphs.commons.State;
+
 import java.util.LinkedList;
 
-import commons.Node;
-import commons.State;
-
 class RoutesBetweenNodes {
-    public static void main(final String[] args) {
+    public static void main(final String[] args) throws CloneNotSupportedException {
         final Node n1 = new Node(1);
         final Node n2 = new Node(2);
         final Node n3 = new Node(3);
@@ -34,14 +36,14 @@ class RoutesBetweenNodes {
         n11.nodes.add(n10);
         n10.nodes.add(n12);
 
-        assert isNodeConnected(n1, n2);
-        assert isNodeConnected(n1, n9);
-        assert isNodeConnected(n1, n7);
-        assert isNodeConnected(n1, n5);
+        assert isNodeConnected(n1.deepCopy(), n2.deepCopy());
+        assert isNodeConnected(n1.deepCopy(), n9.deepCopy());
+        assert isNodeConnected(n1.deepCopy(), n7.deepCopy());
+        assert isNodeConnected(n1.deepCopy(), n5.deepCopy());
 
-        assert !isNodeConnected(n1, n10);
-        assert isNodeConnected(n11, n10);
-        assert !isNodeConnected(n12, n1);
+        assert !isNodeConnected(n1.deepCopy(), n10.deepCopy());
+        assert isNodeConnected(n11.deepCopy(), n10.deepCopy());
+        assert !isNodeConnected(n12.deepCopy(), n1.deepCopy());
         System.out.println("Completed");
 
     }
@@ -52,11 +54,11 @@ class RoutesBetweenNodes {
 
         final LinkedList<Node> list = new LinkedList<>();
         list.add(sNode);
-        Node current = null;
         while (!list.isEmpty()) {
+            Node current = null;
             current = list.removeFirst();
             current.state = State.VISITED;
-            if (current == eNode) {
+            if (current.value == eNode.value) {
                 return true;
             }
             for (final Node n : current.nodes) {

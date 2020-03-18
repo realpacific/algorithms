@@ -1,5 +1,6 @@
+package graphs;
 
-import commons.Tree;
+import graphs.commons.Tree;
 
 /**
  * Given a sorted (increasing order) array with unique integer elements, write

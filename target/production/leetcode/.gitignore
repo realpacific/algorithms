@@ -1,0 +1,9 @@
+.idea
+.pytest_cache
+__pycache__
+.idea
+.venv
+.vscode
+.pytest_cache
+*/__pycache__
+*.class

@@ -1,4 +1,4 @@
-package commons;
+package graphs.commons;
 
 public class BidirectionalTree {
     public BidirectionalTree parent;

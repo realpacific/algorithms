@@ -1,16 +1,12 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-import java.util.Stack;
+package graphs;
 
-import commons.Graph;
-import commons.State;
-import commons.Graph.Vertex;
+import graphs.commons.Graph;
+import graphs.commons.State;
+
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.List;
+
 
 class BuildOrder {
     public static void main(String[] args) {
@@ -73,7 +69,7 @@ class BuildOrder {
         // Visit all its edges but in DFS manner
         for (int i = 0; i < v.edges.size(); i++) {
             // Check for cycles
-            if(v.edges.get(i).end.state == State.VISITING) {
+            if (v.edges.get(i).end.state == State.VISITING) {
                 System.out.println("HAS CYCLES");
                 throw new RuntimeException("HAS CYCLES");
             }

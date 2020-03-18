@@ -1,7 +1,10 @@
+package graphs;
+
+import graphs.commons.Tree;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import commons.Tree;
 
 class PathWithSum {
     static int targetSum = 8;

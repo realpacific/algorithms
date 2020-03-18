@@ -1,4 +1,7 @@
-import commons.Tree;
+package graphs;
+
+import graphs.commons.Tree;
+
 /**
  * left <= current < right
  */

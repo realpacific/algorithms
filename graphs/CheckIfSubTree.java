@@ -1,4 +1,6 @@
-import commons.BidirectionalTree;
+package graphs;
+
+import graphs.commons.BidirectionalTree;
 
 class CheckIfSubTree {
     public static void main(String[] args) {
@@ -22,18 +24,18 @@ class CheckIfSubTree {
         final BidirectionalTree tree3 = new BidirectionalTree(null, 30);
         tree3.left = new BidirectionalTree(tree3, 40);
         tree3.right = new BidirectionalTree(tree3, 50);
-        assert traverse(biggerTree, tree3) == false;
+        assert !traverse(biggerTree, tree3);
 
         // Smaller has one more extra node
         subTree.left.left.left = new BidirectionalTree(subTree.left.left, 55);
-        assert traverse(biggerTree, subTree) == false;
+        assert !traverse(biggerTree, subTree);
 
     }
 
     static boolean traverse(BidirectionalTree bigTree, BidirectionalTree smallTree) {
         if (bigTree == null) {
             return false;
-        } else if (bigTree.data == smallTree.data && checkIfSubtree(bigTree, smallTree)) {
+        } else if (bigTree.data.equals(smallTree.data) && checkIfSubtree(bigTree, smallTree)) {
             // If same data found, then check if they are subtree
             return true;
         }
@@ -42,12 +44,15 @@ class CheckIfSubTree {
     }
 
     private static boolean checkIfSubtree(BidirectionalTree bigTree, BidirectionalTree smallTree) {
+        if(smallTree == null) {
+            return true;
+        }
         // Big tree is already finished but small tree is not
         if (bigTree == null && smallTree != null) {
             return false;
         }
         // If their data is not same, then return false
-        if (smallTree.data != bigTree.data) {
+        if (smallTree != null && !smallTree.data.equals(bigTree.data)) {
             return false;
         }
         return checkIfSubtree(bigTree.left, smallTree.left) && checkIfSubtree(bigTree.right, smallTree.right);

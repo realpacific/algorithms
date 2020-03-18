@@ -1,9 +1,10 @@
+package graphs;
+
+import graphs.commons.Tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
-import commons.Tree;
 
 /**
  * Given a binary tree, design an algorithm which creates a linked list of all
