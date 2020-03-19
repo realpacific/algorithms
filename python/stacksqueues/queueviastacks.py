@@ -1,4 +1,4 @@
-from stack import Stack
+from .stack import Stack
 
 class QueueViaStack:
     def __init__(self):

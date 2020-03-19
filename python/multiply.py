@@ -1,5 +1,5 @@
 def multiply(num1: str, num2: str):
-    sum = 0
+    total_sum = 0
     lenght1 = len(num1)
     lenght2 = len(num2)
 
@@ -26,11 +26,11 @@ def multiply(num1: str, num2: str):
         if carry != 0:
             session_res = (carry * 10 ** (len(str(session_res)))) + session_res
         print(session_res, carry)
-        sum += session_res
+        total_sum += session_res
     #
-    # print(num1, "*", num2, "=", sum)
+    # print(num1, "*", num2, "=", total_sum)
     # print("---------------------------")
-    return sum
+    return total_sum
 
 
 def test(num1, num2):

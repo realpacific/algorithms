@@ -1,7 +1,4 @@
-import os
-import sys
-from shared.linked_list import Node
-from shared.reversed_linked_list import RLinkedList
+from codinginterview.shared import Node, RLinkedList
 
 
 def pad_zero(l, times):
@@ -13,13 +10,13 @@ def pad_zero(l, times):
 
 
 def add(l1, l2):
-    ''' (6 -> 1 -> 7) + (2 -> 9). That is 617 + 029 = 6 -> 4 -> 6 '''
+    """ (6 -> 1 -> 7) + (2 -> 9). That is 617 + 029 = 6 -> 4 -> 6 """
     # Use recursion to calculate the sum of one's digit first then pass carry & Node value to higher digits
     if l1.next is None and l2.next is None:
-        sum = (l1.data + l2.data)
-        return (1 if sum > 9 else 0, Node(sum % 10))
+        sum_of_data = (l1.data + l2.data)
+        return 1 if sum_of_data > 9 else 0, Node(sum_of_data % 10)
 
-     # Recurse here
+    # Recurse here
     carry, node = add(l1.next, l2.next)
     value = carry
     if l1 is not None:
@@ -33,6 +30,8 @@ def add(l1, l2):
 
 
 def sum_list_forward(l1, l2):
+    new_l1 = None
+    new_l2 = None
     if len(l1) < len(l2):
         new_l1 = pad_zero(l1, len(l2) - len(l1))
         new_l2 = l2

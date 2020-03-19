@@ -20,10 +20,11 @@ class StackWithThreshold:
     def __repr__(self):
         return str(self)
 
+
 class StackOfPlates:
     def __init__(self):
         self.stack_with_plates = []
-    
+
     def push(self, data):
         latest_stack = None
         if len(self.stack_with_plates) > 0:

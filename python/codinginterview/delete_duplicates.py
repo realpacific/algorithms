@@ -1,5 +1,5 @@
-from shared import Node, LinkedList, RLinkedList
-
+from codinginterview.shared.node import Node
+from codinginterview.shared.linked_list import LinkedList
 
 
 def delete_duplicates(linkedlist):

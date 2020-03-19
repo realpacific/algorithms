@@ -1,30 +1,28 @@
 package bits;
 
-import commons.BitUtils;
+
+import bits.commons.BitUtils;
 
 public class Insertion {
     public static void main(String[] args) {
-        Byte m = 0b1011;
+        byte m = 0b1011;
         // 0b100(1011)00
-        Byte n = (byte) 0b100001100;
+        byte n = (byte) 0b101001100;
         int i = 2;
         int j = 6;
 
-        Byte nullifierBytes = n;
-        
+        // Clear all the bits in range i~j
         for (int k = 0; k < 10; k++) {
-            if (k >= 2 && k < 6) {
-                nullifierBytes = BitUtils.clearBit(nullifierBytes, k);
-            } else {
-                nullifierBytes = BitUtils.setBit(nullifierBytes, k);
+            if (k >= i && k < j) {
+                n = BitUtils.clearBit(n, k);
             }
         }
-        assert nullifierBytes == Byte.valueOf((byte)0b111000011);
-        
-        byte nullfiedBytes = (byte) (nullifierBytes & n);
+        assert n == (byte) 0b101000000;
+
+        // Shift the bits to be inserted by i so that we get 1011(00)
         byte shifted = (byte) (m << i);
-        System.out.println(Integer.toBinaryString(nullfiedBytes + shifted));
-        assert (byte)(nullfiedBytes + shifted) == 0b10010111; 
-        assert false == true;
+
+        // n OR shifted will give result
+        assert (n | shifted) == (byte) 0b101101100;
     }
 }

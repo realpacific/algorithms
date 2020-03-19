@@ -1,6 +1,4 @@
-import os
-import sys
-from shared.linked_list import Node, LinkedList
+from codinginterview.shared.linked_list import Node, LinkedList
 
 
 def delete_middle(linked, k):

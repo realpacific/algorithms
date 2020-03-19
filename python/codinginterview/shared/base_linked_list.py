@@ -1,5 +1,3 @@
-from shared.node import Node
-
 class BaseLinkedList:
     def __init__(self):
         self.node = None

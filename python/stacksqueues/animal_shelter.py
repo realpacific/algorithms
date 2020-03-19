@@ -1,5 +1,7 @@
 import datetime
-from queueviastacks import QueueViaStack
+
+from .queueviastacks import QueueViaStack
+
 
 class Animal:
     def __init__(self, name):
@@ -9,13 +11,16 @@ class Animal:
     def __repr__(self):
         return f"Animal({self.name})"
 
+
 class Cat(Animal):
     def __init__(self, name):
         super().__init__(name)
 
+
 class Dog(Animal):
     def __init__(self, name):
         super().__init__(name)
+
 
 class AnimalShelter:
     def __init__(self):
@@ -44,7 +49,7 @@ class AnimalShelter:
             return self.dequeue_dog()
         elif dog is None:
             return self.dequeue_cat()
-       
+
         if dog.arrival_time > cat.arrival_time:
             return self.dequeue_dog()
         elif dog.arrival_time < cat.arrival_time:
@@ -57,9 +62,9 @@ class AnimalShelter:
             else:
                 return self.dequeue_dog()
 
-
     def __repr__(self):
         return f"AnimalShelter(dog={self.dog_queue}, cat={self.cat_queue})"
+
 
 shelter = AnimalShelter()
 shelter.add(Cat("Tom"))

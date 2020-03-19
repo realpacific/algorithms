@@ -1,4 +1,5 @@
-from shared import Node, CircularLinkedList
+from codinginterview.shared.circular_linked_list import CircularLinkedList
+from codinginterview.shared.node import Node
 
 
 def is_linked_list_circular(l1):

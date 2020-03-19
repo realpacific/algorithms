@@ -1,5 +1,7 @@
 def one_or_zero_edits_away(original, given):
-    '''199. One Away: There are three types of edits that can be performed on strings: insert a character, remove a character, or replace a character. Given two strings, write a function to check if they are one edit(or zero edits) away.'''
+    """199. One Away: There are three types of edits that can be performed on strings: insert a character,
+    remove a character, or replace a character. Given two strings, write a function to check if they are one edit(or
+    zero edits) away. """
     records_from_original = {}
     leftover_from_given = []
     for i in original:
@@ -13,8 +15,8 @@ def one_or_zero_edits_away(original, given):
 
     print(records_from_original, leftover_from_given)
     return 0 <= sum(list(records_from_original.values())) <= 1 \
-        and len(leftover_from_given) <= 1 \
-        and min(list(records_from_original.values())) >= 0
+           and len(leftover_from_given) <= 1 \
+           and min(list(records_from_original.values())) >= 0
 
 
 assert one_or_zero_edits_away('pale', 'ple')

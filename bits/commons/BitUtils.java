@@ -1,9 +1,9 @@
-package commons;
+package bits.commons;
 
 public class BitUtils {
     public static byte clearBit(byte value, int position) {
         byte b = (byte) (1 << position);
-        return (byte) (value & b);
+        return (byte) (value & ~b);
     }
 
     public static byte setBit(byte value, int position) {

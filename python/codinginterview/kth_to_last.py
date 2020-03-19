@@ -1,4 +1,4 @@
-from shared import Node, LinkedList
+from codinginterview.shared.linked_list import Node, LinkedList
 
 
 def kth_to_last(linked, k):

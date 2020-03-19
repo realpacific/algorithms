@@ -1,6 +1,6 @@
 import os
 import sys
-from shared.linked_list import Node, LinkedList
+from codinginterview.shared import Node, LinkedList
 
 
 def sum_list(l1, l2, carry):

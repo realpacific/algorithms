@@ -1,4 +1,4 @@
-from shared import Node, LinkedList
+from codinginterview.shared.linked_list import Node, LinkedList
 
 def _traverse_till_end(l):
     current = l.node

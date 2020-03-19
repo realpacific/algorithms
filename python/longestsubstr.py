@@ -12,11 +12,11 @@ def lengthOfLongestSubstring(s):
             substring += char
             length = len(substring) if length < len(substring) else length
         else:
-            previous= substring
+            previous = substring
             length = len(substring) if length < len(substring) else length
             substring = ""
             try:
-                substring = previous[previous.rindex(char) + 1 : ]
+                substring = previous[previous.rindex(char) + 1:]
                 substring += char
                 print(substring, "try")
             except:

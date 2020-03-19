@@ -4,7 +4,7 @@ def zero_matrix(matrix):
     col = len(matrix[0])
     for i in range(0, row):
         for j in range(0, col):
-            if(matrix[i][j] == 0):
+            if matrix[i][j] == 0:
                 position_of_zeros.append((i, j))
 
     for (i, j) in position_of_zeros:

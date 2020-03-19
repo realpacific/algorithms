@@ -1,10 +1,10 @@
-from shared.node import Node
-from shared.base_linked_list import BaseLinkedList
+from codinginterview.shared.base_linked_list import BaseLinkedList
+from codinginterview.shared.node import Node
+
 
 class LinkedList(BaseLinkedList):
     def __init__(self):
-        self.node = None
-        self.length = 0
+        super(LinkedList, self).__init__()
 
     def add(self, data):
         if not isinstance(data, Node):
