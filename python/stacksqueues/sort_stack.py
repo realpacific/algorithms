@@ -1,5 +1,6 @@
 from .stack import Stack
 
+
 class SortedStack:
     def __init__(self):
         self.stack = Stack()
@@ -15,6 +16,7 @@ class SortedStack:
         # Move all the values from temp stack to current stack
         while not self._temp.isempty():
             self.stack.push(self._temp.pop())
+
 
 sorted_stack = SortedStack()
 sorted_stack.push(1)

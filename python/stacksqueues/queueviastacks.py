@@ -1,10 +1,11 @@
 from .stack import Stack
 
+
 class QueueViaStack:
     def __init__(self):
         self._backup_stack = Stack()
         self.stack = Stack()
-    
+
     def first_element(self):
         if self.stack.isempty():
             return None
@@ -29,12 +30,12 @@ class QueueViaStack:
             self.stack.push(self._backup_stack.pop())
         return popped_value
 
-    
     def __str__(self):
         return f"QueueViaStack({self.stack})"
 
     def __repr__(self):
         return str(self)
+
 
 queue = QueueViaStack()
 assert queue.dequeue() is None
