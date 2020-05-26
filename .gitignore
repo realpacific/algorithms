@@ -9,4 +9,5 @@ __pycache__
 *.class
 *.iml
 python/venv
-target/**
+target/**d
+!/python/moderate/venv/Scripts/
