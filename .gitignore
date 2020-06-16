@@ -13,3 +13,4 @@ target/**d
 /python/*/venv/
 target
 python/*/venv
+python/moderate/venv
