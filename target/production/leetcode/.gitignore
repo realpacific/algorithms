@@ -9,8 +9,4 @@ __pycache__
 *.class
 *.iml
 python/venv
-target/**d
-/python/*/venv/
-target
-python/*/venv
-python/moderate/venv
+target/**
