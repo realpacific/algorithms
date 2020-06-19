@@ -39,7 +39,6 @@ class Line:
         else:
             return 0
 
-
 if __name__ == '__main__':
     square1 = Square(Point(5, 20), Point(10, 15))
     square2 = Square(Point(5, 5), Point(10, 0))
