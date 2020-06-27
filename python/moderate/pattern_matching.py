@@ -11,6 +11,12 @@ def __build_from_pattern(pattern: str, a: str, b: str):
 
 
 def pattern_matching(pattern: str, value: str):
+    """
+    You are given two strings, pattern and value. The pattern string consists of just the letters a and b,
+    describing a pattern within a string. For example, the string catcatgocatgo
+    matches the pattern aabab (where cat is a and go is b). It also matches patterns like a, ab, and b.
+    Write a method to determine if value matches pattern.
+    """
     starter_char = pattern[0]
     other_char = 'b' if starter_char == 'a' else 'a'
 
@@ -39,9 +45,9 @@ def pattern_matching(pattern: str, value: str):
 
 
 if __name__ == '__main__':
-    pattern_matching('aabab', 'catcatgocatgo')
-    pattern_matching('abaaaaa', 'catgoocatcatcatcatcat')
-    pattern_matching('abaaaab', 'catgoocatcatcatcatcat')
-    pattern_matching('abaabaa', 'catgoocatcatgoocatcat')
-    pattern_matching('ababaaa', 'catgoocatgoocatcatcat')
-    pattern_matching('aba', 'zxcvbnm')
+    assert pattern_matching('aabab', 'catcatgocatgo')
+    assert pattern_matching('abaaaaa', 'catgoocatcatcatcatcat')
+    assert pattern_matching('abaaaab', 'catgoocatcatcatcatcat') == False
+    assert pattern_matching('abaabaa', 'catgoocatcatgoocatcat')
+    assert pattern_matching('ababaaa', 'catgoocatgoocatcatcat')
+    assert pattern_matching('aba', 'zxcvbnm') == False
