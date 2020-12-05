@@ -1,0 +1,104 @@
+from typing import Dict, List
+
+
+class Edge:
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+
+    def __repr__(self):
+        return f"Edge({self.start} -> {self.end})"
+
+
+class Vertex:
+    def __init__(self, root_name, freq):
+        self.frequency = freq
+        self.root_name = root_name
+        self.is_visited = False
+        self.edge: List[Edge] = []
+
+    def connect(self, vertex: 'Vertex'):
+        self.edge.append(Edge(start=self.root_name, end=vertex.root_name))
+
+    def __repr__(self):
+        return f"Vertex(n={self.root_name}, f={self.frequency}, {self.edge})"
+
+
+class Graph:
+    def __init__(self):
+        self.mappings: Dict[str, Vertex] = {}
+        self.vertices: List[Vertex] = []
+
+    def create(self, root_value, freq):
+        vertex = Vertex(root_name=root_value, freq=freq)
+        self.mappings[root_value] = vertex
+        self.vertices.append(vertex)
+
+    def __getitem__(self, item):
+        return self.mappings[item]
+
+    def join(self, name1, name2):
+        v1 = self.mappings[name1]
+        v2 = self.mappings[name2]
+        v1.connect(v2)
+        v2.connect(v1)
+
+    def __repr__(self):
+        return f"{self.vertices}"
+
+
+__synonyms_table: Dict[str, str] = {
+    "Jonathan": "John",
+    "Jon": "Johnny",
+    "Johnny": "John",
+    "Kari": "Carrie",
+    "Carleton": "Carlton"
+}
+
+__counts: Dict[str, int] = {
+    "John": 10,
+    "Jon": 3,
+    "Davis": 2,
+    "Kari": 3,
+    'Johnny': 11,
+    "Carlton": 8,
+    "Carleton": 2,
+    "Jonathan": 9,
+    "Carrie": 5
+}
+
+graph = Graph()
+
+
+def get_count(vrtx: Vertex) -> int:
+    if vrtx.is_visited:
+        return 0
+    total = 0
+    vrtx.is_visited = True
+
+    for e in vrtx.edge:
+        _start_edge = graph[e.start]
+        if not _start_edge.is_visited:
+            total += get_count(_start_edge)
+        _start_edge.is_visited = True
+
+        _end_edge = graph[e.end]
+        if not _end_edge.is_visited:
+            total += get_count(_end_edge)
+        _end_edge.is_visited = True
+
+    return vrtx.frequency + total
+
+
+if __name__ == "__main__":
+    for name, count in __counts.items():
+        graph.create(name, count)
+
+    for n1, n2 in __synonyms_table.items():
+        graph.join(n1, n2)
+
+    # Create a graph and traverse every unvisited nodes
+    for i in graph.vertices:
+        total_count = get_count(i)
+        if total_count > 0:
+            print(i.root_name, total_count)
