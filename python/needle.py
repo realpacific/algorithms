@@ -32,9 +32,10 @@ def strStr(haystack: str, needle: str) -> int:
     return -1
 
 
-print(strStr("hellove", 'lov'))
-print(strStr("hellove", 'e'))
-print(strStr("hellove", 'ov'))
-print(strStr("hello", 'zzzzzzzll'))
-print(strStr("hello", 'hello'))
-print(strStr(haystack="aaaaa", needle="bba"))
+if __name__ == "__main__":
+    print(strStr("hellove", 'lov'))
+    print(strStr("hellove", 'e'))
+    print(strStr("hellove", 'ov'))
+    print(strStr("hello", 'zzzzzzzll'))
+    print(strStr("hello", 'hello'))
+    print(strStr(haystack="aaaaa", needle="bba"))

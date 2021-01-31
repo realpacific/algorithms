@@ -1,6 +1,5 @@
-import os
-import sys
-from codinginterview.shared import Node, LinkedList
+from .shared.linked_list import LinkedList
+from .shared.node import Node
 
 
 def sum_list(l1, l2, carry):
@@ -27,18 +26,19 @@ def sum_list(l1, l2, carry):
     return node
 
 
-l1 = LinkedList()
-l1.add(Node(7))
-l1.add(Node(1))
-l1.add(Node(6))
-for i in l1:
-    print(i)
+if __name__ == "__main__":
+    l1 = LinkedList()
+    l1.add(Node(7))
+    l1.add(Node(1))
+    l1.add(Node(6))
+    for i in l1:
+        print(i)
 
-l2 = LinkedList()
-l2.add(Node(5))
-l2.add(Node(9))
-l2.add(Node(2))
-for i in l2:
-    print(i)
+    l2 = LinkedList()
+    l2.add(Node(5))
+    l2.add(Node(9))
+    l2.add(Node(2))
+    for i in l2:
+        print(i)
 
-print(sum_list(l1.node, l2.node, 0))
+    print(sum_list(l1.node, l2.node, 0))

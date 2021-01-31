@@ -1,4 +1,6 @@
-from codinginterview.shared import Node, LinkedList, RLinkedList
+from shared.linked_list import LinkedList
+from shared.node import Node
+from shared.reversed_linked_list import RLinkedList
 
 
 def is_linked_list_palindrome(l1):
@@ -16,20 +18,21 @@ def is_linked_list_palindrome(l1):
     return True
 
 
-l1 = LinkedList()
-l1.add(Node(1))
-l1.add(Node(0))
-l1.add(Node(5))
-l1.add(Node(0))
-l1.add(Node(1))
-assert is_linked_list_palindrome(l1)
+if __name__ == "__main__":
+    l1 = LinkedList()
+    l1.add(Node(1))
+    l1.add(Node(0))
+    l1.add(Node(5))
+    l1.add(Node(0))
+    l1.add(Node(1))
+    assert is_linked_list_palindrome(l1)
 
-l2 = LinkedList()
-l2.add(Node(1))
-assert is_linked_list_palindrome(l2)
+    l2 = LinkedList()
+    l2.add(Node(1))
+    assert is_linked_list_palindrome(l2)
 
-l3 = LinkedList()
-l3.add(Node(1))
-l3.add(Node(2))
-l3.add(Node(3))
-assert is_linked_list_palindrome(l3) == False
+    l3 = LinkedList()
+    l3.add(Node(1))
+    l3.add(Node(2))
+    l3.add(Node(3))
+    assert is_linked_list_palindrome(l3) == False

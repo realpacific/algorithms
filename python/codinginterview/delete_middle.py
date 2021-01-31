@@ -1,4 +1,4 @@
-from codinginterview.shared.linked_list import Node, LinkedList
+from shared.linked_list import Node, LinkedList
 
 
 def delete_middle(linked, k):
@@ -14,16 +14,18 @@ def delete_middle(linked, k):
         current = current.next
         count += 1
 
-linked = LinkedList()
-linked.add(Node(0))
-linked.add(Node(1))
-linked.add(Node(2))
-linked.add(Node(3))
-linked.add(Node(4))
-linked.add(Node(5))
-linked.add(Node(6))
-linked.add(Node(7))
-linked.add(Node(8))
-linked.add(Node(9))
-delete_middle(linked, 4)
-linked.print()
+
+if __name__ == "__main__":
+    linked = LinkedList()
+    linked.add(Node(0))
+    linked.add(Node(1))
+    linked.add(Node(2))
+    linked.add(Node(3))
+    linked.add(Node(4))
+    linked.add(Node(5))
+    linked.add(Node(6))
+    linked.add(Node(7))
+    linked.add(Node(8))
+    linked.add(Node(9))
+    delete_middle(linked, 4)
+    linked.print()

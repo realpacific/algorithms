@@ -1,6 +1,7 @@
 # https://leetcode.com/problems/remove-element/
 from timeit import default_timer as timer
 
+
 def remove_element(nums, val):
     start = timer()
     i = 0
@@ -17,6 +18,7 @@ def remove_element(nums, val):
     print(nums, timer() - start)
 
 
-remove_element([3, 2, 2, 3], 3)
-remove_element([0, 1, 2, 2, 3, 0, 4, 2], 2)
-remove_element([3, 2, 2, 3, 2, 3, 3, 3, 3, 33, 3, 3, 3, 3, 3, 32, 2, 2, 2, 1, 1, 1], 3)
+if __name__ == "__main__":
+    remove_element([3, 2, 2, 3], 3)
+    remove_element([0, 1, 2, 2, 3, 0, 4, 2], 2)
+    remove_element([3, 2, 2, 3, 2, 3, 3, 3, 3, 33, 3, 3, 3, 3, 3, 32, 2, 2, 2, 1, 1, 1], 3)

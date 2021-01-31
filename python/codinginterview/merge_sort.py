@@ -1,6 +1,6 @@
 def init_merge_sort(arr):
     if len(arr) > 1:
-        mid = len(arr)//2
+        mid = len(arr) // 2
         left = arr[:mid]
         right = arr[mid:]
 
@@ -29,7 +29,8 @@ def init_merge_sort(arr):
             k += 1
 
 
-array = [9, 8, 3, 4, 6, 5]
-print(array)
-init_merge_sort(array)
-print(array)
+if __name__ == "__main__":
+    array = [9, 8, 3, 4, 6, 5]
+    print(array)
+    init_merge_sort(array)
+    print(array)

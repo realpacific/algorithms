@@ -28,9 +28,10 @@ def lengthOfLongestSubstring(s):
     return length
 
 
-assert (lengthOfLongestSubstring("pwwkew") == 3)
-assert (lengthOfLongestSubstring("abcabcbb") == 3)
-assert (lengthOfLongestSubstring("bbbbb") == 1)
-assert (lengthOfLongestSubstring("aab") == 2)
-assert (lengthOfLongestSubstring("dvdf") == 3)
-assert (lengthOfLongestSubstring("anviaj") == 5)
+if __name__ == "__main__":
+    assert (lengthOfLongestSubstring("pwwkew") == 3)
+    assert (lengthOfLongestSubstring("abcabcbb") == 3)
+    assert (lengthOfLongestSubstring("bbbbb") == 1)
+    assert (lengthOfLongestSubstring("aab") == 2)
+    assert (lengthOfLongestSubstring("dvdf") == 3)
+    assert (lengthOfLongestSubstring("anviaj") == 5)

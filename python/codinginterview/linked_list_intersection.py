@@ -1,4 +1,5 @@
-from shared import Node, LinkedList
+from shared.node import Node
+from shared.linked_list import LinkedList
 
 
 def _traverse_till_end(l):

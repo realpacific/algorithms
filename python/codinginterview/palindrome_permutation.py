@@ -21,23 +21,24 @@ def is_palindrome_permutation(value):
         return sum(records) == 1
 
 
-assert is_palindrome_permutation('level') == True
-assert is_palindrome_permutation('tacocat') == True
-assert is_palindrome_permutation('poop') == True
-assert is_palindrome_permutation('poop') == True
-assert is_palindrome_permutation('nitin') == True
-assert is_palindrome_permutation('level') == True
-assert is_palindrome_permutation('level') == True
-assert is_palindrome_permutation('level') == True
-assert is_palindrome_permutation('madam') == True
-assert is_palindrome_permutation('mom') == True
-assert is_palindrome_permutation('racecar') == True
-assert is_palindrome_permutation('redder') == True
-assert is_palindrome_permutation('repaper') == True
-assert is_palindrome_permutation('rotator') == True
+if __name__ == "__main__":
+    assert is_palindrome_permutation('level') == True
+    assert is_palindrome_permutation('tacocat') == True
+    assert is_palindrome_permutation('poop') == True
+    assert is_palindrome_permutation('poop') == True
+    assert is_palindrome_permutation('nitin') == True
+    assert is_palindrome_permutation('level') == True
+    assert is_palindrome_permutation('level') == True
+    assert is_palindrome_permutation('level') == True
+    assert is_palindrome_permutation('madam') == True
+    assert is_palindrome_permutation('mom') == True
+    assert is_palindrome_permutation('racecar') == True
+    assert is_palindrome_permutation('redder') == True
+    assert is_palindrome_permutation('repaper') == True
+    assert is_palindrome_permutation('rotator') == True
 
-assert is_palindrome_permutation('prashant') == False
-assert is_palindrome_permutation('loop') == False
-assert is_palindrome_permutation('') == True
-assert is_palindrome_permutation('s') == True
-assert is_palindrome_permutation('xxx') == True
+    assert is_palindrome_permutation('prashant') == False
+    assert is_palindrome_permutation('loop') == False
+    assert is_palindrome_permutation('') == True
+    assert is_palindrome_permutation('s') == True
+    assert is_palindrome_permutation('xxx') == True

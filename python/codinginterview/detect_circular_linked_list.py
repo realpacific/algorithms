@@ -1,5 +1,5 @@
-from codinginterview.shared.circular_linked_list import CircularLinkedList
-from codinginterview.shared.node import Node
+from shared.circular_linked_list import CircularLinkedList
+from shared.node import Node
 
 
 def is_linked_list_circular(l1):
@@ -10,27 +10,24 @@ def is_linked_list_circular(l1):
         if current in registry:
             return True
         registry.append(current)
-        current= current.next
+        current = current.next
     return False
 
 
-
 # ------------------------------------
+if __name__ == "__main__":
+    l1 = CircularLinkedList()
+    l1.add(Node(1))
+    l1.add(Node(2))
+    l1.add(Node(3))
+    l1.add(Node(4), join=True)
 
-l1 = CircularLinkedList()
-l1.add(Node(1))
-l1.add(Node(2))
-l1.add(Node(3))
-l1.add(Node(4), join=True)
+    assert is_linked_list_circular(l1)
 
-assert is_linked_list_circular(l1)
+    l2 = CircularLinkedList()
+    l2.add(Node(1))
+    l2.add(Node(2))
+    l2.add(Node(3))
+    l2.add(Node(4))
 
-
-
-l2 = CircularLinkedList()
-l2.add(Node(1))
-l2.add(Node(2))
-l2.add(Node(3))
-l2.add(Node(4))
-
-assert not is_linked_list_circular(l2)
+    assert not is_linked_list_circular(l2)

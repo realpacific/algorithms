@@ -1,4 +1,4 @@
-from codinginterview.shared import Node, RLinkedList
+from shared import Node, RLinkedList
 
 
 def pad_zero(l, times):
@@ -26,7 +26,7 @@ def add(l1, l2):
     new_node = Node(value % 10)
     new_node.next = node
 
-    return (1 if value > 9 else 0, new_node)
+    return 1 if value > 9 else 0, new_node
 
 
 def sum_list_forward(l1, l2):
@@ -43,14 +43,15 @@ def sum_list_forward(l1, l2):
     return add(l1.node, l2.node)
 
 
-l1 = RLinkedList()
-l1.add(Node(7))
-l1.add(Node(1))
-l1.add(Node(6))
+if __name__ == "__main__":
+    l1 = RLinkedList()
+    l1.add(Node(7))
+    l1.add(Node(1))
+    l1.add(Node(6))
 
-l2 = RLinkedList()
-l2.add(Node(9))
-l2.add(Node(2))
-print('__________')
+    l2 = RLinkedList()
+    l2.add(Node(9))
+    l2.add(Node(2))
+    print('__________')
 
-print(sum_list_forward(l1, l2))
+    print(sum_list_forward(l1, l2))
