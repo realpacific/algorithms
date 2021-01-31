@@ -21,11 +21,12 @@ def is_palindrome(s):
     return s == s[::-1]
 
 
-# assert (longesPalindrome("lababa") == "aba")
-longesPalindrome("lababa")
-print("---------------")
-longesPalindrome("labaaba")
-longesPalindrome("zznitinzx")
-longesPalindrome("xxxabazzlevexxxxx")
-longesPalindrome("a")
-longesPalindrome("ac")
+if __name__ == "__main__":
+    # assert (longesPalindrome("lababa") == "aba")
+    longesPalindrome("lababa")
+    print("---------------")
+    longesPalindrome("labaaba")
+    longesPalindrome("zznitinzx")
+    longesPalindrome("xxxabazzlevexxxxx")
+    longesPalindrome("a")
+    longesPalindrome("ac")

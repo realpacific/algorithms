@@ -1,6 +1,3 @@
-import functools
-
-
 def sumEvenAfterQueries(A, queries):
     s = sum(i for i in A if i % 2 == 0)
     result = []
@@ -42,5 +39,6 @@ def sumOfEven(A):
     return sum
 
 
-sumEvenAfterQueries(A=[1, 2, 3, 4], queries=[[1, 0], [-3, 1], [-4, 0], [2, 3]])
-print([8, 6, 2, 4])
+if __name__ == "__main__":
+    sumEvenAfterQueries(A=[1, 2, 3, 4], queries=[[1, 0], [-3, 1], [-4, 0], [2, 3]])
+    print([8, 6, 2, 4])

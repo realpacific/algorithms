@@ -21,12 +21,13 @@ def sortArrayByParity2(A):
     return A
 
 
-print(sortArrayByParity2([4, 2, 3, 1]))
+if __name__ == "__main__":
+    print(sortArrayByParity2([4, 2, 3, 1]))
 
-print(sortArrayByParity2([4]))
-print(sortArrayByParity2([3]))
-print(sortArrayByParity2([4, 2]))
-print(sortArrayByParity2([3, 4]))
-print(sortArrayByParity2([4, 4]))
-print(sortArrayByParity2([3, 1, 2, 4, 5]))
-print(sortArrayByParity2([3, 3, 3, 3, 2, 2, 2, 2, 3, 3, 3, 1, 2, 4, 5, 5, 5, 0]))
+    print(sortArrayByParity2([4]))
+    print(sortArrayByParity2([3]))
+    print(sortArrayByParity2([4, 2]))
+    print(sortArrayByParity2([3, 4]))
+    print(sortArrayByParity2([4, 4]))
+    print(sortArrayByParity2([3, 1, 2, 4, 5]))
+    print(sortArrayByParity2([3, 3, 3, 3, 2, 2, 2, 2, 3, 3, 3, 1, 2, 4, 5, 5, 5, 0]))

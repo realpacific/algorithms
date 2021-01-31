@@ -3,7 +3,7 @@ def quick_sort(arr, low, high):
         return
     max = partition(arr, low, high)
     quick_sort(arr, low, max)
-    quick_sort(arr, max+1, high)
+    quick_sort(arr, max + 1, high)
 
 
 def partition(A, low, high):
@@ -32,9 +32,10 @@ def partition(A, low, high):
     return j
 
 
-# array = [9, 8, 1, 10, 20, 0]
-array = [10, 16, 8, 12, 15, 6, 3, 9, 5]
-print(array)
-array.append(100000)
-quick_sort(array, 0, len(array)-1)
-print(array[0:-1])
+if __name__ == "__main__":
+    # array = [9, 8, 1, 10, 20, 0]
+    array = [10, 16, 8, 12, 15, 6, 3, 9, 5]
+    print(array)
+    array.append(100000)
+    quick_sort(array, 0, len(array) - 1)
+    print(array[0:-1])

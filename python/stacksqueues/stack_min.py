@@ -9,10 +9,12 @@ class NodeWithMin:
     def __repr__(self):
         return str(self)
 
+
 class MinStack:
     """Stack has a function min, which returns the minimum element. Push, pop and min should all operate in 0(1) time"""
+
     def __init__(self):
-       self.stack = []
+        self.stack = []
 
     def peek(self):
         if len(self) > 0:
@@ -36,7 +38,7 @@ class MinStack:
             raise Exception("Stack is empty.")
         poped_element = self.stack.pop()
         # When popped, peeking into the stack will return the next lowest element
-    
+
     def min(self):
         element = self.peek()
         return element.min if element is not None else None
@@ -50,8 +52,9 @@ class MinStack:
     def __repr__(self):
         return str(self)
 
-st = MinStack() 
-assert st.min() == None
+
+st = MinStack()
+assert st.min() is None
 st.push(5)
 st.push(6)
 assert st.min() == 5

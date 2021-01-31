@@ -1,6 +1,7 @@
 from shared.node import Node
 from shared.base_linked_list import BaseLinkedList
 
+
 class RLinkedList(BaseLinkedList):
     def __init__(self):
         self.node = None

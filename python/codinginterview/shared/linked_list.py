@@ -1,5 +1,5 @@
-from codinginterview.shared.base_linked_list import BaseLinkedList
-from codinginterview.shared.node import Node
+from .base_linked_list import BaseLinkedList
+from .node import Node
 
 
 class LinkedList(BaseLinkedList):

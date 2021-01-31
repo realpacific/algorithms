@@ -12,8 +12,7 @@ def string_compression(string):
         if i == current or current is None:
             count += 1
         else:
-            compressed_string = compressed_string + \
-                current + (str(count) if count > 1 else '')
+            compressed_string = compressed_string + current + (str(count) if count > 1 else '')
             count = 1
         current = i
     compressed_string = compressed_string + current + str(count)
@@ -24,11 +23,12 @@ def string_compression(string):
     return compressed_string
 
 
-assert string_compression('aaaabbbbcccccaaa') == 'a4b4c5a3'
-assert string_compression('abcdef') == 'abcdef'
-assert string_compression('abababaeeee') == 'abababae4'
-assert string_compression('aaaaaa') == 'a6'
-assert string_compression('baba') == 'baba'
-assert string_compression('a') == 'a'
-assert string_compression('') == ''
-assert string_compression('aaaaaaaaaaaaaaaaabaaaaaaaaaa') == 'a17ba10'
+if __name__ == "__main__":
+    assert string_compression('aaaabbbbcccccaaa') == 'a4b4c5a3'
+    assert string_compression('abcdef') == 'abcdef'
+    assert string_compression('abababaeeee') == 'abababae4'
+    assert string_compression('aaaaaa') == 'a6'
+    assert string_compression('baba') == 'baba'
+    assert string_compression('a') == 'a'
+    assert string_compression('') == ''
+    assert string_compression('aaaaaaaaaaaaaaaaabaaaaaaaaaa') == 'a17ba10'

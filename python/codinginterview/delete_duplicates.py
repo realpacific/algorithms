@@ -1,5 +1,5 @@
-from codinginterview.shared.node import Node
-from codinginterview.shared.linked_list import LinkedList
+from shared.linked_list import LinkedList
+from shared.node import Node
 
 
 def delete_duplicates(linkedlist):
@@ -14,16 +14,17 @@ def delete_duplicates(linkedlist):
         current = current.next
 
 
-linked = LinkedList()
-linked.add(Node(1))
-linked.add(Node(2))
-linked.add(Node(2))
-linked.add(Node(2))
-linked.add(Node(3))
-linked.add(Node(4))
-linked.add(Node(5))
-linked.add(Node(1))
-linked.add(Node(6))
-linked.add(Node(7))
-delete_duplicates(linked)
-linked.print()
+if __name__ == "__main__":
+    linked = LinkedList()
+    linked.add(Node(1))
+    linked.add(Node(2))
+    linked.add(Node(2))
+    linked.add(Node(2))
+    linked.add(Node(3))
+    linked.add(Node(4))
+    linked.add(Node(5))
+    linked.add(Node(1))
+    linked.add(Node(6))
+    linked.add(Node(7))
+    delete_duplicates(linked)
+    linked.print()

@@ -6,7 +6,8 @@ import java.util.List;
 
 public class PermutationWithoutDuplicates {
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(getPermutation("abcd").toArray()));
+//        System.out.println(Arrays.toString(getPermutation("abcd").toArray()));
+        System.out.println(Arrays.toString(getPermutation("abc").toArray()));
 
         ArrayList<String> result = new ArrayList<>();
         getPermutation("", "abcd", result);

@@ -1,3 +1,6 @@
+from unittest import TestCase
+
+
 def threeSum_old(nums):
     result = []
     for i in range(len(nums)):
@@ -49,7 +52,6 @@ def find_index_of_first_positive(n, start=0, end=None):
 print(threeSum([-2, 0, 1, 1, 2]))
 print("-=-=-=-")
 print(threeSum([-1, 0, 1, 2, -1, -4]))
-
 
 list = [
     82597,
@@ -3053,6 +3055,17 @@ list = [
     -7418,
     77916
 ]
+
+
 # print(threeSum(list))
 
 # print(find_index_of_first_positive(sorted(list)))=
+
+
+class TestThreeSum(TestCase):
+    def test_sum(self):
+        self.assertEqual(threeSum([-1, 0, 1, 2, -1, -4]), [[-1, -1, 2]])
+        self.assertEqual(threeSum([0, 0, 0, 0]), [])
+        self.assertEqual(threeSum([0, 0]), [])
+        self.assertEqual(threeSum([-2, 0, 1, 1, 2]), [[-2, 0, 2], [-2, 1, 1]])
+        self.assertEqual(threeSum([-1, 0, 1, 0]), [[-1, 0, 1]])

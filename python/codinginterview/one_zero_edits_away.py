@@ -19,10 +19,11 @@ def one_or_zero_edits_away(original, given):
            and min(list(records_from_original.values())) >= 0
 
 
-assert one_or_zero_edits_away('pale', 'ple')
-assert one_or_zero_edits_away('pales', 'pale')
-assert one_or_zero_edits_away('pale', 'bale')
-assert one_or_zero_edits_away('pbbb', 'bbpb')
-assert one_or_zero_edits_away('pale', 'bae') == False
-assert one_or_zero_edits_away('pbbb', 'bpbp') == False
-assert one_or_zero_edits_away('apple', 'aple')
+if __name__ == "__main__":
+    assert one_or_zero_edits_away('pale', 'ple')
+    assert one_or_zero_edits_away('pales', 'pale')
+    assert one_or_zero_edits_away('pale', 'bale')
+    assert one_or_zero_edits_away('pbbb', 'bbpb')
+    assert one_or_zero_edits_away('pale', 'bae') == False
+    assert one_or_zero_edits_away('pbbb', 'bpbp') == False
+    assert one_or_zero_edits_away('apple', 'aple')
