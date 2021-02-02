@@ -1,6 +1,7 @@
 package algorithmdesignmanualbook
 
 import kotlin.test.assertEquals
+import kotlin.test.assertFails
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
@@ -97,6 +98,34 @@ open class BinarySearchTree(private var node: Node) {
         }
     }
 
+    fun deleteKthSmallestElement(k: Int) {
+        val nodes = mutableListOf<BinarySearchTree>()
+        traverseInOrder(node.toBST(), nodes, k)
+        if (nodes.size < k) {
+            throw RuntimeException("k is too large")
+        }
+        val nodeToBeDeleted = nodes.lastOrNull()?.node
+        nodeToBeDeleted?.value?.let {
+            println("Deleting $it")
+            deleteFirst(it)
+        }
+    }
+
+    private fun traverseInOrder(root: BinarySearchTree?, nodes: MutableList<BinarySearchTree>, until: Int) {
+        require(until > 0)
+        if (root == null) {
+            return
+        }
+        traverseInOrder(root.node.left?.toBST(), nodes, until)
+        // Requires double check
+        if (nodes.size < until) {
+            nodes.add(root.node.toBST())
+        } else {
+            return
+        }
+        traverseInOrder(root.node.right?.toBST(), nodes, until)
+    }
+
     /**
      * In order traversal
      */
@@ -178,9 +207,28 @@ open class BinarySearchTree(private var node: Node) {
 fun main() {
     example1()
     testForDeletion()
+    testForDeleteKthSmallestElement()
 }
 
-private fun testForDeletion() {
+fun testForDeleteKthSmallestElement() {
+    //           10
+    //     6          15
+    //  4    7     12    19
+    val bst = createBST()
+    withPrint("3rd smallest item") {
+        bst.deleteKthSmallestElement(3)
+        assertTrue { bst.findOrNull(7) == null }
+    }
+    assertFails { bst.deleteKthSmallestElement(1000000) }
+    withPrint("6th smallest item") {
+        bst.deleteKthSmallestElement(6)
+        assertTrue { bst.findOrNull(19) == null }
+    }
+    assertFails { bst.deleteKthSmallestElement(6) }
+
+}
+
+private fun createBST(): BinarySearchTree {
     val node10 = Node.create(10)
     val node6 = Node.create(6)
     val node15 = Node.create(15)
@@ -196,6 +244,11 @@ private fun testForDeletion() {
     bst.add(node7)
     bst.add(node12)
     bst.add(node19)
+    return bst
+}
+
+private fun testForDeletion() {
+    val bst = createBST()
     //           10
     //     6          15
     //  4    7     12    19
