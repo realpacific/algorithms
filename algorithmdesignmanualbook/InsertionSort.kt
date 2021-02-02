@@ -8,8 +8,7 @@ fun main() {
     val elements = "INSERTIONSORT".split("").filter(String::isNotBlank).also(::println)
     val input = elements.toTypedArray()
 
-    withBenchmark { insertionSort(input) }
-
+    insertionSort(input)
     println(Arrays.toString(input))
 
     val expected = ArrayList(elements).sorted()

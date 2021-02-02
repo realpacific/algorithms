@@ -10,7 +10,7 @@ fun main() {
     val matA = arrayOf(arrayOf(1, 2, 3), arrayOf(3, 3, 3), arrayOf(5, 4, 3))
     val matB = arrayOf(arrayOf(1, 3), arrayOf(2, 3), arrayOf(3, 3))
 
-    withBenchmark { multiplyMatrix(matA, matB) }
+    multiplyMatrix(matA, matB)
 
     val matA2 = arrayOf(arrayOf(1, 2, 3), arrayOf(3, 3, 3))
     val matB2 = arrayOf(arrayOf(1, 3), arrayOf(3, 3))
