@@ -14,4 +14,6 @@ data class Node(val value: Int) {
     }
 
     fun toBST() = BinarySearchTree(this)
+
+    fun isLeafNode() = left == null && right == null
 }
