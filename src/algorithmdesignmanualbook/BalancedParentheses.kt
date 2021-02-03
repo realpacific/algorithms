@@ -1,6 +1,6 @@
 package algorithmdesignmanualbook
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.util.StringStack
+import java.util.*
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
@@ -29,10 +29,10 @@ fun main() {
 
 fun findPositionOfInvalidParenthesesOrNull(string: String): Int? {
     if (string.isEmpty()) return null
-    val stack = StringStack()
+    val stack = Stack<String>()
     string.forEachIndexed { index, c ->
         if (c == '(') {
-            stack.pushString("(")
+            stack.push("(")
         } else if (c == ')') {
             if (stack.isEmpty()) {
                 return index
@@ -40,7 +40,7 @@ fun findPositionOfInvalidParenthesesOrNull(string: String): Int? {
             stack.pop()
         }
     }
-    return if(stack.isEmpty()) null else string.lastIndex
+    return if (stack.isEmpty()) null else string.lastIndex
 }
 
 /**
@@ -48,10 +48,10 @@ fun findPositionOfInvalidParenthesesOrNull(string: String): Int? {
  */
 fun checkIfBalancedParentheses(string: String): Boolean {
     if (string.isEmpty()) return true
-    val stack = StringStack()
+    val stack = Stack<String>()
     string.forEachIndexed { index, c ->
         if (c == '(') {
-            stack.pushString("(")
+            stack.push("(")
         } else if (c == ')') {
             if (stack.isEmpty()) {
                 return false

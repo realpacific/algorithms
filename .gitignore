@@ -8,14 +8,21 @@ __pycache__
 */__pycache__
 *.class
 *.iml
-python/venv
+src/python/venv
 target/**d
-/python/*/venv/
+/src/python/*/venv/
 target
-python/*/venv
+src/python/*/venv
 target/*
 
 
-/python/*/venv/*
-/python/moderate/venv/
+/src/python/*/venv/*
+/src/python/moderate/venv/
 /lib/
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+/logs.txt

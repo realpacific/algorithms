@@ -1,6 +1,6 @@
 package algorithmdesignmanualbook
 
-import utils.Utils
+import utils.PrintUtils
 import kotlin.test.assertFails
 
 typealias  Matrix = Array<Array<Int>>
@@ -22,9 +22,9 @@ fun main() {
  * Complexity of this algorithm = O(xyz) i.e. CUBIC
  */
 fun multiplyMatrix(matA: Matrix, matB: Matrix): Matrix {
-    Utils.printArr(matA.toList())
+    PrintUtils.printArr(matA.toList())
     println("x")
-    Utils.printArr(matB.toList())
+    PrintUtils.printArr(matB.toList())
 
     require(matA[0].size == matB.size) {
         "Matrix multiplication not possible between ${matA.dimension().str()} & ${matB.dimension().str()}"
@@ -44,7 +44,7 @@ fun multiplyMatrix(matA: Matrix, matB: Matrix): Matrix {
 
     }
     return result.also {
-        Utils.printArr(result.toList())
+        PrintUtils.printArr(result.toList())
         println()
     }
 }

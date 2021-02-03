@@ -1,8 +1,10 @@
 package sortingandsearch;
 
-import utils.Utils;
+import utils.PrintUtils;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * You are given an array-like data structure Listy which lacks a size
@@ -78,7 +80,7 @@ public class SortedSearchNoSize {
          * Needs to be backtrack multiple times to get the max index in the list
          */
         private int getIndexBeyondMax() {
-            Utils.print(list);
+            PrintUtils.print(list);
             int maxIndex = 1;
             while (elementAt(maxIndex) != -1) {
                 maxIndex *= 2;

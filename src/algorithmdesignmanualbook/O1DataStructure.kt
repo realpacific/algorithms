@@ -1,6 +1,6 @@
 package algorithmdesignmanualbook
 
-import utils.Utils
+import utils.PrintUtils
 import utils.assertIterableSameInAnyOrder
 import java.util.*
 
@@ -58,7 +58,7 @@ class O1DataStructure {
     }
 
     fun print() {
-        Utils.println(array)
+        PrintUtils.println(array)
     }
 
     fun asList(): List<Int> {
