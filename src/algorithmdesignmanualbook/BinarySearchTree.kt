@@ -6,6 +6,8 @@ import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 open class BinarySearchTree(private var node: Node) {
+    fun getNode() = node
+
     open fun add(newNode: Node) {
         if (node.value < newNode.value) {
             if (node.right == null) {
@@ -228,7 +230,7 @@ fun testForDeleteKthSmallestElement() {
 
 }
 
-private fun createBST(): BinarySearchTree {
+fun createBST(): BinarySearchTree {
     val node10 = Node.create(10)
     val node6 = Node.create(6)
     val node15 = Node.create(15)

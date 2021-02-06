@@ -8,16 +8,16 @@ __pycache__
 */__pycache__
 *.class
 *.iml
-src/python/venv
+python/venv
 target/**d
-/src/python/*/venv/
+python/*/venv/
 target
 src/python/*/venv
 target/*
 
 
-/src/python/*/venv/*
-/src/python/moderate/venv/
+python/*/venv/*
+python/moderate/venv/
 /lib/
 
 # Ignore Gradle project-specific cache directory
