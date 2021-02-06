@@ -1,6 +1,6 @@
 package sortingandsearch;
 
-import utils.Utils;
+import utils.PrintUtils;
 
 import java.util.*;
 
@@ -37,7 +37,7 @@ public class GroupAnagrams {
         for (List<String> list : map.values()) {
             result.addAll(list);
         }
-        Utils.print(result);
+        PrintUtils.print(result);
     }
 
     private static String sort(String s) {

@@ -1,7 +1,5 @@
 package bigo;
 
-import java.util.Arrays;
-
 public class PermutationCount {
     public static void main(String[] args) {
         String str = "abc";

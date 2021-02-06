@@ -1,6 +1,6 @@
 package dynamic;
 
-import utils.Utils;
+import utils.PrintUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -18,7 +18,7 @@ public class EightQueens {
 
         placeQueens(0, board, result);
 
-        Utils.printArr(result);
+        PrintUtils.printArr(result);
 
     }
 

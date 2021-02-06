@@ -1,6 +1,6 @@
 package utils;
 
-public class Utils {
+public class PrintUtils {
     public static <T> void printArr(Iterable<T[]> it) {
         for (T[] t : it) {
             for (Object t1 : t) {
