@@ -1,5 +1,7 @@
-package algorithmdesignmanualbook
+package algorithmdesignmanualbook.datastructures
 
+import algorithmdesignmanualbook.print
+import algorithmdesignmanualbook.withPrint
 import utils.assertArraysSame
 
 /**

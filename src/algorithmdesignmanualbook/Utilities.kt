@@ -8,7 +8,8 @@ inline fun <T> withPrint(msg: String, block: () -> T): T {
     return result
 }
 
-fun <T> T.print(printer: ((T) -> Any)? = null): T {
+fun <T> T.print(msg: String? = null, printer: ((T) -> Any)? = null): T {
+    kotlin.io.print("$msg: ")
     val value = printer?.invoke(this) ?: this
 
     if (printer == null && this is Array<*>) {

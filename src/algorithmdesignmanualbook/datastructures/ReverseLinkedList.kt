@@ -1,4 +1,4 @@
-package algorithmdesignmanualbook
+package algorithmdesignmanualbook.datastructures
 
 
 data class LinkedListNode(val value: Int) {

@@ -1,5 +1,6 @@
-package algorithmdesignmanualbook
+package algorithmdesignmanualbook.datastructures
 
+import algorithmdesignmanualbook.withPrint
 import utils.PrintUtils
 import utils.assertIterableSameInAnyOrder
 import java.util.*

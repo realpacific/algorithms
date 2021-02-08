@@ -1,4 +1,4 @@
-package algorithmdesignmanualbook
+package algorithmdesignmanualbook.sorting
 
 import java.util.*
 

@@ -1,5 +1,6 @@
-package algorithmdesignmanualbook
+package algorithmdesignmanualbook.datastructures
 
+import algorithmdesignmanualbook.print
 import kotlin.test.assertTrue
 
 

@@ -1,7 +1,5 @@
-package algorithmdesignmanualbook
+package algorithmdesignmanualbook.datastructures
 
-import kotlin.system.measureNanoTime
-import kotlin.system.measureTimeMillis
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
