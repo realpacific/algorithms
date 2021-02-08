@@ -1,4 +1,4 @@
-package algorithmdesignmanualbook;
+package algorithmdesignmanualbook.datastructures;
 
 import utils.Assertions;
 

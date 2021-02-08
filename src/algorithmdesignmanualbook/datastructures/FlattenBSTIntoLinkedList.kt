@@ -1,8 +1,8 @@
-package algorithmdesignmanualbook
+package algorithmdesignmanualbook.datastructures
 
+import algorithmdesignmanualbook.print
 import utils.assertIterableSameInAnyOrder
 import java.util.*
-import kotlin.test.assertTrue
 
 class FlattenBSTIntoLinkedList(private val bst: BinarySearchTree) {
 

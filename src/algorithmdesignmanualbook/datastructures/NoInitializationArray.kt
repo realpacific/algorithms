@@ -1,5 +1,6 @@
-package algorithmdesignmanualbook
+package algorithmdesignmanualbook.datastructures
 
+import algorithmdesignmanualbook.print
 import java.util.*
 import kotlin.random.Random
 import kotlin.test.assertFalse

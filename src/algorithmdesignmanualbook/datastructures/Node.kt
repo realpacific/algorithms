@@ -1,4 +1,4 @@
-package algorithmdesignmanualbook
+package algorithmdesignmanualbook.datastructures
 
 data class Node(val value: Int) {
     var parent: Node? = null
