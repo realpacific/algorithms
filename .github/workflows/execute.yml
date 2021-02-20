@@ -11,11 +11,12 @@ jobs:
       - name: Execute .kt and .java files
         run: ./run.sh
       - name: Store artifacts
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: jvm-test-reports
           path: jvm-logs.txt
           retention-days: 1
+          if-no-files-found: warn
 
   exec-python-files:
     runs-on: ubuntu-latest
@@ -29,11 +30,12 @@ jobs:
           chmod +x ./python-run.sh
           ./python-run.sh
       - name: Store artifacts
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: python-test-reports
           path: python-logs.txt
           retention-days: 1
+          if-no-files-found: warn
 
   aggregate-logs:
     name: Aggregate logs & fail if not empty
@@ -68,8 +70,9 @@ jobs:
             echo "Build passed";
           fi
       - name: Store artifacts
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         if: failure()
         with:
           name: aggregate-logs-report.txt
           path: agg-logs.txt
+          if-no-files-found: warn
