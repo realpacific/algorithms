@@ -62,11 +62,13 @@ jobs:
               cat agg-logs.txt;
               exit 1;
             else
-              echo "Build passed" >> agg-logs.txt;
+              echo "Build passed";
             fi
           done
       - name: Store artifacts
         uses: actions/upload-artifact@v1
+        if: failure()
         with:
           name: aggregate-logs-report.txt
           path: agg-logs.txt
+          if-no-files-found: ignore
