@@ -40,6 +40,8 @@ private fun findTransitionIndex(startIndex: Int, input: Array<String>): Int? {
             val nextIndex = 2.toDouble().pow(growth).toInt()
             if (nextIndex < input.lastIndex) {
                 currentIndex = nextIndex
+            } else {
+                currentIndex++
             }
         } else {
             // binary search since there is a transition after `startIndex`
@@ -60,7 +62,6 @@ fun main() {
     }
 
     run {
-
         val input3 = "0000000000000000001".formatInput()
         assertTrue { findTransitionIndex(0, input = input3) == input3.indexOf("1") }
     }

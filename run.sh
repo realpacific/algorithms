@@ -20,7 +20,7 @@ removeExtension() {
 
 find . -type f -name "*.class" -exec rm -f {} \;
 
-rm logs.txt || true
+rm jvm-logs.txt || true
 
 for i in $(git ls-files | grep .kt); do
   filename=$(removeExtension "$i")
