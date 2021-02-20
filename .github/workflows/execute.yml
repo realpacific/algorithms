@@ -58,10 +58,15 @@ jobs:
             else
               echo "No contents in $i"
             fi
-            if [ -s agg-logs.txt ];
+            if [ -s agg-logs.txt ]; then
               cat agg-logs.txt;
               exit 1;
             else
-              then echo "Build passed";
+              echo "Build passed" >> agg-logs.txt;
             fi
           done
+      - name: Store artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: aggregate-logs-report.txt
+          path: agg-logs.txt
