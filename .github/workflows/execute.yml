@@ -15,6 +15,7 @@ jobs:
         with:
           name: jvm-test-reports
           path: jvm-logs.txt
+          retention-days: 1
 
   exec-python-files:
     runs-on: ubuntu-latest
@@ -32,6 +33,7 @@ jobs:
         with:
           name: python-test-reports
           path: python-logs.txt
+          retention-days: 1
 
   aggregate-logs:
     name: Aggregate logs & fail if not empty

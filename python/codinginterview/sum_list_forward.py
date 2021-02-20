@@ -1,5 +1,5 @@
-from .shared.node import Node
-from .shared.reversed_linked_list import RLinkedList
+from shared.node import Node
+from shared.reversed_linked_list import RLinkedList
 
 
 def pad_zero(l, times):
