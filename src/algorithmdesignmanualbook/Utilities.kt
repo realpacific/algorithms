@@ -12,9 +12,17 @@ fun <T> T.print(msg: String? = null, printer: ((T) -> Any)? = null): T {
     kotlin.io.print("${msg ?: "Result"}: ")
     val value = printer?.invoke(this) ?: this
 
-    if (printer == null && this is Array<*>) {
-        println(Arrays.toString(this))
-        return this
+    if (printer == null) {
+        when (this) {
+            is Array<*> -> {
+                println(Arrays.toString(this))
+                return this
+            }
+            is IntArray -> {
+                println(this.toList())
+                return this
+            }
+        }
     }
 
     println(value)

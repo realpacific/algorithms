@@ -1,9 +1,9 @@
-from .shared.linked_list import LinkedList
-from .shared.node import Node
+from shared.linked_list import LinkedList
+from shared.node import Node
 
 
 def sum_list(l1, l2, carry):
-    ''' 7 -> 1 -> 6 + 5 -> 9 -> 2 = 617+295 = 2 -> 1 -> 9 '''
+    """ 7 -> 1 -> 6 + 5 -> 9 -> 2 = 617+295 = 2 -> 1 -> 9 """
     if l1 is None and l2 is None and carry == 0:
         return
 

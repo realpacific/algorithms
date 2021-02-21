@@ -18,7 +18,7 @@ private fun quickSort(array: IntArray, low: Int, high: Int) {
     }
 }
 
-fun partition(array: IntArray, low: Int, high: Int): Int {
+private fun partition(array: IntArray, low: Int, high: Int): Int {
     val pivot = array[low]
     var i = low
     var j = high

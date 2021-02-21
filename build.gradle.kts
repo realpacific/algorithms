@@ -42,7 +42,7 @@ tasks.create("execClass", type = JavaExec::class) {
         if (executionResult.get().exitValue != 0) {
             println(">>> Execution failed")
 
-            val logs = File("logs.txt")
+            val logs = File("jvm-logs.txt")
             if (!logs.exists()) {
                 logs.createNewFile()
             }

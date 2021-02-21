@@ -4,7 +4,7 @@ import algorithmdesignmanualbook.print
 import utils.assertIterableSame
 import java.util.*
 
-typealias Color = Pair<Int, String>
+private typealias Color = Pair<Int, String>
 
 /**
  * Assume that we are given n pairs of items as input, where the first item is a
@@ -15,7 +15,7 @@ typealias Color = Pair<Int, String>
  *
  * Solution: Maintain 3 queue for each color. At last, dequeue red, blue and then yellow
  */
-fun colorSort(array: Array<Color>): List<Color> {
+private fun colorSort(array: Array<Color>): List<Color> {
     array.print("Input:")
     val redQueue = LinkedList<Color>()
     val blueQueue = LinkedList<Color>()
