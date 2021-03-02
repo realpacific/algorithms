@@ -1,6 +1,6 @@
 package algorithmdesignmanualbook.graph
 
-import kotlin.test.assertFailsWith
+import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 fun main() {
@@ -18,8 +18,10 @@ fun main() {
 
     graph.join(v2, v3)
     graph.join(v2, v3)
-    graph.join(v2, v3)
     graph.join(v3, v2)
 
-
+    assertTrue { graph.isConnected(v1.value, v2.value) }
+    assertTrue { graph.isConnected(v1.value, v3.value) }
+    assertFalse { graph.isConnected(v2.value, v1.value) }
+    assertFalse { graph.isConnected(v3.value, v1.value) }
 }
