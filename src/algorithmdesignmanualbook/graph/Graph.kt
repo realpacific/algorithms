@@ -1,7 +1,7 @@
 package algorithmdesignmanualbook.graph
 
 class Graph(private val isDirected: Boolean) {
-    private val vertices = mutableMapOf<String, Vertex>()
+    val vertices = mutableMapOf<String, Vertex>()
 
     fun isIn(value: String): Boolean {
         return vertices.containsKey(value)
@@ -74,7 +74,7 @@ class Graph(private val isDirected: Boolean) {
         var weight: Int = 0
 
         override fun toString(): String {
-            return "Vertex(${endVertex.value}, weight=$weight)"
+            return "Edge(${startVertex.value} ${endVertex.value}, weight=$weight)"
         }
     }
 
