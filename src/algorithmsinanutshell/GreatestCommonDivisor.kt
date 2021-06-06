@@ -1,4 +1,4 @@
-package algorithmsinanutshell.chapter2
+package algorithmsinanutshell
 
 import kotlin.test.assertEquals
 
