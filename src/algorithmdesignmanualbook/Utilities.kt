@@ -28,3 +28,5 @@ fun <T> T.print(msg: String? = null, printer: ((T) -> Any)? = null): T {
     println(value)
     return this
 }
+
+fun String.padLeft(count: Int = 3) = " ".repeat(count) + this
