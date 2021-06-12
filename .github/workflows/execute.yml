@@ -49,7 +49,7 @@ jobs:
         run: |
           touch agg-logs.txt
           ls -la ~/logs
-          for i in ~/logs/*.txt; do
+          for i in ~/logs/*/*.txt; do
             echo "Reading logs $i"
             if [ -s "$i" ]; then
               cat "$i" >> agg-logs.txt;
