@@ -64,7 +64,8 @@ class Graph(val relation: Relation = Relation.UNWEIGHTED_DIRECTED) {
         }
 
         override fun equals(other: Any?): Boolean {
-            if (other is algorithmsinanutshell.Vertex) {
+            // In Graph#add method, there is a check that ensures vertex value is unique
+            if (other is Vertex) {
                 return this.value == other.value
             }
             return super.equals(other)
@@ -88,6 +89,7 @@ class Graph(val relation: Relation = Relation.UNWEIGHTED_DIRECTED) {
     inner class Edge(val startVertex: Vertex, val endVertex: Vertex, val weight: Int?) {
 
         override fun equals(other: Any?): Boolean {
+            // In case of un-directed relationship, a--b and b--a are same
             if (!relation.isDirected() && other is Edge) {
                 return ((this.startVertex == other.startVertex && this.endVertex == other.endVertex)
                     .or(this.endVertex == other.startVertex && this.startVertex == other.endVertex))
@@ -101,10 +103,14 @@ class Graph(val relation: Relation = Relation.UNWEIGHTED_DIRECTED) {
         }
 
         override fun hashCode(): Int {
-            var result = startVertex.value
-            result = result + endVertex.value
-            result = 31 * result + (weight ?: 0)
-            return result
+            // start vertex and end vertex are interchangeable in case of un-directed relationship
+            if (!relation.isDirected()) {
+                var result = startVertex.value
+                result += endVertex.value
+                result = 31 * result + (weight ?: 0)
+                return result
+            }
+            return super.hashCode()
         }
     }
 

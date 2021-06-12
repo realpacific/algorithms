@@ -14,6 +14,7 @@ class PrimMinSpanningTreeAlgorithm(val graph: Graph) {
     private val selected = mutableSetOf<Vertex>()
     private val mst = Stack<Edge>()
     private val pq = PriorityQueue<Edge> { o1, o2 -> o1!!.weight!! - o2!!.weight!! }
+    private var isExecuted = false
 
     private lateinit var minEdge: Graph.Edge
 
@@ -32,12 +33,19 @@ class PrimMinSpanningTreeAlgorithm(val graph: Graph) {
     fun execute(): PrimMinSpanningTreeAlgorithm {
         runAlgorithm()
         mst.forEach(::println)
+        isExecuted = true
         return this
     }
 
-    fun result() = mst.toList()
+    fun result(): List<Edge> {
+        require(isExecuted)
+        return mst.toList()
+    }
 
-    fun minCost() = mst.sumBy { it.weight!! }
+    fun minCost(): Int {
+        require(isExecuted)
+        return mst.sumBy { it.weight!! }
+    }
 
     private fun runAlgorithm() {
         // Add the starting vertex to selected
