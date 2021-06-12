@@ -44,11 +44,6 @@ jobs:
     steps:
       - uses: actions/download-artifact@v2
         with:
-          name: jvm-test-reports
-          path: ~/logs
-      - uses: actions/download-artifact@v2
-        with:
-          name: python-test-reports
           path: ~/logs
       - name: Fail if not empty
         run: |
