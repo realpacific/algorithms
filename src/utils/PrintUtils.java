@@ -10,6 +10,15 @@ public class PrintUtils {
         }
     }
 
+    public static void printIntArrWithCast(Iterable<Integer[]> it) {
+        for (Integer[] t : it) {
+            for (Integer t1 : t) {
+                System.out.print(castToInfinity(t1) + " ");
+            }
+            System.out.println();
+        }
+    }
+
     public static <T> void println(Iterable<T> it) {
         for (Object o : it) {
             System.out.println(o);
@@ -23,5 +32,9 @@ public class PrintUtils {
         System.out.println("");
     }
 
+    static String castToInfinity(Integer t) {
+        if (t == Integer.MAX_VALUE) return "∞";
+        else return t.toString();
+    }
 
 }
