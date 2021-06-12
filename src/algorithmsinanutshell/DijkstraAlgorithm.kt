@@ -4,9 +4,6 @@ import algorithmdesignmanualbook.padLeft
 import java.util.*
 import kotlin.test.assertEquals
 
-typealias Vertex = Graph.Vertex
-typealias Edge = Graph.Edge
-typealias State = Graph.State
 
 class DijkstraAlgorithm(val graph: Graph, private val startVertex: Vertex, private val endVertex: Vertex) {
     /**

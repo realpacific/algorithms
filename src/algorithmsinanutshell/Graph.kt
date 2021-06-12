@@ -1,5 +1,8 @@
 package algorithmsinanutshell
 
+typealias Vertex = Graph.Vertex
+typealias Edge = Graph.Edge
+typealias State = Graph.State
 
 enum class Relation(val symbol: String) {
     UNWEIGHTED_DIRECTED("----->"),
@@ -23,6 +26,9 @@ class Graph(val relation: Relation = Relation.UNWEIGHTED_DIRECTED) {
     var nodes = mutableListOf<Vertex>()
         private set
     private val map = mutableMapOf<Int, Vertex>()
+
+    val vertexCount: Int
+        get() = nodes.size
 
     fun add(value: Int): Vertex {
         require(!map.containsKey(value)) {
@@ -57,26 +63,58 @@ class Graph(val relation: Relation = Relation.UNWEIGHTED_DIRECTED) {
             return "Vertex(value=$value, edges=$edges,  state=$state)"
         }
 
-        fun connectWith(vertex: Vertex, weight: Int? = null) {
+        override fun equals(other: Any?): Boolean {
+            if (other is algorithmsinanutshell.Vertex) {
+                return this.value == other.value
+            }
+            return super.equals(other)
+        }
+
+        override fun hashCode(): Int {
+            return value
+        }
+
+        fun connectWith(vertex: Vertex, weight: Int? = null, readd: Boolean = true) {
             if (relation.isWeighted()) require(weight != null)
             else require(weight == null)
 
             edges.add(Edge(this, vertex, weight))
-            if (!relation.isDirected()) {
-                vertex.connectWith(this)
+            if (!relation.isDirected() && readd) {
+                vertex.connectWith(this, weight, false)
             }
         }
     }
 
     inner class Edge(val startVertex: Vertex, val endVertex: Vertex, val weight: Int?) {
 
+        override fun equals(other: Any?): Boolean {
+            if (!relation.isDirected() && other is Edge) {
+                return ((this.startVertex == other.startVertex && this.endVertex == other.endVertex)
+                    .or(this.endVertex == other.startVertex && this.startVertex == other.endVertex))
+                        && this.weight == other.weight
+            }
+            return super.equals(other)
+        }
+
         override fun toString(): String {
             return "Edge(${startVertex.value} ${relation.createSymbol(weight)} ${endVertex.value})"
+        }
+
+        override fun hashCode(): Int {
+            var result = startVertex.value
+            result = result + endVertex.value
+            result = 31 * result + (weight ?: 0)
+            return result
         }
     }
 
     enum class State {
         Discovered, Undiscovered, Processing;
+    }
+
+    companion object {
+        fun createWeightedDirectedGraph() = Graph(Relation.WEIGHTED_DIRECTED)
+        fun createUnweightedUndirectedGraph() = Graph(Relation.UNWEIGHTED_UNDIRECTED)
     }
 }
 
