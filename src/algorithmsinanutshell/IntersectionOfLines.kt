@@ -39,8 +39,9 @@ import kotlin.test.assertTrue
 class IntersectionOfLines(val l1: Line, val l2: Line) {
 
     private fun getOrientation(p1: Point, p2: Point, other: Point): Orientation {
-        val alpha = abs(p1.angle(other))
-        val beta = abs(p2.angle(other))
+        val alpha = p1.angle(other)
+        val beta = p2.angle(other)
+        // println("$p1----$p2 $other= $alpha $beta")
         if (alpha == beta) return Orientation.COLINEAR
         return if (beta > alpha) Orientation.ACW else Orientation.CW
     }
@@ -86,6 +87,12 @@ class IntersectionOfLines(val l1: Line, val l2: Line) {
 
 fun main() {
     run {
+        val l1 = Line(6 fromTo 4, 9 fromTo 4)
+        val l2 = Line(3 fromTo 2, 10 fromTo 3)
+        val algorithm = IntersectionOfLines(l1, l2)
+        assertFalse { algorithm.hasIntersection() }
+    }
+    run {
         val l1 = Line(5 fromTo 5, 10 fromTo 12)
         val l2 = Line(0 fromTo 0, 1 fromTo 1)
         val algorithm = IntersectionOfLines(l1, l2)
@@ -106,5 +113,12 @@ fun main() {
         val l2 = Line(1 fromTo 0, 15 fromTo 0)
         val algorithm = IntersectionOfLines(l1, l2)
         assertTrue { algorithm.hasIntersection() }
+    }
+
+    run {
+        val l1 = Line(6 fromTo 4, 9 fromTo 4)
+        val l2 = Line(7 fromTo 1, 8 fromTo 1)
+        val algorithm = IntersectionOfLines(l1, l2)
+        assertFalse { algorithm.hasIntersection() }
     }
 }

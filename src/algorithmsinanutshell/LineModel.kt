@@ -13,7 +13,11 @@ data class Point(val x: Int, val y: Int) {
     fun angle(point: Point): Double {
         val slope = (point.y - y).toDouble() / (point.x - x)
         // tanß = p/b
-        return Math.toDegrees(atan(slope))
+        var angle = Math.toDegrees(atan(slope))
+        if (angle < 0) {
+            angle += 360
+        }
+        return angle
     }
 }
 
