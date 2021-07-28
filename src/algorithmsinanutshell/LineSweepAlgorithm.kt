@@ -41,6 +41,7 @@ class LineSweepAlgorithm(private val lines: List<Line>) {
         val intersectionMap = mapOf(*lines.map { l -> Pair(l, mutableSetOf<Line>()) }.toTypedArray())
         // Could be optimized
         // Find minY and maxY to find the length of vertical line that moves from minX to maxX
+        // OR GO with top to bottom instead of left to right, _lines is already sorted
         val (minY, maxY) = Pair(
             _lines.minOf { line -> min(line.p1.y, line.p2.y) },
             _lines.maxOf { line -> max(line.p1.y, line.p2.y) }
@@ -107,10 +108,10 @@ fun main() {
     run {
         //
         //   *    *   *
-        //     \   |/
+        //     \  | /
         //        x
-        //     /   |\
-        //    *    * *
+        //     /  | \
+        //    *   *  *
         val lines = listOf(
             Line(1 fromTo 6, 4 fromTo 8),
             Line(1 fromTo 8, 4 fromTo 6),
