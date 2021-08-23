@@ -2,6 +2,9 @@ package arraysandstrings
 
 import kotlin.test.assertTrue
 
+/**
+ * @suppress
+ */
 fun main() {
     assertTrue(isRotation("waterbottle", "erbottlewat"))
 }

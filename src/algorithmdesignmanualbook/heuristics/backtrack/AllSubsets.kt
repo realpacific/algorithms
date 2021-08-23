@@ -26,6 +26,9 @@ class AllSubsets(private val nums: Array<Int>) {
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     run {
         val solution = AllSubsets(arrayOf(1, 2, 3))

@@ -65,6 +65,9 @@ class FordFulkersonAlgorithm(private val network: Network) {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     network1()
     network2()

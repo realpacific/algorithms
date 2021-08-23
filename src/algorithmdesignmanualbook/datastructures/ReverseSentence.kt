@@ -22,6 +22,9 @@ private fun reverse(str: String): String {
     return sb.toString().print()
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     assertEquals(expected = "Chris is name My.", actual = reverse("My name is Chris"))
 }

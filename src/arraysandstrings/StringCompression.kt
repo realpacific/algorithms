@@ -2,6 +2,9 @@ package arraysandstrings
 
 import kotlin.test.assertEquals
 
+/**
+ * @suppress
+ */
 fun main() {
     assertEquals(compress("aabcccccaaa"), "a2b1c5a3")
     assertEquals(compress("abc"), "abc")

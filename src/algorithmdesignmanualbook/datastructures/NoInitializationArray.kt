@@ -66,6 +66,9 @@ class NoInitializationArray(val maxValue: Int, val maxSize: Int) {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val solution = NoInitializationArray(maxValue = 20, maxSize = 10)
     solution.add(10)

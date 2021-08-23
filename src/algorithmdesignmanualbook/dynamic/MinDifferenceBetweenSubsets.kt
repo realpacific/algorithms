@@ -24,6 +24,9 @@ private fun findMinRec(array: Array<Int>, i: Int, sumCalculated: Int, sumTotal: 
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     val array = arrayOf(1, 6, 11, 5)
     findMinRec(array, array.size, 0, array.sum()).print("Min diff betn subset is: ")

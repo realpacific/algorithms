@@ -64,6 +64,9 @@ class PartialSumUsingFenwickTree(private val values: Array<Int>) {
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     val solution = PartialSumUsingFenwickTree(arrayOf(1, 2, 3, 4, 5, 6))
     solution.removeLastSetBit(0b111).print { it.toString(2) }

@@ -1,10 +1,12 @@
 plugins {
     `java-lang`
     kotlin("jvm") version "1.4.21"
+    id("org.jetbrains.dokka") version "1.5.0"
 }
 
 repositories {
     jcenter()
+    mavenCentral()
 }
 
 sourceSets {
@@ -25,6 +27,7 @@ dependencies {
 
     implementation("org.jetbrains.kotlin:kotlin-test-junit:1.4.21")
     implementation("org.jetbrains.kotlin:kotlin-test:1.4.21")
+    dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.5.0")
 }
 
 val failures = mutableListOf<String>()
@@ -50,4 +53,8 @@ tasks.create("execClass", type = JavaExec::class) {
             executionResult.get().rethrowFailure()
         }
     }
+}
+
+tasks.dokkaHtml.configure {
+    outputDirectory.set(projectDir.resolve("docs"))
 }

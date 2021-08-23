@@ -85,6 +85,9 @@ class IntersectionOfLines(val l1: Line, val l2: Line) {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     run {
         val l1 = Line(6 fromTo 4, 9 fromTo 4)

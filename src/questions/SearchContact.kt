@@ -8,6 +8,9 @@ import kotlin.test.assertTrue
  * If not found, return "NO_CONTACT"
  * IF multiple return the alphabetically lowest
  */
+/**
+ * @suppress
+ */
 fun main() {
     val result = solution(arrayOf("amy", "fara", "ben", "nina", "jon"), arrayOf("9849000000", "9849000001", "9849002310", "9888022345", "334455661"), "9849")
     assertTrue(result == "amy")

@@ -21,6 +21,9 @@ fun arrangeNegativeThenPositiveNumber(array: Array<Int>): Array<Int> {
     return array
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     run {
         arrayOf(1, 2, 3, 4).assertNegativeBeforePositive()

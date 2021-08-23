@@ -71,6 +71,9 @@ class PrimMinSpanningTreeAlgorithm(val graph: Graph) {
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     val graph = Graph(Relation.WEIGHTED_UNDIRECTED)
     val v1 = graph.add(1)

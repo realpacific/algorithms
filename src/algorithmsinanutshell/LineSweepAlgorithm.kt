@@ -75,6 +75,9 @@ class LineSweepAlgorithm(private val lines: List<Line>) {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     run {
         val lines = listOf(

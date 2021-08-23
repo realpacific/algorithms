@@ -28,6 +28,9 @@ private object IsPermutationOfStringAPalindrome {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     assertTrue(isPalindrome("Tact Coa"))
     assertTrue(isPalindrome("level"))

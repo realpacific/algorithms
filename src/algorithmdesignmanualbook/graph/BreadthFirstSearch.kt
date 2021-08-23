@@ -27,6 +27,9 @@ private fun breadthFirstTraversal(graph: Graph) {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     withPrint("Graph 1") {
         val graph1 = Graph.getDefaultDirected()

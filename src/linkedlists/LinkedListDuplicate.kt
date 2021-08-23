@@ -4,6 +4,9 @@ import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 
+/**
+ * @suppress
+ */
 fun main() {
     val list = LinkedList()
     list.addLast(Node(0))

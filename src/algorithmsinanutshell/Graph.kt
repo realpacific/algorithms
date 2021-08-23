@@ -127,6 +127,9 @@ class Graph(val relation: Relation = Relation.UNWEIGHTED_DIRECTED) {
 fun Iterable<Vertex>.getVertexNames() = this.map { it.value }.joinToString(",")
 
 
+/**
+ * @suppress
+ */
 fun main() {
     val graph = Graph(Relation.WEIGHTED_DIRECTED)
 

@@ -207,6 +207,9 @@ open class BinarySearchTree(private var node: Node) {
     fun getRoot() = node
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     example1()
     testForDeletion()

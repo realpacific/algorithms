@@ -26,6 +26,9 @@ private fun traverseBreadthFirst(node: Node?) {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     //           10
     //     6          15

@@ -5,6 +5,9 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
+/**
+ * @suppress
+ */
 fun main() {
     assertTrue { checkIfBalancedParentheses("()()()()") }
     assertTrue { checkIfBalancedParentheses("()") }

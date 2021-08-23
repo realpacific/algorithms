@@ -3,6 +3,9 @@ package algorithmdesignmanualbook.graph
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
+/**
+ * @suppress
+ */
 fun main() {
     val graph = Graph(true)
     val v1 = graph.addVertex("1")

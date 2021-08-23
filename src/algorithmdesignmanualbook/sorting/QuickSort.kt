@@ -45,6 +45,9 @@ private fun partition(array: IntArray, low: Int, high: Int): Int {
     return j
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val input1 = intArrayOf(6, 8, 1, 5, 2, 9, 11)
     quickSort(input1, 0, input1.lastIndex)

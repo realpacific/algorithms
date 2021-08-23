@@ -61,6 +61,9 @@ private fun editDistance(str1: String, str2: String, m: Int, n: Int, mem: Array<
 
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     run {
         val (str1, str2) = Pair("saturday", "friday")

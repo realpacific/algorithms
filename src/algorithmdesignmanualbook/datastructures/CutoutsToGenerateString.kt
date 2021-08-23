@@ -34,6 +34,9 @@ fun isGenerateStringFromCutoutPossible(searchStr: String, magazine: String): Boo
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     assertFalse { isGenerateStringFromCutoutPossible("hello", "Give an algorithm") }
     assertTrue { isGenerateStringFromCutoutPossible("sing me a zing", "You are given a search string and a magazine") }

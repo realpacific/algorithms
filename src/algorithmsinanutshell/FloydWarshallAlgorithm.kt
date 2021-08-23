@@ -59,6 +59,9 @@ class FloydWarshallAlgorithm(val graph: Graph) {
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     val graph = Graph.createWeightedDirectedGraph()
     val v1 = graph.add(1)

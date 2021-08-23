@@ -4,6 +4,9 @@ import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.test.assertEquals
 
+/**
+ * @suppress
+ */
 fun main() {
     val elements = "INSERTIONSORT".split("").filter(String::isNotBlank).also(::println)
     val input = elements.toTypedArray()

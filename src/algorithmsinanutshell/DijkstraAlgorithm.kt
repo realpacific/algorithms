@@ -83,6 +83,9 @@ class DijkstraAlgorithm(val graph: Graph, private val startVertex: Vertex, priva
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     test1()
     test2()

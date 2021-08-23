@@ -41,6 +41,9 @@ private fun colorSort(array: Array<Color>): List<Color> {
     return result.print()
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val input = arrayOf(Pair(1, "blue"), Pair(3, "red"), Pair(4, "blue"), Pair(6, "yellow"), Pair(9, "red"))
     assertIterableSame(

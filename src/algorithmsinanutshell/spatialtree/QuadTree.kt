@@ -94,6 +94,9 @@ class QuadTree {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val tree = QuadTree()
     tree.insert(10, 10, 1010)

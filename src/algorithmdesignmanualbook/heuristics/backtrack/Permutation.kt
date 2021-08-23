@@ -24,6 +24,9 @@ class Permutation(val str: String) {
 
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     Permutation("abc").execute().forEach {
         println(it)

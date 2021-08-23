@@ -1,5 +1,8 @@
 package linkedlists
 
+/**
+ * @suppress
+ */
 fun main() {
     val list1 = LinkedList()
     // 617

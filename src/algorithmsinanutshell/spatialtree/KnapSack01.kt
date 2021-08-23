@@ -89,6 +89,9 @@ class KnapSack01(val weights: IntArray, val profits: IntArray, val totalCapacity
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val weights = intArrayOf(1, 3, 4, 5)
     val profits = intArrayOf(1, 4, 5, 7)

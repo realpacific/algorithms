@@ -61,6 +61,9 @@ private fun breadthFirstTraversal(graph: Graph) {
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     run {
         val graph = createGraph()

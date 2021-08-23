@@ -84,6 +84,9 @@ class ConvexHullScanUsingGrahamScan(private val points: Array<Point>) {
 
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val exec = ConvexHullScanUsingGrahamScan(
         arrayOf(

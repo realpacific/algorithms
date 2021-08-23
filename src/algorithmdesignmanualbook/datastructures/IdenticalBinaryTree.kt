@@ -40,6 +40,9 @@ class IdenticalBinaryTree(private val bst1: BinarySearchTree, private val bst2: 
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     val bst1 = createBST()
     val bst2 = createBST()

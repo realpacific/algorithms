@@ -20,6 +20,9 @@ private fun calculateGcd(a: Int, b: Int): Int {
   return low
 }
 
+/**
+ * @suppress
+ */
 fun main() {
   assertEquals(4, calculateGcd(1220, 516))
   assertEquals(10, calculateGcd(30, 20))

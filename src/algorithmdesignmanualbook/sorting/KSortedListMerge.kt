@@ -27,6 +27,9 @@ private fun merge(arrays: Array<Array<Int>>, n: Int): Array<Int?> {
     return result
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val input1 = arrayOf(1, 2, 6, 8, 10, 11)
     val input2 = arrayOf(1, 2, 7, 9, 12)

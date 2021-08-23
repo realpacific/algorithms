@@ -52,6 +52,9 @@ private class UnionFindSimpleGraph(private val vertexCount: Int, private val edg
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     run {
         val graph = UnionFindSimpleGraph(3, 3)

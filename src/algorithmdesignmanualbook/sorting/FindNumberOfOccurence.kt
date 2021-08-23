@@ -56,6 +56,9 @@ private fun findNumberOfOccurrence(str: String, array: Array<String>): IntRange?
     return left..right
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val input = "search, sort, search, ball, sort, hello, hi, hello, hello, hello, hello, apple, string, string, zebra"
         .split(", ")

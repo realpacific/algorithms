@@ -23,6 +23,9 @@ class FlattenBSTIntoLinkedList(private val bst: BinarySearchTree) {
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     val bst1 = createBST()
     //           10

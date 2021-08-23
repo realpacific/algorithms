@@ -51,6 +51,9 @@ private fun findTransitionIndex(startIndex: Int, input: Array<String>): Int? {
     return null
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     run {
         val input1 = "00000000000000000001111111111111111111".formatInput()

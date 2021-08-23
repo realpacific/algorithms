@@ -21,6 +21,9 @@ private fun LinkedListNode.getMiddleNode(): LinkedListNode {
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     val list = LinkedListNode(1)
     list.add(2)

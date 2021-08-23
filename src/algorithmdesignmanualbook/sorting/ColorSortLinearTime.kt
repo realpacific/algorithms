@@ -70,6 +70,9 @@ private fun sort(sorter: ColorSortLinearTime) {
     sorter.print()
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     run {
         assertFails { arrayOf(1, 1, 1, 1, 2, 2, 2, 2, 1).assertSequenceAreGrouped() }

@@ -77,6 +77,9 @@ class BucketSort(arr: IntArray) {
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     run {
         val input = intArrayOf(44, 12, 1, 300, 3, 66, 101, 7, 9)

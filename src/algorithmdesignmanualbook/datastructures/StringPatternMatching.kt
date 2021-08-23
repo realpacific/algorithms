@@ -3,6 +3,9 @@ package algorithmdesignmanualbook.datastructures
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
+/**
+ * @suppress
+ */
 fun main() {
 
     assertTrue(matchPatternUsingHash("abba", "aababba"))

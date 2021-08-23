@@ -70,6 +70,9 @@ fun midpointIndex(array: IntArray): Int {
     return array.size / 2
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     run {
         println("Input 1")

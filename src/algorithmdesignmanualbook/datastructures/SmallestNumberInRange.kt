@@ -100,6 +100,9 @@ class SmallestNumberInRangeHashMapApproach(private val values: Array<Int>) : Sma
 
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val input = arrayOf(1, 2, 4, 0, 3)
     val matrixSolution = SmallestNumberInRangeMatrixApproach(input)

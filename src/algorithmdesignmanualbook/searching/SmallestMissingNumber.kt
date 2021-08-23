@@ -35,6 +35,9 @@ private fun smallestMissingNumber(array: IntArray, low: Int, high: Int): Int {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     assertTrue {
         val array = intArrayOf(2, 3, 4, 5, 8, 10, 12, 19, 26)

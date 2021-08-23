@@ -69,6 +69,9 @@ private fun findLargestOccurringOrderedPair(str: String): String {
     return trie.largestCount!!.first.print()
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     assertTrue { findLargestOccurringOrderedPair("A new puppy in New York is happy with its New York life") == "New York" }
     assertTrue { findLargestOccurringOrderedPair("I am running from change change searching for change change") == "change change" }

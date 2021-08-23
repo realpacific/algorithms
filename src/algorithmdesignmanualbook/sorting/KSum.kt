@@ -12,6 +12,9 @@ private fun kSum(array: Array<Int>, k: Int) {
 
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val input = arrayOf(1, 2, 3, 0, -1, -4, -2, 4, 5, 6, 7, 8).sortedArray().print()
     TODO()

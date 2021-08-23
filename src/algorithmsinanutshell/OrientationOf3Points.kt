@@ -16,6 +16,9 @@ private class OrientationOf3Points(val p: Point, val q: Point, val r: Point) {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     run {
         val algorithm = OrientationOf3Points(0 fromTo 0, 2 fromTo 4, 6 fromTo 0)

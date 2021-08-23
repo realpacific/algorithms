@@ -54,6 +54,9 @@ fun merge(array: IntArray, low: Int, high: Int, mid: Int) {
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     val input1 = intArrayOf(6, 8, 1, 5, 2, 9, 11)
     mergeSort(input1, 0, input1.lastIndex)

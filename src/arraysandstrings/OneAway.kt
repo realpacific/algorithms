@@ -55,6 +55,9 @@ object OneAway {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     assertFalse(actual = OneAway.isOneAway("pacos", "acpos"))
 

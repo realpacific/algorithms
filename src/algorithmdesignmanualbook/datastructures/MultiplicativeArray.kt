@@ -78,6 +78,9 @@ class MultiplicativeArrayWithDivision : MultiplicativeArray {
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     val solutionWithDivision = MultiplicativeArrayWithDivision()
     val solutionWithDoubleArrayApproach = MultiplicativeArrayWithDoubleArrayApproach()

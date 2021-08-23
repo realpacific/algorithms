@@ -37,6 +37,9 @@ class PartialSum(private val values: Array<Int>) {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val solution = PartialSum(arrayOf(1, 2, 3, 4, 5, 6))
     solution.add(index = 2, value = 10)

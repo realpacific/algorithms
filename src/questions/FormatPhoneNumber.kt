@@ -3,6 +3,9 @@ package questions
 /**
  * Given a phone number should format in the form of abc-def-ijk. Last two part can be of 2 digits
  */
+/**
+ * @suppress
+ */
 fun main() {
     solution("00-44    48 5555 83612").also { println(it) }
     solution("00-44    48 5555 8361").also { println(it) }

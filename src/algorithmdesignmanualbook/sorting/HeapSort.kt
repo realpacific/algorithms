@@ -107,6 +107,9 @@ class HeapSort {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val sort = HeapSort()
     sort.add(20)

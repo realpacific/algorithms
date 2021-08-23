@@ -42,6 +42,9 @@ data class LinkedListNode(val value: Int) {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val list = LinkedListNode(1)
     list.reverse()?.print()

@@ -41,6 +41,9 @@ fun prim(graph: Array<Array<Int>>, vertex: Int) {
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     // Adjacent matrix
     val matrix = arrayOf(

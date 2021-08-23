@@ -61,6 +61,9 @@ class NearestNeighbourQueries(val array: Array<Array<Int>>) {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     run {
         val array = arrayOf(

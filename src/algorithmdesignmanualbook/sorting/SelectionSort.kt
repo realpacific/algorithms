@@ -2,6 +2,9 @@ package algorithmdesignmanualbook.sorting
 
 import java.util.*
 
+/**
+ * @suppress
+ */
 fun main() {
     val elements = "SELECTIONSORT".split("").filter(String::isNotBlank)
     val input = elements.toTypedArray()

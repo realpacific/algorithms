@@ -151,6 +151,9 @@ class AVLTree(val value: Int) {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val tree = AVLTree(100)
     tree.add(30)

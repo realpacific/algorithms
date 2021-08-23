@@ -79,6 +79,9 @@ class MultiDimNode(val value: Array<Int>, var left: MultiDimNode? = null, var ri
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val array = arrayOf(
         arrayOf(3, 6), arrayOf(17, 15), arrayOf(13, 15),

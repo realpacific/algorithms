@@ -67,6 +67,9 @@ class O1DataStructure {
     }
 }
 
+/**
+ * @suppress
+ */
 fun main() {
     val ds = O1DataStructure()
     ds.add(1)

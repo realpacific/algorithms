@@ -22,6 +22,9 @@ private fun twoPairSum(array1: Array<Int>, array2: Array<Int>, x: Int): Pair<Int
 }
 
 
+/**
+ * @suppress
+ */
 fun main() {
     assertTrue {
         twoPairSum(
