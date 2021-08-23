@@ -13,7 +13,8 @@ Collection of Data Structures and Algorithms solutions
 """
 
 footer = """
-#### Generate docs using `python3 generate_docs.py`
+ ___
+ Generate docs `python3 generate_docs.py`
 """
 
 register_headers: Dict[str, List[str]] = {}

@@ -248,4 +248,5 @@ Collection of Data Structures and Algorithms solutions
 * [node](python/codinginterview/shared/node.py)
 
 
-#### Generate docs using `python3 generate_docs.py`
+ ___
+ Generate docs `python3 generate_docs.py`
