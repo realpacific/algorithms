@@ -14,40 +14,45 @@ Collection of Data Structures and Algorithms solutions
 
 footer = """
  ___
- Generate docs `python3 generate_docs.py`
+ To generate docs, use: `python3 generate_docs.py`
 """
 
 register_headers: Dict[str, List[str]] = {}
 
 
-def exec(extension: str):
-    for file in glob.glob(extension, recursive=True):
-        if re.match('python/venv/*', file):
+def find_files_with_extension(extension: str):
+    for file_path_ in glob.glob(extension, recursive=True):
+        if re.match('python/venv/*', file_path_):
             continue
-        split = file.split('/')
-        header = split[len(split) - 2]
-        if header not in register_headers:
-            register_headers[header] = []
-        register_headers[header].append(file)
-        register_headers[header] = register_headers[header]
+        splits = file_path_.split('/')
+        title = splits[len(splits) - 2]
+        if title not in register_headers:
+            register_headers[title] = []
+        register_headers[title].append(file_path_)
+        register_headers[title] = register_headers[title]
+
+
+def write_markdown(content: str):
+    f.write(header)
+    f.write(content)
+    f.write(footer)
 
 
 if __name__ == "__main__":
-    exec('**/*.java')
-    exec('**/*.kt')
-    exec('**/*.py')
-    mkdown = ''
+    find_files_with_extension('**/*.java')
+    find_files_with_extension('**/*.kt')
+    find_files_with_extension('**/*.py')
+    content_ = ''
+    paths: List[str]
     for (key, paths) in register_headers.items():
-        mkdown += f"##### {key}\n"
-        for file_path in paths:
-            split = file_path.split('/')
+        content_ += f"##### {key}\n"
+        for path in paths:
+            split = path.split('/')
             file = split[len(split) - 1]
             if file in ignore_filenames:
                 continue
-            mkdown += f"* [{file.split('.')[0]}]({file_path})\n"
-        mkdown += '\n'
+            content_ += f"* [{file.split('.')[0]}]({path})\n"
+        content_ += '\n'
 
     with open("README.md", "w") as f:
-        f.write(header)
-        f.write(mkdown)
-        f.write(footer)
+        write_markdown(content_)

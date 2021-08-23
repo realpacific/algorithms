@@ -249,4 +249,4 @@ Collection of Data Structures and Algorithms solutions
 
 
  ___
- Generate docs `python3 generate_docs.py`
+ To generate docs, use: `python3 generate_docs.py`
