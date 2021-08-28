@@ -3,8 +3,8 @@
 
 Collection of Data Structures and Algorithms solutions
 
-
-##### dynamic
+### Contents
+###### dynamic
 * [RecursiveMultiply](src/dynamic/RecursiveMultiply.java)
 * [PermutationWithDuplicates](src/dynamic/PermutationWithDuplicates.java)
 * [Coins](src/dynamic/Coins.java)
@@ -17,7 +17,7 @@ Collection of Data Structures and Algorithms solutions
 * [MinDifferenceBetweenSubsets](src/algorithmdesignmanualbook/dynamic/MinDifferenceBetweenSubsets.kt)
 * [EditDistance](src/algorithmdesignmanualbook/dynamic/EditDistance.kt)
 
-##### sortingandsearch
+###### sortingandsearch
 * [SortedMatrixSearch](src/sortingandsearch/SortedMatrixSearch.java)
 * [RankFromStream](src/sortingandsearch/RankFromStream.java)
 * [SortedSearchNoSize](src/sortingandsearch/SortedSearchNoSize.java)
@@ -26,7 +26,7 @@ Collection of Data Structures and Algorithms solutions
 * [SortedMerge](src/sortingandsearch/SortedMerge.java)
 * [SparseSearch](src/sortingandsearch/SparseSearch.java)
 
-##### hard
+###### hard
 * [Shuffle](src/hard/Shuffle.java)
 * [AddWithoutPlus](src/hard/AddWithoutPlus.java)
 * [RandomSet](src/hard/RandomSet.java)
@@ -34,22 +34,18 @@ Collection of Data Structures and Algorithms solutions
 * [baby_names](python/hard/baby_names.py)
 * [count_of_2s](python/hard/count_of_2s.py)
 
-##### bigo
+###### bigo
 * [PermutationCount](src/bigo/PermutationCount.java)
 * [PowerOf2](src/bigo/PowerOf2.java)
 
-##### utils
-* [PrintUtils](src/utils/PrintUtils.java)
-* [Assertions](src/utils/Assertions.kt)
-
-##### bits
+###### bits
 * [PairwiseSwap](src/bits/PairwiseSwap.java)
 * [Conversion](src/bits/Conversion.java)
 * [BinaryToString](src/bits/BinaryToString.java)
 * [Insertion](src/bits/Insertion.java)
 * [FlipBitToWin](src/bits/FlipBitToWin.java)
 
-##### commons
+###### commons
 * [BitUtils](src/bits/commons/BitUtils.java)
 * [Tree](src/graphs/commons/Tree.java)
 * [Node](src/graphs/commons/Node.java)
@@ -57,10 +53,10 @@ Collection of Data Structures and Algorithms solutions
 * [Graph](src/graphs/commons/Graph.java)
 * [State](src/graphs/commons/State.java)
 
-##### threads
+###### threads
 * [FizzBuzz](src/threads/FizzBuzz.java)
 
-##### datastructures
+###### datastructures
 * [DynamicGrowShrinkArray](src/algorithmdesignmanualbook/datastructures/DynamicGrowShrinkArray.java)
 * [CutoutsToGenerateString](src/algorithmdesignmanualbook/datastructures/CutoutsToGenerateString.kt)
 * [LargestOccuringOrderedPair](src/algorithmdesignmanualbook/datastructures/LargestOccuringOrderedPair.kt)
@@ -79,7 +75,7 @@ Collection of Data Structures and Algorithms solutions
 * [FlattenBSTIntoLinkedList](src/algorithmdesignmanualbook/datastructures/FlattenBSTIntoLinkedList.kt)
 * [ReverseLinkedList](src/algorithmdesignmanualbook/datastructures/ReverseLinkedList.kt)
 
-##### graphs
+###### graphs
 * [PickRandomNode](src/graphs/PickRandomNode.java)
 * [CheckBST](src/graphs/CheckBST.java)
 * [ListOfDepth](src/graphs/ListOfDepth.java)
@@ -91,7 +87,7 @@ Collection of Data Structures and Algorithms solutions
 * [RoutesBetweenNodes](src/graphs/RoutesBetweenNodes.java)
 * [FirstCommonAncestor](src/graphs/FirstCommonAncestor.java)
 
-##### arraysandstrings
+###### arraysandstrings
 * [UniqueCharacters](src/arraysandstrings/UniqueCharacters.java)
 * [IsOneStringPermutationOfOther](src/arraysandstrings/IsOneStringPermutationOfOther.java)
 * [URLify](src/arraysandstrings/URLify.java)
@@ -102,7 +98,7 @@ Collection of Data Structures and Algorithms solutions
 * [MatrixRotation](src/arraysandstrings/MatrixRotation.kt)
 * [URLify](src/arraysandstrings/URLify.kt)
 
-##### algorithmsinanutshell
+###### algorithmsinanutshell
 * [IntersectionOfLines](src/algorithmsinanutshell/IntersectionOfLines.kt)
 * [TreeTraversal](src/algorithmsinanutshell/TreeTraversal.kt)
 * [ConvexHullScanUsingGrahamScan](src/algorithmsinanutshell/ConvexHullScanUsingGrahamScan.kt)
@@ -117,32 +113,29 @@ Collection of Data Structures and Algorithms solutions
 * [AVLTree](src/algorithmsinanutshell/AVLTree.kt)
 * [Graph](src/algorithmsinanutshell/Graph.kt)
 
-##### networkflow
+###### networkflow
 * [Network](src/algorithmsinanutshell/networkflow/Network.kt)
 * [FordFulkersonAlgorithm](src/algorithmsinanutshell/networkflow/FordFulkersonAlgorithm.kt)
 
-##### spatialtree
+###### spatialtree
 * [KDTree](src/algorithmsinanutshell/spatialtree/KDTree.kt)
 * [KnapSack01](src/algorithmsinanutshell/spatialtree/KnapSack01.kt)
 * [NearestNeighbourQueries](src/algorithmsinanutshell/spatialtree/NearestNeighbourQueries.kt)
 * [QuadTree](src/algorithmsinanutshell/spatialtree/QuadTree.kt)
 
-##### algorithmdesignmanualbook
-* [Utilities](src/algorithmdesignmanualbook/Utilities.kt)
-
-##### backtrack
+###### backtrack
 * [Permutation](src/algorithmdesignmanualbook/heuristics/backtrack/Permutation.kt)
 * [AllSubsets](src/algorithmdesignmanualbook/heuristics/backtrack/AllSubsets.kt)
 
-##### partialsum
+###### partialsum
 * [PartialSumUsingFenwickTree](src/algorithmdesignmanualbook/partialsum/PartialSumUsingFenwickTree.kt)
 * [PartialSumUsingCumulativeSum](src/algorithmdesignmanualbook/partialsum/PartialSumUsingCumulativeSum.kt)
 
-##### searching
+###### searching
 * [SmallestMissingNumber](src/algorithmdesignmanualbook/searching/SmallestMissingNumber.kt)
 * [MagicIndexSearch](src/algorithmdesignmanualbook/searching/MagicIndexSearch.kt)
 
-##### graph
+###### graph
 * [UnionFind](src/algorithmdesignmanualbook/graph/UnionFind.kt)
 * [BreadthFirstSearch](src/algorithmdesignmanualbook/graph/BreadthFirstSearch.kt)
 * [PrimMinSpanningTree](src/algorithmdesignmanualbook/graph/PrimMinSpanningTree.kt)
@@ -150,7 +143,7 @@ Collection of Data Structures and Algorithms solutions
 * [SimpleGraph](src/algorithmdesignmanualbook/graph/SimpleGraph.kt)
 * [Graph](src/algorithmdesignmanualbook/graph/Graph.kt)
 
-##### sorting
+###### sorting
 * [KSum](src/algorithmdesignmanualbook/sorting/KSum.kt)
 * [NegativePositiveNumberArrangement](src/algorithmdesignmanualbook/sorting/NegativePositiveNumberArrangement.kt)
 * [HeapSort](src/algorithmdesignmanualbook/sorting/HeapSort.kt)
@@ -167,19 +160,16 @@ Collection of Data Structures and Algorithms solutions
 * [FindMedian](src/algorithmdesignmanualbook/sorting/FindMedian.kt)
 * [QuickSort](src/algorithmdesignmanualbook/sorting/QuickSort.kt)
 
-##### linkedlists
+###### linkedlists
 * [SumLists](src/linkedlists/SumLists.kt)
 * [LinkedListDuplicate](src/linkedlists/LinkedListDuplicate.kt)
 * [LinkedList](src/linkedlists/LinkedList.kt)
 
-##### questions
+###### questions
 * [FormatPhoneNumber](src/questions/FormatPhoneNumber.kt)
 * [SearchContact](src/questions/SearchContact.kt)
 
-##### generate_docs.py
-* [generate_docs](generate_docs.py)
-
-##### python
+###### python
 * [longestpalindrome](python/longestpalindrome.py)
 * [needle](python/needle.py)
 * [reverseint](python/reverseint.py)
@@ -192,7 +182,7 @@ Collection of Data Structures and Algorithms solutions
 * [sumEvenAfterQueries](python/sumEvenAfterQueries.py)
 * [valid_paranthesis](python/valid_paranthesis.py)
 
-##### stacksqueues
+###### stacksqueues
 * [stack_of_plates](python/stacksqueues/stack_of_plates.py)
 * [stack](python/stacksqueues/stack.py)
 * [animal_shelter](python/stacksqueues/animal_shelter.py)
@@ -200,7 +190,7 @@ Collection of Data Structures and Algorithms solutions
 * [stack_min](python/stacksqueues/stack_min.py)
 * [sort_stack](python/stacksqueues/sort_stack.py)
 
-##### moderate
+###### moderate
 * [continuous_sequence](python/moderate/continuous_sequence.py)
 * [master_mind](python/moderate/master_mind.py)
 * [factorial_zeros](python/moderate/factorial_zeros.py)
@@ -222,7 +212,7 @@ Collection of Data Structures and Algorithms solutions
 * [intersection](python/moderate/intersection.py)
 * [living_people](python/moderate/living_people.py)
 
-##### codinginterview
+###### codinginterview
 * [string_compression](python/codinginterview/string_compression.py)
 * [one_zero_edits_away](python/codinginterview/one_zero_edits_away.py)
 * [delete_middle](python/codinginterview/delete_middle.py)
@@ -240,7 +230,7 @@ Collection of Data Structures and Algorithms solutions
 * [linked_list_intersection](python/codinginterview/linked_list_intersection.py)
 * [sum_list](python/codinginterview/sum_list.py)
 
-##### shared
+###### shared
 * [linked_list](python/codinginterview/shared/linked_list.py)
 * [base_linked_list](python/codinginterview/shared/base_linked_list.py)
 * [reversed_linked_list](python/codinginterview/shared/reversed_linked_list.py)
@@ -248,5 +238,14 @@ Collection of Data Structures and Algorithms solutions
 * [node](python/codinginterview/shared/node.py)
 
 
+ 
  ___
  To generate docs, use: `python3 generate_docs.py`
+ 
+ ### References
+ The questions were taken from these books:
+ * The Algorithm Design Manual by Steven Skiena
+ * Algorithms in a Nutshell by George T. Heineman
+ * Cracking the Coding Interview by Gayle Laakmann
+ 
+ The source of idea/algorithm/code are referenced in the code comments.
