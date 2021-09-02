@@ -243,7 +243,9 @@ Collection of Data Structures and Algorithms solutions
  To generate docs, use: `python3 generate_docs.py`
  
  ### References
- The questions were taken from these books:
+ 
+ The questions were taken from these books: 
+
  * The Algorithm Design Manual by Steven Skiena
  * Algorithms in a Nutshell by George T. Heineman
  * Cracking the Coding Interview by Gayle Laakmann

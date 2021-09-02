@@ -24,11 +24,11 @@ class CheckIfSubTree {
         final BidirectionalTree tree3 = new BidirectionalTree(null, 30);
         tree3.left = new BidirectionalTree(tree3, 40);
         tree3.right = new BidirectionalTree(tree3, 50);
-        assert !traverse(biggerTree, tree3);
+        assert traverse(biggerTree, tree3);
 
         // Smaller has one more extra node
-        subTree.left.left.left = new BidirectionalTree(subTree.left.left, 55);
-        assert !traverse(biggerTree, subTree);
+        tree3.left.left = new BidirectionalTree(tree3.left, 55);
+        assert !traverse(biggerTree, tree3);
 
     }
 
