@@ -1,5 +1,7 @@
 package algorithmsinanutshell
 
+import algorithmdesignmanualbook.print
+import utils.PrintUtils
 import utils.assertArraysSame
 import java.util.*
 
@@ -40,20 +42,12 @@ class ConvexHullScanUsingGrahamScan(private val points: Array<Point>) {
      *
      */
     private fun excludeP2FromConvexHull(p1: Point, p2: Point, p3: Point): Boolean {
-
-        // Angle made wrt horizontal line
-        val theta12 = p1.angle(p2)
-        val theta23 = p2.angle(p3)
-
-        println("$p1 $p2 = $theta12")
-        println("$p2 $p3 = $theta23")
-
-        if (theta12 == theta23) {
-            return false
-        } else if (theta12 > 0 && theta23 <= 0) {
-            return true
+        val orientation = OrientationOf3Points(p1, p2, p3)
+        return when (orientation.getOrientation()) {
+            Orientation.CW -> true
+            Orientation.ACW -> false
+            Orientation.COLINEAR -> false
         }
-        return false
     }
 
     fun execute(): Stack<Point> {
