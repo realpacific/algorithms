@@ -7,6 +7,7 @@ import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 /**
+ * ```
  * Two lines (P1, P2) and (P3,P4) intersect when orientation of:
  * * (P1 wrt P3,P4) and (P2 wrt P3,P4)
  * * (P3 wrt P1,P2) and (P4 wrt P1,P2)
@@ -22,8 +23,7 @@ import kotlin.test.assertTrue
  *
  *   orientation of P3 wrt P1P2 is ACW.
  *
- *
- * ### Special case is when (P1, P2) and (P3,P4) are collinear.
+ * Special case is when (P1, P2) and (P3,P4) are collinear.
  *
  *  * In case of non-intersecting case, orientation is 0 for both P3(P1P2) and P4(P1,P2) and vv.
  *
@@ -34,16 +34,14 @@ import kotlin.test.assertTrue
  *       P1 o----->--oP3-----P2o-->---o P4 (Intersecting case)
  *
  *
- * https://www.youtube.com/watch?v=bbTqI0oqL5U
+ * ```
+ *
+ * [Link](https://www.youtube.com/watch?v=bbTqI0oqL5U)
  */
 class IntersectionOfLines(val l1: Line, val l2: Line) {
 
     private fun getOrientation(p1: Point, p2: Point, other: Point): Orientation {
-        val alpha = p1.angle(other)
-        val beta = p2.angle(other)
-        // println("$p1----$p2 $other= $alpha $beta")
-        if (alpha == beta) return Orientation.COLINEAR
-        return if (beta > alpha) Orientation.ACW else Orientation.CW
+        return OrientationOf3Points(p1, p2, other).getOrientation()
     }
 
     /**

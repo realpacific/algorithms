@@ -8,7 +8,7 @@ import kotlin.test.assertTrue
  *
  * [Related](https://youtu.be/bbTqI0oqL5U?t=161)
  */
-private class OrientationOf3Points(val p: Point, val q: Point, val r: Point) {
+class OrientationOf3Points(val p: Point, val q: Point, val r: Point) {
 
     /**
      * ```
