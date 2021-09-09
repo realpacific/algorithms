@@ -11,9 +11,6 @@ home="$(pwd)"
 logFile="$home/python-logs.txt"
 rm $logFile || true
 
-
-cd python
-
 for i in $(git ls-files | grep .py); do
   filename="$i"
   isRunnable=$(isPythonMainFile "$i")

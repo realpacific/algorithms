@@ -6,12 +6,12 @@ class LinkedList(BaseLinkedList):
     def __init__(self):
         super(LinkedList, self).__init__()
 
-    def add(self, data):
+    def add(self, data: Node):
         if not isinstance(data, Node):
             raise TypeError()
 
         if self.node is None:
-            self.node = data
+            self.node: Node = data
         else:
             current = self.node
             while current.next is not None:
