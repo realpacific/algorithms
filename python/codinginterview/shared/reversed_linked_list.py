@@ -1,11 +1,10 @@
-from shared.node import Node
-from shared.base_linked_list import BaseLinkedList
+from .base_linked_list import BaseLinkedList
+from .node import Node
 
 
 class RLinkedList(BaseLinkedList):
     def __init__(self):
-        self.node = None
-        self.length = 0
+        super().__init__()
 
     def add(self, data):
         if not isinstance(data, Node):

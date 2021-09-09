@@ -1,11 +1,11 @@
-def init_merge_sort(arr):
+def merge_sort(arr):
     if len(arr) > 1:
         mid = len(arr) // 2
         left = arr[:mid]
         right = arr[mid:]
 
-        init_merge_sort(left)
-        init_merge_sort(right)
+        merge_sort(left)
+        merge_sort(right)
 
         i = j = k = 0
 
@@ -31,6 +31,7 @@ def init_merge_sort(arr):
 
 if __name__ == "__main__":
     array = [9, 8, 3, 4, 6, 5]
+    expectation = sorted(array)
+    merge_sort(array)
     print(array)
-    init_merge_sort(array)
-    print(array)
+    assert array == expectation

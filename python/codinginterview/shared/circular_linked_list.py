@@ -6,6 +6,7 @@ class CircularLinkedList(BaseLinkedList):
     def __init__(self):
         super(CircularLinkedList, self).__init__()
         self.is_circular_yet = False
+        self.first_element = None
 
     def add(self, data, join=False):
         if self.is_circular_yet:

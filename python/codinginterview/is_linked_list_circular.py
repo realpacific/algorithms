@@ -2,19 +2,22 @@ from shared.circular_linked_list import CircularLinkedList
 from shared.node import Node
 
 
-def is_linked_list_circular(l1):
-    current = l1.node
-    registry = []
+def is_linked_list_circular(linked_list_):
+    """
+    Detect if a Linked List is circular
+    """
+
+    current = linked_list_.node
+    registry = set()
     while current is not None:
         # The linked list is circular if one of its element points to previous element
         if current in registry:
             return True
-        registry.append(current)
+        registry.add(current)
         current = current.next
     return False
 
 
-# ------------------------------------
 if __name__ == "__main__":
     l1 = CircularLinkedList()
     l1.add(Node(1))
