@@ -1,41 +1,71 @@
 def quick_sort(arr, low, high):
     if low == high:
         return
-    max = partition(arr, low, high)
-    quick_sort(arr, low, max)
-    quick_sort(arr, max + 1, high)
+    max_ = partition(arr, low, high)
+    quick_sort(arr, low, max_)
+    quick_sort(arr, max_ + 1, high)
 
 
-def partition(A, low, high):
-    pivot = A[low]
+def partition(arr, low, high):
+    pivot = arr[low]
     i = low
     j = high
-    while i < j:
+    while i <= j:
         while True:
             i += 1
-            print('inc i ', i, A[i])
-            if i >= len(A) or A[i] > pivot:
+            if i >= len(arr) or arr[i] > pivot:
                 break
 
         while True:
             j -= 1
-            print('dec j ', j, A[j])
-            if j < 0 or A[j] <= pivot:
+            if j < 0 or arr[j] <= pivot:
                 break
 
         if i < j:
-            A[i], A[j] = A[j], A[i]
-            print('swaping', A[i], A[j], '--->', A)
+            arr[i], arr[j] = arr[j], arr[i]
 
-    A[low], A[j] = A[j], A[low]
-    print('swapping pivot', A)
+    arr[low], arr[j] = arr[j], arr[low]
     return j
 
 
+def test_1():
+    array = [1000, 10, 16, 8, 12, 15, 6, 3, 9, 5, 1000000]
+    expected = sorted(array)
+    quick_sort(array, 0, len(array))
+    assert array == expected
+
+
+def test_2():
+    array = [1000, 5, 100, 8, 0, 1000000, 9]
+    expected = sorted(array)
+    quick_sort(array, 0, len(array))
+    assert array == expected
+
+
+def test_3():
+    array = [1000, 5, 100, 8, 0, 1, 4, 9]
+    expected = sorted(array)
+    quick_sort(array, 0, len(array))
+    assert array == expected
+
+
+def test_4():
+    array = [90, 5, 100]
+    expected = sorted(array)
+    quick_sort(array, 0, len(array))
+    assert array == expected
+
+
+def test_5():
+    array = [90, 100]
+    expected = sorted(array)
+    quick_sort(array, 0, len(array))
+    assert array == expected
+
+
 if __name__ == "__main__":
-    # array = [9, 8, 1, 10, 20, 0]
-    array = [10, 16, 8, 12, 15, 6, 3, 9, 5]
-    print(array)
-    array.append(100000)
-    quick_sort(array, 0, len(array) - 1)
-    print(array[0:-1])
+    test_1()
+    test_2()
+    test_3()
+    test_4()
+    test_5()

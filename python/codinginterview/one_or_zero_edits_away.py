@@ -24,6 +24,6 @@ if __name__ == "__main__":
     assert one_or_zero_edits_away('pales', 'pale')
     assert one_or_zero_edits_away('pale', 'bale')
     assert one_or_zero_edits_away('pbbb', 'bbpb')
-    assert one_or_zero_edits_away('pale', 'bae') == False
-    assert one_or_zero_edits_away('pbbb', 'bpbp') == False
+    assert one_or_zero_edits_away('pale', 'bae') is False
+    assert one_or_zero_edits_away('pbbb', 'bpbp') is False
     assert one_or_zero_edits_away('apple', 'aple')

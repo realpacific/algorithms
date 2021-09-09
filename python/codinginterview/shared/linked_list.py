@@ -18,3 +18,14 @@ class LinkedList(BaseLinkedList):
                 current = current.next
             current.next = data
         self.length += 1
+
+    @classmethod
+    def create(cls, node: Node) -> 'LinkedList':
+        linked_list = LinkedList()
+        if node is None:
+            return linked_list
+        current = node
+        while current is not None:
+            linked_list.add(Node(current.data))
+            current = current.next
+        return linked_list

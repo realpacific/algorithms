@@ -3,16 +3,20 @@ from shared.node import Node
 from shared.reversed_linked_list import RLinkedList
 
 
-def is_linked_list_palindrome(l1):
-    if l1 is None:
+def is_linked_list_palindrome(linked_list: LinkedList):
+    """
+    Check if a linked list is a palindrome
+    """
+
+    if linked_list is None:
         return True
-    current = l1.node
+    current = linked_list.node
     r_linked_list = RLinkedList()
     while current is not None:
         r_linked_list.add(Node(current.data))
         current = current.next
 
-    for i, j in zip(r_linked_list, l1):
+    for i, j in zip(r_linked_list, linked_list):
         if i.data != j.data:
             return False
     return True
