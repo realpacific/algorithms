@@ -14,17 +14,6 @@ Collection of Data Structures and Algorithms solutions
 """
 
 footer = """
- 
- #### References
- 
- The questions were taken from these books:
- 
- * The Algorithm Design Manual by Steven Skiena
- * Algorithms in a Nutshell by George T. Heineman
- * Cracking the Coding Interview by Gayle Laakmann
- 
- The source of idea/algorithm/code are referenced in the code comments.
- 
  ___
  <sub>This README was auto-generated during pre-commit.</sub>
 """
@@ -99,7 +88,7 @@ class PythonDocsStrategy(DocsStrategy):
         return None
 
 
-def title_case(name: str):
+def function_case(name: str):
     start = name[0].lower()
     return start + name[1:]
 
@@ -116,10 +105,12 @@ class KotlinDocsStrategy(DocsStrategy):
         docs_end = None
 
         for [index, line] in enumerate(self.lines):
-            if re.match(f'class {self.filename}*', line) or re.match(f'fun {title_case(filename_)}', line):
+            if re.match(f'(private |public |)class {self.filename}*', line) \
+                    or re.match(f'fun {function_case(filename_)}', line) \
+                    or re.match(f'(private |public |)object {self.filename}*', line):
                 docs_start = index
                 current_line = self.lines[docs_start]
-                while not current_line.startswith("/*"):
+                while not current_line.startswith("/**"):
                     docs_start -= 1
                     if docs_start == 0:
                         return None
@@ -165,7 +156,7 @@ if __name__ == "__main__":
     find_files_with_extension('**/*.java')
     find_files_with_extension('**/*.kt')
     find_files_with_extension('**/*.py')
-    content_ = '### Contents\n'
+    content_ = '### Table of Contents\n'
     paths: List[str]
     content_ += f"| Filename | Description |\n"
     content_ += f"|  --- | --- |\n"
@@ -186,8 +177,7 @@ if __name__ == "__main__":
                 if strategy is not None:
                     docs = strategy(content, filename_).extract_docs()
 
-            content_ += f"|  [{filename_}]({path}) <br><sub>{lang[ext_]}</sub> | {docs if docs is not None else ''} |\n"
-        # content_ += '\n'
+            content_ += f"|  [{filename_}]({path}) <br><sub>{lang[ext_]} &#8226; {key}</sub> | {docs if docs is not None else ''} |\n"
 
     with open("README.md", "w") as f:
         write_markdown(content_)
