@@ -1,5 +1,6 @@
 package algorithmdesignmanualbook.datastructures
 
+import _utils.UseCommentAsDocumentation
 import kotlin.test.assertTrue
 
 private typealias Table = Array<Array<Int?>>
@@ -17,6 +18,7 @@ private interface SmallestNumberInRange {
  * Given arrays of integer [values] of size n, convert it into matrix M of nxn
  * such that M[i][j + 1] <= M[i][j] and anything before M[i][i] is null. M[i][i] holds the ith index item of [values]
  */
+@UseCommentAsDocumentation
 class SmallestNumberInRangeMatrixApproach(private val values: Array<Int>) : SmallestNumberInRange {
 
     // O(n^2) initialization

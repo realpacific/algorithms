@@ -112,14 +112,20 @@ class KotlinDocsStrategy(DocsStrategy):
             if line.startswith(f'import _utils.Document'):
                 occurrence = re.findall(r'@Document\("(.*)"\)', self.content)
                 return " <br>".join(occurrence)
+            has_read_from_comments_annotation = False
+            if line.startswith(f'import _utils.UseCommentAsDocumentation'):
+                has_read_from_comments_annotation = True
+
             if re.match(f'(private |public |)class {self.filename}*', line) \
                     or re.match(f'(private |public |)fun {function_case(filename_)}', line) \
-                    or re.match(f'(private |public |)object {self.filename}*', line):
+                    or re.match(f'(private |public |)object {self.filename}*', line) \
+                    or re.match(f'@UseCommentAsDocumentation', line.strip()):
                 docs_start = index
                 current_line = self.lines[docs_start]
                 while not current_line.startswith("/**"):
                     docs_start -= 1
-                    if docs_start == 0:
+                    # dont return as there might be @UseCommentAsDocumentation
+                    if docs_start == 0 and not has_read_from_comments_annotation:
                         return ""
                     current_line = self.lines[docs_start]
                 docs_start += 1
@@ -128,7 +134,7 @@ class KotlinDocsStrategy(DocsStrategy):
 
                 while not (current_line.startswith('*/')):
                     docs_end = docs_end + 1
-                    if docs_end >= len(self.lines):
+                    if docs_end >= len(self.lines) and not has_read_from_comments_annotation:
                         return ""
                     current_line = self.lines[docs_end]
                 break

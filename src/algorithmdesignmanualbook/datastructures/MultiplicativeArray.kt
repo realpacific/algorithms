@@ -1,5 +1,6 @@
 package algorithmdesignmanualbook.datastructures
 
+import _utils.UseCommentAsDocumentation
 import algorithmdesignmanualbook.print
 import algorithmdesignmanualbook.withPrint
 import utils.assertArraysSame
@@ -8,6 +9,7 @@ import utils.assertArraysSame
  * You have an unordered array X of n integers. Find the array M containing
  * n elements where Mi is the product of all integers in X except for Xi. You may not use division.
  */
+@UseCommentAsDocumentation
 private interface MultiplicativeArray {
     fun getMultiplicativeArray(array: Array<Int>): Array<Int>
 }
