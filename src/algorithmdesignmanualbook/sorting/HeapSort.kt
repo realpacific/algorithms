@@ -1,6 +1,5 @@
 package algorithmdesignmanualbook.sorting
 
-import algorithmdesignmanualbook.withPrint
 import utils.assertArraysSame
 import java.lang.Integer.max
 import java.lang.Integer.min

@@ -1,6 +1,5 @@
 package bigo;
 
-import java.util.LinkedList;
 
 public class PowerOf2 {
     public static void main(String[] args) {

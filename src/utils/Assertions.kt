@@ -2,6 +2,10 @@
 
 package utils
 
+import _utils.SkipDocumentation
+
+@SkipDocumentation
+
 
 fun <T> assertIterableSame(expected: Iterable<T>, actual: Iterable<T>) {
     require(expected.count() == actual.count())

@@ -1,7 +1,10 @@
 package algorithmdesignmanualbook.graph
 
+import _utils.SkipDocumentation
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
+
+@SkipDocumentation
 
 fun main() {
     val graph = Graph(true)

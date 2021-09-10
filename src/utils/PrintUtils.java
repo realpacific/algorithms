@@ -1,5 +1,9 @@
 package utils;
 
+import _utils.SkipDocumentation;
+
+@SkipDocumentation
+
 public class PrintUtils {
     public static <T> void printArr(Iterable<T[]> it) {
         for (T[] t : it) {

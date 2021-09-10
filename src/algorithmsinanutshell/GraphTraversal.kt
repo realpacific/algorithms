@@ -1,8 +1,11 @@
 package algorithmsinanutshell
 
+import _utils.Document
 import java.util.*
 import kotlin.test.assertEquals
 
+
+@Document("Depth First Traversal")
 private fun depthFirstTraversal(graph: Graph) {
 
     fun traverseNodeDepthFirst(vertex: Graph.Vertex) {
@@ -32,7 +35,7 @@ private fun depthFirstTraversal(graph: Graph) {
     graph.getUnvisited().forEach(::traverseNodeDepthFirst)
 }
 
-
+@Document("Breadth First Traversal")
 private fun breadthFirstTraversal(graph: Graph) {
     fun traverseBreadthFirst(vertex: Graph.Vertex) {
         val queue = LinkedList<Graph.Vertex>()
