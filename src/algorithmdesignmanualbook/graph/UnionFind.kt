@@ -1,5 +1,6 @@
 package algorithmdesignmanualbook.graph
 
+import _utils.UseCommentAsDocumentation
 import java.util.*
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
@@ -12,6 +13,7 @@ import kotlin.test.assertTrue
  *      |  1  |  2  |  0  |
  *
  */
+@UseCommentAsDocumentation
 private class UnionFindSimpleGraph(private val vertexCount: Int, private val edgesCount: Int) {
 
     class Edge(var src: Int, var dest: Int)

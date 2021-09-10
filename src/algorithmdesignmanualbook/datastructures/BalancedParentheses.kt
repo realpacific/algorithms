@@ -1,5 +1,6 @@
 package algorithmdesignmanualbook.datastructures
 
+import _utils.UseCommentAsDocumentation
 import java.util.*
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
@@ -44,8 +45,9 @@ fun findPositionOfInvalidParenthesesOrNull(string: String): Int? {
 }
 
 /**
- * @return true if a string contains properly nested and balanced parentheses, and false if otherwise.
+ * Check if a string contains properly nested and balanced parentheses, and false if otherwise.
  */
+@UseCommentAsDocumentation
 fun checkIfBalancedParentheses(string: String): Boolean {
     if (string.isEmpty()) return true
     val stack = Stack<String>()

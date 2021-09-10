@@ -1,5 +1,6 @@
 package algorithmdesignmanualbook.datastructures
 
+import _utils.UseCommentAsDocumentation
 import kotlin.test.assertTrue
 
 /**
@@ -9,6 +10,7 @@ import kotlin.test.assertTrue
  * Use two pointer, one traverses one step ahead and another by 2 steps.
  * When the fast pointer reaches the end, the slow pointer is at middle.
  */
+@UseCommentAsDocumentation
 private fun LinkedListNode.getMiddleNode(): LinkedListNode {
     var slowPointer: LinkedListNode = this
     var fastPointer: LinkedListNode? = this

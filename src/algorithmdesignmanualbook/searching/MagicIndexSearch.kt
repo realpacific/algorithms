@@ -1,5 +1,6 @@
 package algorithmdesignmanualbook.searching
 
+import _utils.UseCommentAsDocumentation
 import algorithmdesignmanualbook.print
 import kotlin.test.assertTrue
 
@@ -7,6 +8,7 @@ import kotlin.test.assertTrue
  * [4-33] Algorithm to determine whether there exists an i index such as ai = i given array of {a1, a2, a3 ... an}
  * Sorted and distinct case:
  */
+@UseCommentAsDocumentation
 fun findMagicIndex(array: IntArray, low: Int, high: Int): Int? {
     if (high < low) {
         return null

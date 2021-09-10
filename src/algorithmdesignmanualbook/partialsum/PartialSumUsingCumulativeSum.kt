@@ -1,5 +1,6 @@
 package algorithmdesignmanualbook.partialsum
 
+import _utils.UseCommentAsDocumentation
 import java.util.*
 import kotlin.test.assertEquals
 
@@ -9,6 +10,7 @@ import kotlin.test.assertEquals
  * • Add(i,y) – Add the value y to the ith number.
  * • Partial-sum(i) – Return the sum of the first i numbers
  */
+@UseCommentAsDocumentation
 class PartialSum(private val values: Array<Int>) {
     private val cumulativeSum = Array(values.size) { 0 }
 
