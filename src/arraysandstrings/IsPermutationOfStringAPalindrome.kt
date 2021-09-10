@@ -1,5 +1,6 @@
 package arraysandstrings
 
+import _utils.UseCommentAsDocumentation
 import arraysandstrings.IsPermutationOfStringAPalindrome.isPalindrome
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
@@ -13,6 +14,7 @@ private object IsPermutationOfStringAPalindrome {
      * for a odd length string, there must be only one odd # of character (the middle one)
      * for a even length string, all chars must have even # of occurrence
      */
+    @UseCommentAsDocumentation
     fun isPalindrome(str: String): Boolean {
         val input = str.toLowerCase().replace(" ", "")
         val charCount = mutableMapOf<Char, Int>()

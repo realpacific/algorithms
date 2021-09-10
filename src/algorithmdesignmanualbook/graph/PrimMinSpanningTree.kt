@@ -1,10 +1,13 @@
 package algorithmdesignmanualbook.graph
 
+import _utils.UseCommentAsDocumentation
+
 /**
  * Solution: https://www.programiz.com/dsa/prim-algorithm
  *
  * Given vertices with weighted edges, from start vertex, chose the edge with min edge such that it doesnt form cycle.
  */
+@UseCommentAsDocumentation
 fun prim(graph: Array<Array<Int>>, vertex: Int) {
     var sum = 0
     var numberOfEdges = 0
@@ -44,11 +47,11 @@ fun prim(graph: Array<Array<Int>>, vertex: Int) {
 fun main() {
     // Adjacent matrix
     val matrix = arrayOf(
-            arrayOf(0, 9, 75, 0, 0),
-            arrayOf(9, 0, 95, 19, 42),
-            arrayOf(75, 95, 0, 51, 66),
-            arrayOf(0, 19, 51, 0, 31),
-            arrayOf(0, 42, 66, 31, 0)
+        arrayOf(0, 9, 75, 0, 0),
+        arrayOf(9, 0, 95, 19, 42),
+        arrayOf(75, 95, 0, 51, 66),
+        arrayOf(0, 19, 51, 0, 31),
+        arrayOf(0, 42, 66, 31, 0)
     )
     prim(matrix, matrix.size)
 }

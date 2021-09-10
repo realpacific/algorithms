@@ -1,5 +1,7 @@
 package algorithmdesignmanualbook.datastructures
 
+import _utils.UseCommentAsDocumentation
+
 
 data class LinkedListNode(val value: Int) {
     var next: LinkedListNode? = null
@@ -26,6 +28,7 @@ data class LinkedListNode(val value: Int) {
     /**
      * [link here](https://leetcode.com/problems/reverse-linked-list)
      */
+    @UseCommentAsDocumentation
     fun reverse(): LinkedListNode? {
         var prev: LinkedListNode? = null
         var current: LinkedListNode? = this

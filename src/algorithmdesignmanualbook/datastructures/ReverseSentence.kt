@@ -1,11 +1,13 @@
 package algorithmdesignmanualbook.datastructures
 
+import _utils.UseCommentAsDocumentation
 import algorithmdesignmanualbook.print
 import kotlin.test.assertEquals
 
 /**
  * Reverse the words in a sentence—i.e., “My name is Chris” becomes “Chris is name My.”
  */
+@UseCommentAsDocumentation
 private fun reverse(str: String): String {
     val split = str.split(" ")
     if (split.size <= 1) {

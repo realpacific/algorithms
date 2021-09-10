@@ -1,5 +1,6 @@
 package algorithmdesignmanualbook.datastructures
 
+import _utils.UseCommentAsDocumentation
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
@@ -45,6 +46,7 @@ fun matchPatternUsingHash(pattern: String, str: String): Boolean {
  *
  * O(ab) where a = len of pattern and b = len of string
  */
+@UseCommentAsDocumentation
 fun matchPatternNaive(pattern: String, str: String): Boolean {
     val lenPattern = pattern.length
     val lenString = str.length
