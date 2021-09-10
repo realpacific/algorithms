@@ -168,7 +168,7 @@ if __name__ == "__main__":
     find_files_with_extension('**/*.java')
     find_files_with_extension('**/*.kt')
     find_files_with_extension('**/*.py')
-    content_ = '### Table of Contents\n'
+    content_ = '### Table of Contents\n\n'
     paths: List[str]
     content_ += f"| Filename | Description |\n"
     content_ += f"|  --- | --- |\n"

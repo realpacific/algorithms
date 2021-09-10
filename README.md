@@ -4,6 +4,7 @@
 Collection of Data Structures and Algorithms solutions
 
 ### Table of Contents
+
 | Filename | Description |
 |  --- | --- |
 |  [TowerOfHanoi](src/dynamic/TowerOfHanoi.java) <br><sub>Java &#8226; dynamic</sub> |  |
