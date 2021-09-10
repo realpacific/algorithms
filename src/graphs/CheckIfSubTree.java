@@ -2,6 +2,9 @@ package graphs;
 
 import graphs.commons.BidirectionalTree;
 
+/**
+ * Check if a tree is a subtree of another
+ */
 class CheckIfSubTree {
     public static void main(String[] args) {
         // bigger tree
@@ -44,7 +47,7 @@ class CheckIfSubTree {
     }
 
     private static boolean checkIfSubtree(BidirectionalTree bigTree, BidirectionalTree smallTree) {
-        if(smallTree == null) {
+        if (smallTree == null) {
             return true;
         }
         // Big tree is already finished but small tree is not

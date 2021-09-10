@@ -7,7 +7,7 @@ import kotlin.math.sqrt
 /**
  * K-d tree is a binary search tree with more than 1 dimensions (i.e k dimensions).
  *
- * A 2-d tree looks like given points {{3, 6}, {17, 15}, {13, 15}, {6, 12}, {9, 1}, {2, 7}, {10, 19}}
+ * A 2-d tree looks like given points ((3, 6), (17, 15), (13, 15), (6, 12), (9, 1), (2, 7), (10, 19))
  *
  *
  *            (3, 6)   ----> compare x coordinate
@@ -27,7 +27,7 @@ class KDTree(val array: Array<Array<Int>>) {
 
     init {
         require(array.isNotEmpty())
-        require(array.map { it.size }.distinct().size == 1)
+        require(array.map ( it.size }.distinct().size == 1)
         tree = MultiDimNode(array[0])
         for (i in 1..array.lastIndex) {
             tree.insert(array[i], 0)

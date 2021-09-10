@@ -1,5 +1,6 @@
 package algorithmsinanutshell
 
+import _utils.UseCommentAsDocumentation
 import kotlin.test.assertEquals
 
 /**
@@ -7,6 +8,7 @@ import kotlin.test.assertEquals
  *
  * [Link](https://www.freecodecamp.org/news/euclidian-gcd-algorithm-greatest-common-divisor/)
  */
+@UseCommentAsDocumentation
 private fun calculateGcd(a: Int, b: Int): Int {
   var (low, high) = if (a < b) Pair(a, b) else Pair(b, a)
   while ((high % low) > 0) {

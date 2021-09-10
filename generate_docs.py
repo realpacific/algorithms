@@ -172,6 +172,8 @@ if __name__ == "__main__":
     paths: List[str]
     content_ += f"| Filename | Description |\n"
     content_ += f"|  --- | --- |\n"
+
+    undocumented_files = []
     for (key, paths) in register_headers.items():
         if len(paths) == 0:
             continue
@@ -190,6 +192,11 @@ if __name__ == "__main__":
                     docs = strategy(content, filename_).extract_docs()
             if docs is not None:
                 content_ += f"|  [{filename_}]({path}) <br><sub>{lang[ext_]} &#8226; {key}</sub> | {docs} |\n"
+                if len(docs) == 0:
+                    undocumented_files.append(path)
 
     with open("README.md", "w") as f:
         write_markdown(content_)
+    print(f'Undocumented files: {len(undocumented_files)}')
+    with open("UNDOCUMENTED.txt", "w") as file:
+        file.write('\n'.join(undocumented_files))
