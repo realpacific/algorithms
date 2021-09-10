@@ -1,5 +1,6 @@
 package algorithmdesignmanualbook.datastructures
 
+import _utils.UseCommentAsDocumentation
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
@@ -12,6 +13,7 @@ import kotlin.test.assertTrue
  * * Cases matters
  * * Whitespace doesn't matter
  */
+@UseCommentAsDocumentation
 fun isGenerateStringFromCutoutPossible(searchStr: String, magazine: String): Boolean {
     val frequency = mutableMapOf<Char, Int>()
     searchStr.replace(" ", "").forEach {
@@ -38,5 +40,10 @@ fun main() {
     assertFalse { isGenerateStringFromCutoutPossible("hello", "Give an algorithm") }
     assertTrue { isGenerateStringFromCutoutPossible("sing me a zing", "You are given a search string and a magazine") }
     assertFalse { isGenerateStringFromCutoutPossible("you", "You are given a search string and a magazine") }
-    assertTrue { isGenerateStringFromCutoutPossible("You give me a gain", "You are given a search string and a magazine") }
+    assertTrue {
+        isGenerateStringFromCutoutPossible(
+            "You give me a gain",
+            "You are given a search string and a magazine"
+        )
+    }
 }
