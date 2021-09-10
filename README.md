@@ -14,7 +14,7 @@ Collection of Data Structures and Algorithms solutions
 |  [EightQueens](src/dynamic/EightQueens.java) <br><sub>Java &#8226; dynamic</sub> |  |
 |  [Parens](src/dynamic/Parens.java) <br><sub>Java &#8226; dynamic</sub> |  Implement an algorithm to print all valid (i.e., properly opened and closed) combinations <br> of n pairs of parentheses |
 |  [Coins](src/dynamic/Coins.java) <br><sub>Java &#8226; dynamic</sub> |  |
-|  [RecursiveMultiply](src/dynamic/RecursiveMultiply.java) <br><sub>Java &#8226; dynamic</sub> |  |
+|  [RecursiveMultiply](src/dynamic/RecursiveMultiply.java) <br><sub>Java &#8226; dynamic</sub> |  Multiply without using *. |
 |  [EditDistance](src/algorithmdesignmanualbook/dynamic/EditDistance.kt) <br><sub>Kotlin &#8226; dynamic</sub> |  |
 |  [MinDifferenceBetweenSubsets](src/algorithmdesignmanualbook/dynamic/MinDifferenceBetweenSubsets.kt) <br><sub>Kotlin &#8226; dynamic</sub> |  |
 |  [SortedMerge](src/sortingandsearch/SortedMerge.java) <br><sub>Java &#8226; sortingandsearch</sub> |  You are given two sorted arrays, A and B, where A has a large enough buffer at the <br> end to hold B. Write a method to merge B into A in sorted order. |
@@ -40,7 +40,6 @@ Collection of Data Structures and Algorithms solutions
 |  [Node](src/graphs/commons/Node.java) <br><sub>Java &#8226; commons</sub> |  |
 |  [Tree](src/graphs/commons/Tree.java) <br><sub>Java &#8226; commons</sub> |  |
 |  [BidirectionalTree](src/graphs/commons/BidirectionalTree.java) <br><sub>Java &#8226; commons</sub> |  |
-|  [State](src/graphs/commons/State.java) <br><sub>Java &#8226; commons</sub> |  |
 |  [Graph](src/graphs/commons/Graph.java) <br><sub>Java &#8226; commons</sub> |  |
 |  [BitUtils](src/bits/commons/BitUtils.java) <br><sub>Java &#8226; commons</sub> |  |
 |  [FizzBuzz](src/threads/FizzBuzz.java) <br><sub>Java &#8226; threads</sub> |  |
@@ -73,7 +72,6 @@ Collection of Data Structures and Algorithms solutions
 |  [RoutesBetweenNodes](src/graphs/RoutesBetweenNodes.java) <br><sub>Java &#8226; graphs</sub> |  |
 |  [IsOneStringPermutationOfOther](src/arraysandstrings/IsOneStringPermutationOfOther.java) <br><sub>Java &#8226; arraysandstrings</sub> |  |
 |  [UniqueCharacters](src/arraysandstrings/UniqueCharacters.java) <br><sub>Java &#8226; arraysandstrings</sub> |  |
-|  [URLify](src/arraysandstrings/URLify.java) <br><sub>Java &#8226; arraysandstrings</sub> |  |
 |  [IsPermutationOfStringAPalindrome](src/arraysandstrings/IsPermutationOfStringAPalindrome.kt) <br><sub>Kotlin &#8226; arraysandstrings</sub> |  |
 |  [StringCompression](src/arraysandstrings/StringCompression.kt) <br><sub>Kotlin &#8226; arraysandstrings</sub> |  |
 |  [StringRotation](src/arraysandstrings/StringRotation.kt) <br><sub>Kotlin &#8226; arraysandstrings</sub> |  |
@@ -83,8 +81,7 @@ Collection of Data Structures and Algorithms solutions
 |  [AVLTree](src/algorithmsinanutshell/AVLTree.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> |  Always a balanced tree <br> https://www.youtube.com/watch?v=jDM6_TnYIqE <br> <br> To delete a non-leaf/non-root node, remove it and find the right most descendant and put it there. <br> The child of right most descendant will replace the old position of rightmost descendant <br> <br> Since there are fixed number of rotation, it can be considered as O(1) <br> <br> Other variations of tree are <br>  * n-way tree like B-trees <br>  * red-black tree with more relaxed rotation rules and enforces height of one branch isn't greater than 2x other branch |
 |  [Graph](src/algorithmsinanutshell/Graph.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> |  |
 |  [TreeTraversal](src/algorithmsinanutshell/TreeTraversal.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> |  |
-|  [GraphTraversal](src/algorithmsinanutshell/GraphTraversal.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> |  |
-|  [LineModel](src/algorithmsinanutshell/LineModel.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> |  |
+|  [GraphTraversal](src/algorithmsinanutshell/GraphTraversal.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> | Depth First Traversal <br>Breadth First Traversal |
 |  [DijkstraAlgorithm](src/algorithmsinanutshell/DijkstraAlgorithm.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> |  |
 |  [PrimMinSpanningTreeAlgorithm](src/algorithmsinanutshell/PrimMinSpanningTreeAlgorithm.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> |  Prim Algorithm starts from min cost edge and then selects the next small cost edge <br> while maintaining the connection with first edge. <br> <br> This can be modeled using [PriorityQueue] sorted using [Edge] w.r.t its weight |
 |  [FloydWarshallAlgorithm](src/algorithmsinanutshell/FloydWarshallAlgorithm.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> |  # All pair shortest path algorithm <br> <br> While Dijkstra Shortest Path algorithm helps find shortest path between start and end vertex, [FloydWarshallAlgorithm] <br> finds the shortest path between all vertices in a [graph] <br> <br> [Source](https://www.youtube.com/watch?v=oNI0rf2P9gE) |
@@ -104,28 +101,27 @@ Collection of Data Structures and Algorithms solutions
 |  [PartialSumUsingFenwickTree](src/algorithmdesignmanualbook/partialsum/PartialSumUsingFenwickTree.kt) <br><sub>Kotlin &#8226; partialsum</sub> |  Let A be an array of n real numbers. Design an algorithm to perform any sequence of the following operations: <br> • Add(i,y) – Add the value y to the ith number. <br> • Partial-sum(i) – Return the sum of the first i numbers <br> Each operation must take O(logn). <br> <br> Fenwick Tree or Binary Indexed Tree is a tree containing n+1 nodes. <br> Each node's parent is right most 1 flipped i.e <br> * 8 -> 1000 so parent is 0000 (0) <br> * 7 -> 0111 so parent is 0110 (6) <br> * 10 -> 1010 so parent is 1000 (8) <br> * 5 -> 0101 so parent is 0100 (4) <br> Sum can be obtained by (0..5) -> tree[6] + tree[4] + tree[0] i.e index+1 and then go upwards to parents <br> <br> To get the parent: <br> > * 2's complement (Flip all bits and add 1) <br> > * AND it with original number <br> > * Subtract it from original number <br> 7 (111) ---(step 1)---> 000+1=001 ---(AND 111)-->001 --(Subtract from 111)--->110 <br> |
 |  [PartialSumUsingCumulativeSum](src/algorithmdesignmanualbook/partialsum/PartialSumUsingCumulativeSum.kt) <br><sub>Kotlin &#8226; partialsum</sub> |  |
 |  [MagicIndexSearch](src/algorithmdesignmanualbook/searching/MagicIndexSearch.kt) <br><sub>Kotlin &#8226; searching</sub> |  |
-|  [SmallestMissingNumber](src/algorithmdesignmanualbook/searching/SmallestMissingNumber.kt) <br><sub>Kotlin &#8226; searching</sub> |  |
+|  [SmallestMissingNumber](src/algorithmdesignmanualbook/searching/SmallestMissingNumber.kt) <br><sub>Kotlin &#8226; searching</sub> |  [4-34] <br>  Suppose that you are given a sorted sequence of distinct integers {a1, a2, . . . , an}, <br>  drawn from 1 to m where n < m. Give an O(lg n) algorithm to find an integer ≤ m <br>  that is not present in a. For full credit, find the smallest such integer. <br> <br>  Solution: Binary search into the array. <br>  Since its sorted and starts from index 1, every element at index i should have element i. <br> |
 |  [UnionFind](src/algorithmdesignmanualbook/graph/UnionFind.kt) <br><sub>Kotlin &#8226; graph</sub> |  Solution: https://www.geeksforgeeks.org/union-find/ <br> <br> Union-Find represent each subset as backward trees <br>      |  0  |  1  |  2  | <br>      |  1  |  2  |  0  | <br> |
 |  [PrimMinSpanningTree](src/algorithmdesignmanualbook/graph/PrimMinSpanningTree.kt) <br><sub>Kotlin &#8226; graph</sub> |  |
-|  [BreadthFirstSearch](src/algorithmdesignmanualbook/graph/BreadthFirstSearch.kt) <br><sub>Kotlin &#8226; graph</sub> |  |
 |  [Graph](src/algorithmdesignmanualbook/graph/Graph.kt) <br><sub>Kotlin &#8226; graph</sub> |  |
 |  [SimpleGraph](src/algorithmdesignmanualbook/graph/SimpleGraph.kt) <br><sub>Kotlin &#8226; graph</sub> |  |
-|  [GraphInit](src/algorithmdesignmanualbook/graph/GraphInit.kt) <br><sub>Kotlin &#8226; graph</sub> |  |
-|  [FindNumberOfOccurence](src/algorithmdesignmanualbook/sorting/FindNumberOfOccurence.kt) <br><sub>Kotlin &#8226; sorting</sub> |  |
-|  [KSortedListMerge](src/algorithmdesignmanualbook/sorting/KSortedListMerge.kt) <br><sub>Kotlin &#8226; sorting</sub> |  |
+|  [BreadthFirstTraversal](src/algorithmdesignmanualbook/graph/BreadthFirstTraversal.kt) <br><sub>Kotlin &#8226; graph</sub> |  |
+|  [FindNumberOfOccurrence](src/algorithmdesignmanualbook/sorting/FindNumberOfOccurrence.kt) <br><sub>Kotlin &#8226; sorting</sub> |  Find the range in which [str] occurs in [array]. <br> <br> [Solution here](https://tutorialspoint.dev/algorithm/searching-algorithms/count-number-of-occurrences-or-frequency-in-a-sorted-array) |
+|  [KSortedListMerge](src/algorithmdesignmanualbook/sorting/KSortedListMerge.kt) <br><sub>Kotlin &#8226; sorting</sub> |  Give an O(n log k)-time algorithm that merges k sorted lists with a total of n <br> elements into one sorted list. (Hint: use a heap to speed up the elementary O(kn)-time algorithm). |
 |  [ColorSortLinearTime](src/algorithmdesignmanualbook/sorting/ColorSortLinearTime.kt) <br><sub>Kotlin &#8226; sorting</sub> |  Suppose an array A consists of n elements, each of which is red, white, or blue. <br> We seek to sort the elements so that all the reds come before all the whites, which <br> come before all the blues The only operation permitted on the keys are: examine and swap. |
 |  [KSum](src/algorithmdesignmanualbook/sorting/KSum.kt) <br><sub>Kotlin &#8226; sorting</sub> |  Given a set S of n integers and an integer T, <br> give an algorithm to test whether k of the integers in S add up to T. <br> <br> [Another way](https://www.geeksforgeeks.org/find-the-k-th-permutation-sequence-of-first-n-natural-numbers/) <br> <br> ### IDEA: <br> <br> For target=21, k=3 i.e. 21/3 and array: <br> <br> | 5 | 6 | 8 | 10 | 12 | <br> <br>  <------- 21/3 ------> <br> <br>   ^ <---   16/2    ---> <br> <br>       ^ <---  10/1 ---> |
-|  [TwoPairSum](src/algorithmdesignmanualbook/sorting/TwoPairSum.kt) <br><sub>Kotlin &#8226; sorting</sub> |  |
-|  [FindMedian](src/algorithmdesignmanualbook/sorting/FindMedian.kt) <br><sub>Kotlin &#8226; sorting</sub> |  |
-|  [NegativePositiveNumberArrangement](src/algorithmdesignmanualbook/sorting/NegativePositiveNumberArrangement.kt) <br><sub>Kotlin &#8226; sorting</sub> |  |
+|  [TwoPairSum](src/algorithmdesignmanualbook/sorting/TwoPairSum.kt) <br><sub>Kotlin &#8226; sorting</sub> |  O(nlogn) algorithm for finding whether there exists a pair of elements, one from S1 and one <br> from S2, that add up to x |
+|  [FastMedian](src/algorithmdesignmanualbook/sorting/FastMedian.kt) <br><sub>Kotlin &#8226; sorting</sub> |  NO need to sort all the items. <br> Just find the sort the items before the median index <br> Using quicksort, find the partition. <br> Then throw away the left partition if the median index lies in the right portion <br> while calibrating the new median index. <br> <br> Similar to finding the kth smallest item in the unsorted list |
+|  [ArrangeNegativeThenPositiveNumber](src/algorithmdesignmanualbook/sorting/ArrangeNegativeThenPositiveNumber.kt) <br><sub>Kotlin &#8226; sorting</sub> |  4-20 <br> Rearrange an array of n keys so that all the negative keys precede all the nonnegative keys |
 |  [MergeSort](src/algorithmdesignmanualbook/sorting/MergeSort.kt) <br><sub>Kotlin &#8226; sorting</sub> |  |
 |  [QuickSort](src/algorithmdesignmanualbook/sorting/QuickSort.kt) <br><sub>Kotlin &#8226; sorting</sub> |  |
-|  [SelectionSort](src/algorithmdesignmanualbook/sorting/SelectionSort.kt) <br><sub>Kotlin &#8226; sorting</sub> |  |
-|  [InsertionSort](src/algorithmdesignmanualbook/sorting/InsertionSort.kt) <br><sub>Kotlin &#8226; sorting</sub> |  |
+|  [SelectionSort](src/algorithmdesignmanualbook/sorting/SelectionSort.kt) <br><sub>Kotlin &#8226; sorting</sub> |  Identify the smallest element from unsorted portion and put it at the end of the sorted portion |
+|  [InsertionSort](src/algorithmdesignmanualbook/sorting/InsertionSort.kt) <br><sub>Kotlin &#8226; sorting</sub> |  How does insertion sort work? <br>  * Loop through elements <br>  * At each element, compare it with element before it <br>  * If smaller, swap places <br>  * Repeat |
 |  [HeapSort](src/algorithmdesignmanualbook/sorting/HeapSort.kt) <br><sub>Kotlin &#8226; sorting</sub> |  |
-|  [ColorSort](src/algorithmdesignmanualbook/sorting/ColorSort.kt) <br><sub>Kotlin &#8226; sorting</sub> |  |
+|  [ColorSort](src/algorithmdesignmanualbook/sorting/ColorSort.kt) <br><sub>Kotlin &#8226; sorting</sub> |  Assume that we are given n pairs of items as input, where the first item is a <br> number and the second item is one of three colors (red, blue, or yellow). <br> Further assume that the items are sorted by number. <br> Give an O(n) algorithm to sort the items by color (all reds before all blues before all yellows) <br> such that the numbers for identical colors stay sorted. <br> <br> Solution: Maintain 3 queue for each color. At last, dequeue red, blue and then yellow |
 |  [BucketSort](src/algorithmdesignmanualbook/sorting/BucketSort.kt) <br><sub>Kotlin &#8226; sorting</sub> |  Maintains bucket of 0..9 or a-z <br> The number of iterations requires depends on number of characters in longest element (length wise) <br> <br> [Algorithm](https://www.youtube.com/watch?v=JMlYkE8hGJM) |
-|  [TransitionIndex](src/algorithmdesignmanualbook/sorting/TransitionIndex.kt) <br><sub>Kotlin &#8226; sorting</sub> |  |
+|  [FindTransitionIndex](src/algorithmdesignmanualbook/sorting/FindTransitionIndex.kt) <br><sub>Kotlin &#8226; sorting</sub> |  Given unbounded 0s followed by unbounded number of 1s, find the first index of transition. <br> <br> Done using ONE-SIDED BINARY SEARCH <br> <br> Solution: <br> <br> Incremental search 1,2,4,6,8... and then binary search on transition range |
 |  [LinkedListDuplicate](src/linkedlists/LinkedListDuplicate.kt) <br><sub>Kotlin &#8226; linkedlists</sub> |  |
 |  [SumLists](src/linkedlists/SumLists.kt) <br><sub>Kotlin &#8226; linkedlists</sub> |  |
 |  [LinkedList](src/linkedlists/LinkedList.kt) <br><sub>Kotlin &#8226; linkedlists</sub> |  |

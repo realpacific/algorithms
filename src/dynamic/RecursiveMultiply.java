@@ -1,5 +1,8 @@
 package dynamic;
 
+/**
+ * Multiply without using *.
+ */
 public class RecursiveMultiply {
     public static void main(String[] args) {
         assert multiply(10, 10) == 100;

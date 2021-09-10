@@ -1,6 +1,9 @@
 package algorithmsinanutshell
 
+import _utils.SkipDocumentation
 import kotlin.math.atan
+
+@SkipDocumentation
 
 data class Line(val p1: Point, val p2: Point)
 

@@ -1,6 +1,5 @@
 package algorithmdesignmanualbook.dynamic
 
-import algorithmdesignmanualbook.print
 import kotlin.system.measureTimeMillis
 import kotlin.test.assertTrue
 

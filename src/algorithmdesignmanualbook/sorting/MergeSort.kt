@@ -15,11 +15,11 @@ private fun mergeSort(array: IntArray, low: Int, high: Int) {
         // break right
         mergeSort(array, mid + 1, high)
         // sort and merge
-        merge(array, low, high, mid)
+        kSortedListMerge(array, low, high, mid)
     }
 }
 
-fun merge(array: IntArray, low: Int, high: Int, mid: Int) {
+fun kSortedListMerge(array: IntArray, low: Int, high: Int, mid: Int) {
     val queue1 = LinkedList<Int>()
     val queue2 = LinkedList<Int>()
     for (i in low..mid) {

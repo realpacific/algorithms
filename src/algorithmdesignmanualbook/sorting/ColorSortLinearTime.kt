@@ -5,15 +5,16 @@ import java.util.*
 import kotlin.test.assertFails
 import kotlin.test.asserter
 
+
+private enum class ColorValue {
+    RED, WHITE, BLUE
+}
+
 /**
  * Suppose an array A consists of n elements, each of which is red, white, or blue.
  * We seek to sort the elements so that all the reds come before all the whites, which
  * come before all the blues The only operation permitted on the keys are: examine and swap.
  */
-private enum class ColorValue {
-    RED, WHITE, BLUE
-}
-
 private class ColorSortLinearTime(private val array: Array<ColorValue>) {
     fun examine(index: Int): ColorValue? {
         return array.getOrNull(index)

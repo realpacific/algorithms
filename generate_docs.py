@@ -52,6 +52,7 @@ class DocsStrategy(ABC):
     def __init__(self, content, filename):
         self.lines: List[str] = list(map(lambda x: x.strip(), content.split('\n')))
         self.filename = filename
+        self.content = content
 
 
 class PythonDocsStrategy(DocsStrategy):
@@ -60,7 +61,7 @@ class PythonDocsStrategy(DocsStrategy):
 
     def extract_docs(self):
         if len(self.lines) == 0:
-            return
+            return ""
         docs_start = None
         docs_end = None
         for [index, line] in enumerate(self.lines):
@@ -70,7 +71,7 @@ class PythonDocsStrategy(DocsStrategy):
                 while not current_line.startswith("'''") and not current_line.startswith('"""'):
                     docs_start += 1
                     if docs_start >= len(self.lines):
-                        return None
+                        return ""
                     current_line = self.lines[docs_start]
                 docs_start += 1
                 docs_end = docs_start + 1
@@ -79,13 +80,12 @@ class PythonDocsStrategy(DocsStrategy):
                 while not (current_line.startswith('"""') or current_line.startswith("'''")):
                     docs_end = docs_end + 1
                     if docs_end >= len(self.lines):
-                        return None
+                        return ""
                     current_line = self.lines[docs_end]
                 break
         if docs_start is not None and docs_end is not None:
-            self.docs = '<br>'.join(self.lines[docs_start:docs_end])
-            return self.docs
-        return None
+            return '<br>'.join(self.lines[docs_start:docs_end])
+        return ""
 
 
 def function_case(name: str):
@@ -96,24 +96,31 @@ def function_case(name: str):
 class KotlinDocsStrategy(DocsStrategy):
     def __init__(self, content, filename):
         super().__init__(content, filename)
-        self.docs = ''
 
     def extract_docs(self):
         if len(self.lines) == 0:
-            return
+            return ""
         docs_start = None
         docs_end = None
-
+        # Ignore packages named _utils
+        if self.lines[0].startswith(f'package _utils'):
+            return None
         for [index, line] in enumerate(self.lines):
+            if line.startswith(f'import _utils.SkipDocumentation'):
+                return None
+
+            if line.startswith(f'import _utils.Document'):
+                occurrence = re.findall(r'@Document\("(.*)"\)', self.content)
+                return " <br>".join(occurrence)
             if re.match(f'(private |public |)class {self.filename}*', line) \
-                    or re.match(f'fun {function_case(filename_)}', line) \
+                    or re.match(f'(private |public |)fun {function_case(filename_)}', line) \
                     or re.match(f'(private |public |)object {self.filename}*', line):
                 docs_start = index
                 current_line = self.lines[docs_start]
                 while not current_line.startswith("/**"):
                     docs_start -= 1
                     if docs_start == 0:
-                        return None
+                        return ""
                     current_line = self.lines[docs_start]
                 docs_start += 1
                 docs_end = docs_start + 1
@@ -122,11 +129,11 @@ class KotlinDocsStrategy(DocsStrategy):
                 while not (current_line.startswith('*/')):
                     docs_end = docs_end + 1
                     if docs_end >= len(self.lines):
-                        return None
+                        return ""
                     current_line = self.lines[docs_end]
                 break
         if docs_start is not None and docs_end is not None:
-            self.docs = ' <br>'.join(
+            return ' <br>'.join(
                 list(
                     filter(
                         lambda x: x.strip() not in {'```'},
@@ -137,8 +144,7 @@ class KotlinDocsStrategy(DocsStrategy):
                     )
                 )
             )
-            return self.docs
-        return None
+        return ""
 
 
 docs_strategy: Dict[str, Type[DocsStrategy]] = {
@@ -170,14 +176,14 @@ if __name__ == "__main__":
             split = path.split('/')
             file = split[len(split) - 1]
             [filename_, ext_] = file.split('.')
-            docs = ''
+            docs = None
             with open(path, "r") as f:
                 content = f.read()
                 strategy = docs_strategy.get(ext_)
                 if strategy is not None:
                     docs = strategy(content, filename_).extract_docs()
-
-            content_ += f"|  [{filename_}]({path}) <br><sub>{lang[ext_]} &#8226; {key}</sub> | {docs if docs is not None else ''} |\n"
+            if docs is not None:
+                content_ += f"|  [{filename_}]({path}) <br><sub>{lang[ext_]} &#8226; {key}</sub> | {docs} |\n"
 
     with open("README.md", "w") as f:
         write_markdown(content_)
