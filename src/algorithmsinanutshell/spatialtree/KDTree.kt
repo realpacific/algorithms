@@ -27,7 +27,7 @@ class KDTree(val array: Array<Array<Int>>) {
 
     init {
         require(array.isNotEmpty())
-        require(array.map ( it.size }.distinct().size == 1)
+        require(array.map { it.size }.distinct().size == 1)
         tree = MultiDimNode(array[0])
         for (i in 1..array.lastIndex) {
             tree.insert(array[i], 0)

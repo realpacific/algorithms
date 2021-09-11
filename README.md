@@ -126,8 +126,10 @@ Collection of Data Structures and Algorithms solutions
 |  [LinkedListDuplicate](src/linkedlists/LinkedListDuplicate.kt) <br><sub>Kotlin &#8226; linkedlists</sub> |  |
 |  [SumLists](src/linkedlists/SumLists.kt) <br><sub>Kotlin &#8226; linkedlists</sub> |  |
 |  [LinkedList](src/linkedlists/LinkedList.kt) <br><sub>Kotlin &#8226; linkedlists</sub> |  |
+|  [SearchInsertPosition](src/questions/SearchInsertPosition.kt) <br><sub>Kotlin &#8226; questions</sub> |  Given a sorted array of distinct integers and a target value, <br> return the index if the target is found. If not, return the index where it would be if it were inserted in order. <br> You must write an algorithm with O(log n) runtime complexity. <br> <br> [Source](https://leetcode.com/problems/search-insert-position/) |
 |  [FormatPhoneNumber](src/questions/FormatPhoneNumber.kt) <br><sub>Kotlin &#8226; questions</sub> |  Given a phone number should format in the form of abc-def-ijk. Last two part can be of 2 digits |
 |  [SearchContact](src/questions/SearchContact.kt) <br><sub>Kotlin &#8226; questions</sub> |  |
+|  [RemoveDuplicateFromSortedArray](src/questions/RemoveDuplicateFromSortedArray.kt) <br><sub>Kotlin &#8226; questions</sub> |  Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place. <br> The relative order of the elements should be kept the same. <br> More formally, if there are k elements after removing the duplicates, <br> then the first k elements of nums should hold the final result. <br> It does not matter what you leave beyond the first k elements. <br> Return k after placing the final result in the first k slots of nums. <br> <br> [Source](https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/) |
 |  [needle](python/needle.py) <br><sub>Python &#8226; python</sub> |  |
 |  [longestpalindrome](python/longestpalindrome.py) <br><sub>Python &#8226; python</sub> |  |
 |  [longestsubstr](python/longestsubstr.py) <br><sub>Python &#8226; python</sub> |  |
