@@ -14,6 +14,16 @@ public class PrintUtils {
         }
     }
 
+
+    public static <T> void printAnyArrWithCast(Iterable<T[]> it, String cast) {
+        for (T[] t : it) {
+            for (T t1 : t) {
+                System.out.print((t1 == null) ? " - " : String.format(" %s ", t1));
+            }
+            System.out.println();
+        }
+    }
+
     public static void printIntArrWithCast(Iterable<Integer[]> it) {
         for (Integer[] t : it) {
             for (Integer t1 : t) {
@@ -33,7 +43,7 @@ public class PrintUtils {
         for (Object o : it) {
             System.out.print(o + " ");
         }
-        System.out.println("");
+        System.out.println();
     }
 
     static String castToInfinity(Integer t) {
