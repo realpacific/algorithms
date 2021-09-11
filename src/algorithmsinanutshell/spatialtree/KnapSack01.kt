@@ -11,11 +11,11 @@ import kotlin.test.assertTrue
  * [Video](https://www.youtube.com/watch?v=8LusJS5-AGo)
  *
  * ```
- * | P | w | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
- * | 1 | 1 |   |   |   |   |   |   |   |   |
- * | 4 | 3 |   |   |   |   |   |   |   |   | <-- while here, everything below are ignored so w1 and w3 are considered
- * | 5 | 4 |   |   |   |   |   |   |   |   |
- * | 6 | 5 |   |   |   |   |   |   |   |   |
+ * ! P ! w ! 0 ! 1 ! 2 ! 3 ! 4 ! 5 ! 6 ! 7 !
+ * ! 1 ! 1 !   !   !   !   !   !   !   !   !
+ * ! 4 ! 3 !   !   !   !   !   !   !   !   ! <-- while here, everything below are ignored so w1 and w3 are considered
+ * ! 5 ! 4 !   !   !   !   !   !   !   !   !
+ * ! 6 ! 5 !   !   !   !   !   !   !   !   !
  * ```
  *
  */

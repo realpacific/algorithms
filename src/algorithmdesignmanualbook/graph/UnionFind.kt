@@ -9,8 +9,8 @@ import kotlin.test.assertTrue
  * Solution: https://www.geeksforgeeks.org/union-find/
  *
  * Union-Find represent each subset as backward trees
- *      |  0  |  1  |  2  |
- *      |  1  |  2  |  0  |
+ *      !  0  !  1  !  2  !
+ *      !  1  !  2  !  0  !
  *
  */
 @UseCommentAsDocumentation

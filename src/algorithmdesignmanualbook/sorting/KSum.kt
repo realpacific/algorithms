@@ -13,7 +13,7 @@ import kotlin.test.assertTrue
  * ```
  * For target=21, k=3 i.e. 21/3 and array:
  *
- * | 5 | 6 | 8 | 10 | 12 |
+ * ! 5 ! 6 ! 8 ! 10 ! 12 !
  *
  *  <------- 21/3 ------>
  *
