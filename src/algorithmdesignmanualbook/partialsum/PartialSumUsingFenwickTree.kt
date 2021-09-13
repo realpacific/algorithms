@@ -20,9 +20,10 @@ import kotlin.experimental.inv
  * Sum can be obtained by (0..5) -> tree[6] + tree[4] + tree[0] i.e index+1 and then go upwards to parents
  *
  * To get the parent:
- * > * 2's complement (Flip all bits and add 1)
- * > * AND it with original number
- * > * Subtract it from original number
+ * * 2's complement (Flip all bits and add 1)
+ * * AND it with original number
+ * * Subtract it from original number
+ *
  * 7 (111) ---(step 1)---> 000+1=001 ---(AND 111)-->001 --(Subtract from 111)--->110
  *
  */

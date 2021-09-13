@@ -84,7 +84,7 @@ class PythonDocsStrategy(DocsStrategy):
                     current_line = self.lines[docs_end]
                 break
         if docs_start is not None and docs_end is not None:
-            return '<br>'.join(self.lines[docs_start:docs_end])
+            return '\n'.join(self.lines[docs_start:docs_end])
         return ""
 
 
@@ -139,7 +139,7 @@ class KotlinDocsStrategy(DocsStrategy):
                     current_line = self.lines[docs_end]
                 break
         if docs_start is not None and docs_end is not None:
-            return ' <br>'.join(
+            return '\n'.join(
                 list(
                     filter(
                         lambda x: x.strip() not in {'```'},
@@ -163,6 +163,21 @@ lang: Dict[str, str] = {
     'kt': 'Kotlin',
     'java': 'Java',
 }
+
+
+def remove_empty_lines(string):
+    lines = list(map(lambda x: x.strip(), string.split('\n')))
+    result = lines[0]
+    for i in range(1, len(lines)):
+        # If two sequential lines breaks, then take only one
+        if lines[i].startswith('*') or lines[i].startswith(':'):
+            result += f' <br>{lines[i]}'
+        elif len(lines[i]) == 0 and len(lines[i - 1]) != 0:
+            result += f' <br>{lines[i]}'
+        else:
+            result += f' {lines[i]}'
+    return result
+
 
 if __name__ == "__main__":
     find_files_with_extension('**/*.java')
@@ -191,6 +206,7 @@ if __name__ == "__main__":
                 if strategy is not None:
                     docs = strategy(content, filename_).extract_docs()
             if docs is not None:
+                docs = remove_empty_lines(docs)
                 content_ += f"|  [{filename_}]({path}) <br><sub>{lang[ext_]} &#8226; {key}</sub> | {docs} |\n"
                 if len(docs) == 0:
                     undocumented_files.append(path)
