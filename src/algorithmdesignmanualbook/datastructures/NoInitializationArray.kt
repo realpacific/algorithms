@@ -15,7 +15,7 @@ import kotlin.test.assertTrue
  * either A or B, as that would take O(m) or O(n) operations. This means the arrays
  * are full of random garbage to begin with, so you must be very careful.
  *
- * [Solution link]((https://research.swtch.com/sparse)):
+ * [Solution link](https://research.swtch.com/sparse):
  *
  * Two arrays both of them with garbage value
  * * dense: contains actual elements in order of insertion
