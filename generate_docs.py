@@ -170,12 +170,13 @@ def remove_empty_lines(string):
     result = lines[0]
     for i in range(1, len(lines)):
         # If two sequential lines breaks, then take only one
-        if lines[i].startswith('*') or lines[i].startswith(':'):
-            result += f' <br>{lines[i]}'
-        elif len(lines[i]) == 0 and len(lines[i - 1]) != 0:
-            result += f' <br>{lines[i]}'
+        current_line = lines[i]
+        if current_line.startswith('*') or current_line.startswith(':') or current_line.startswith('!'):
+            result += f' <br>{current_line}'
+        elif len(current_line) == 0 and len(lines[i - 1]) != 0:
+            result += f' <br>{current_line}'
         else:
-            result += f' {lines[i]}'
+            result += f' {current_line}'
     return result
 
 
