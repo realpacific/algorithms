@@ -1,5 +1,6 @@
 package questions
 
+import _utils.UseCommentAsDocumentation
 import kotlin.test.assertEquals
 
 /**
@@ -8,6 +9,7 @@ import kotlin.test.assertEquals
  *
  * [Source](https://leetcode.com/problems/single-number-ii/)
  */
+@UseCommentAsDocumentation
 private fun singleNumber(nums: IntArray): Int {
     if (nums.size == 1) {
         return nums[0]

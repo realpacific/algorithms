@@ -1,5 +1,6 @@
 package questions
 
+import _utils.UseCommentAsDocumentation
 import utils.assertIterableSameInAnyOrder
 
 /**
@@ -9,6 +10,7 @@ import utils.assertIterableSameInAnyOrder
  *
  * [Source](https://leetcode.com/problems/single-number-iii/)
  */
+@UseCommentAsDocumentation
 private fun singleNumber(nums: IntArray): IntArray {
     if (nums.size == 2) return nums
     val record = mutableSetOf<Int>()
