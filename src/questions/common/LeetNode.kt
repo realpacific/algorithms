@@ -1,4 +1,4 @@
-package questions
+package questions.common
 
 import _utils.SkipDocumentation
 
