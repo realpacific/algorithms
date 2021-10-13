@@ -34,14 +34,30 @@ private fun findContentChildren(g: IntArray, s: IntArray): Int {
     return result.size
 }
 
+private fun findContentChildrenOptimal(g: IntArray, s: IntArray): Int {
+    if (s.isEmpty()) return 0
+    // Sort
+    g.sort()
+    s.sort()
+    var count = 0
+    for (i in 0..s.lastIndex) { // every cookie
+        val greed = g.getOrNull(count) ?: return count // try to satisfy the NEXT easiest/lowest greed factor first
+        if (greed <= s[i]) count++
+    }
+    return count
+}
+
 fun main() {
     assertEquals(
-        4, findContentChildren(g = intArrayOf(10, 9, 8, 7), s = intArrayOf(10, 9, 8, 7))
+        2, findContentChildrenOptimal(g = intArrayOf(10, 9, 8, 7), s = intArrayOf(5, 6, 7, 8))
     )
     assertEquals(
-        1, findContentChildren(g = intArrayOf(1, 2, 3), s = intArrayOf(1, 1))
+        4, findContentChildrenOptimal(g = intArrayOf(10, 9, 8, 7), s = intArrayOf(10, 9, 8, 7))
     )
     assertEquals(
-        2, findContentChildren(g = intArrayOf(1, 2), s = intArrayOf(1, 2, 3))
+        1, findContentChildrenOptimal(g = intArrayOf(1, 2, 3), s = intArrayOf(1, 1))
+    )
+    assertEquals(
+        2, findContentChildrenOptimal(g = intArrayOf(1, 2), s = intArrayOf(1, 2, 3))
     )
 }
