@@ -6,12 +6,11 @@ import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 /**
- * Solution: https://www.geeksforgeeks.org/union-find/
- *
  * Union-Find represent each subset as backward trees
  *      !  0  !  1  !  2  !
  *      !  1  !  2  !  0  !
  *
+ * [Video1](https://www.youtube.com/watch?v=ayW5B2W9hfo) - [Video2](https://www.youtube.com/watch?v=eTaWFhPXPz4) - [Solution](https://www.geeksforgeeks.org/union-find/)
  */
 @UseCommentAsDocumentation
 private class UnionFindSimpleGraph(private val vertexCount: Int, private val edgesCount: Int) {
@@ -23,7 +22,7 @@ private class UnionFindSimpleGraph(private val vertexCount: Int, private val edg
     }
 
     fun find(parent: Array<Int>, i: Int): Int {
-        // if not initialized, then return itself
+        // you've reached the root/parent of the "tree"/relationship
         if (parent[i] == -1 || parent[i] == i) {
             return i
         }

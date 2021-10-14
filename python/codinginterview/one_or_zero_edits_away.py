@@ -1,7 +1,9 @@
 def one_or_zero_edits_away(original, given):
-    """199. One Away: There are three types of edits that can be performed on strings: insert a character,
-    remove a character, or replace a character. Given two strings, write a function to check if they are one edit(or
-    zero edits) away. """
+    """
+        199. One Away: There are three types of edits that can be performed on strings: insert a character,
+        remove a character, or replace a character. Given two strings, write a function to check if they are one edit(or
+        zero edits) away.
+    """
     records_from_original = {}
     leftover_from_given = []
     for i in original:

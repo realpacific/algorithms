@@ -65,7 +65,10 @@ class PythonDocsStrategy(DocsStrategy):
         docs_start = None
         docs_end = None
         for [index, line] in enumerate(self.lines):
-            if re.match(f'def {self.filename}*', line):
+            if re.match(f'def {self.filename}*', line) or \
+                    (
+                            line.strip().startswith('def') and line.endswith(':') and self.filename in line
+                    ):  # method detection
                 docs_start = index
                 current_line = self.lines[docs_start]
                 while not current_line.startswith("'''") and not current_line.startswith('"""'):
