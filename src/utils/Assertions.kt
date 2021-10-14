@@ -3,6 +3,7 @@
 package utils
 
 import _utils.SkipDocumentation
+import kotlin.test.assertEquals
 
 @SkipDocumentation
 
@@ -23,4 +24,8 @@ fun <T> assertIterableSameInAnyOrder(expected: Iterable<T>, actual: Iterable<T>)
     expected.forEach { t ->
         require(actual.contains(t))
     }
+}
+
+infix fun Any?.shouldBe(value: Any?) {
+    assertEquals(this, value)
 }
