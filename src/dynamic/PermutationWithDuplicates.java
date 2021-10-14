@@ -2,7 +2,9 @@ package dynamic;
 
 import java.util.*;
 
-//https://www.youtube.com/watch?v=JF4QrlUJItk
+/**
+ * [Video](https://www.youtube.com/watch?v=JF4QrlUJItk)
+ */
 public class PermutationWithDuplicates {
     public static void main(String[] args) {
         List<String> result = new ArrayList<>();

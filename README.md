@@ -10,7 +10,7 @@ Collection of Data Structures and Algorithms solutions
 |  [TowerOfHanoi](src/dynamic/TowerOfHanoi.java) <br><sub>Java &#8226; dynamic</sub> |  |
 |  [PaintFill](src/dynamic/PaintFill.java) <br><sub>Java &#8226; dynamic</sub> | Implement the"paint fill" function that one might see on many image editing programs. That is, given a screen (represented by a two-dimensional array of colors), a point, and a new color, fill in the surrounding area until the color changes from the original color |
 |  [BooleanEvaluation](src/dynamic/BooleanEvaluation.java) <br><sub>Java &#8226; dynamic</sub> |  |
-|  [PermutationWithDuplicates](src/dynamic/PermutationWithDuplicates.java) <br><sub>Java &#8226; dynamic</sub> |  |
+|  [PermutationWithDuplicates](src/dynamic/PermutationWithDuplicates.java) <br><sub>Java &#8226; dynamic</sub> | [Video](https://www.youtube.com/watch?v=JF4QrlUJItk) |
 |  [PermutationWithoutDuplicates](src/dynamic/PermutationWithoutDuplicates.java) <br><sub>Java &#8226; dynamic</sub> |  |
 |  [EightQueens](src/dynamic/EightQueens.java) <br><sub>Java &#8226; dynamic</sub> |  |
 |  [Parens](src/dynamic/Parens.java) <br><sub>Java &#8226; dynamic</sub> | Implement an algorithm to print all valid (i.e., properly opened and closed) combinations of n pairs of parentheses |
@@ -30,7 +30,7 @@ Collection of Data Structures and Algorithms solutions
 |  [RandomSet](src/hard/RandomSet.java) <br><sub>Java &#8226; hard</sub> |  |
 |  [count_of_2s](python/hard/count_of_2s.py) <br><sub>Python &#8226; hard</sub> | Find the number of 2s in between 0 and n <br>:param number: the max value (inclusive) <br>:return: Number of 2s |
 |  [baby_names](python/hard/baby_names.py) <br><sub>Python &#8226; hard</sub> |  |
-|  [letters_and_numbers](python/hard/letters_and_numbers.py) <br><sub>Python &#8226; hard</sub> |  |
+|  [letters_and_numbers](python/hard/letters_and_numbers.py) <br><sub>Python &#8226; hard</sub> | Given an array filled with letters and numbers, fnd the longest subarray with an equal number of letters and numbers <br>:param string: string <br>:return: subarray |
 |  [PowerOf2](src/bigo/PowerOf2.java) <br><sub>Java &#8226; bigo</sub> |  |
 |  [PermutationCount](src/bigo/PermutationCount.java) <br><sub>Java &#8226; bigo</sub> |  |
 |  [BinaryToString](src/bits/BinaryToString.java) <br><sub>Java &#8226; bits</sub> | Given a real number between 0 & 1 (eg. 0.72) that is passed in as double, print the binary representation. If # cannot be expressed in binary with at most 32 bits, then throw ERROR. |
@@ -103,7 +103,7 @@ Collection of Data Structures and Algorithms solutions
 |  [PartialSumUsingCumulativeSum](src/algorithmdesignmanualbook/partialsum/PartialSumUsingCumulativeSum.kt) <br><sub>Kotlin &#8226; partialsum</sub> | Let A[1..n] be an array of real numbers. Design an algorithm to perform any sequence of the following operations: • Add(i,y) – Add the value y to the ith number. • Partial-sum(i) – Return the sum of the first i numbers |
 |  [MagicIndexSearch](src/algorithmdesignmanualbook/searching/MagicIndexSearch.kt) <br><sub>Kotlin &#8226; searching</sub> | [4-33] Algorithm to determine whether there exists an i index such as ai = i given array of {a1, a2, a3 ... an} Sorted and distinct case: |
 |  [SmallestMissingNumber](src/algorithmdesignmanualbook/searching/SmallestMissingNumber.kt) <br><sub>Kotlin &#8226; searching</sub> | [4-34] Suppose that you are given a sorted sequence of distinct integers {a1, a2, . . . , an}, drawn from 1 to m where n < m. Give an O(lg n) algorithm to find an integer ≤ m that is not present in a. For full credit, find the smallest such integer. <br> Solution: Binary search into the array. Since its sorted and starts from index 1, every element at index i should have element i. <br> |
-|  [UnionFind](src/algorithmdesignmanualbook/graph/UnionFind.kt) <br><sub>Kotlin &#8226; graph</sub> | Solution: https://www.geeksforgeeks.org/union-find/ <br> Union-Find represent each subset as backward trees <br>!  0  !  1  !  2  ! <br>!  1  !  2  !  0  ! <br> |
+|  [UnionFind](src/algorithmdesignmanualbook/graph/UnionFind.kt) <br><sub>Kotlin &#8226; graph</sub> | Union-Find represent each subset as backward trees <br>!  0  !  1  !  2  ! <br>!  1  !  2  !  0  ! <br> [Video1](https://www.youtube.com/watch?v=ayW5B2W9hfo) - [Video2](https://www.youtube.com/watch?v=eTaWFhPXPz4) - [Solution](https://www.geeksforgeeks.org/union-find/) |
 |  [PrimMinSpanningTree](src/algorithmdesignmanualbook/graph/PrimMinSpanningTree.kt) <br><sub>Kotlin &#8226; graph</sub> | Solution: https://www.programiz.com/dsa/prim-algorithm <br> Given vertices with weighted edges, from start vertex, chose the edge with min edge such that it doesnt form cycle. |
 |  [Graph](src/algorithmdesignmanualbook/graph/Graph.kt) <br><sub>Kotlin &#8226; graph</sub> |  |
 |  [SimpleGraph](src/algorithmdesignmanualbook/graph/SimpleGraph.kt) <br><sub>Kotlin &#8226; graph</sub> |  |
@@ -132,7 +132,7 @@ Collection of Data Structures and Algorithms solutions
 |  [SingleNumberII](src/questions/SingleNumberII.kt) <br><sub>Kotlin &#8226; questions</sub> | Given an integer array nums where every element appears three times except for one, which appears exactly once. Find the single element and return it. <br> [Source](https://leetcode.com/problems/single-number-ii/) |
 |  [LengthOfLastWord](src/questions/LengthOfLastWord.kt) <br><sub>Kotlin &#8226; questions</sub> | Given a string s consisting of some words separated by some number of spaces, return the length of the last word in the string. A word is a maximal substring consisting of non-space characters only. <br> [Source](https://leetcode.com/problems/length-of-last-word) |
 |  [FindTheDifference](src/questions/FindTheDifference.kt) <br><sub>Kotlin &#8226; questions</sub> | You are given two strings s and t. String t is generated by random shuffling string s and then add one more letter at a random position. Return the letter that was added to t. <br> [Source](https://leetcode.com/problems/find-the-difference/) |
-|  [SameTree](src/questions/SameTree.kt) <br><sub>Kotlin &#8226; questions</sub> |  |
+|  [SameTree](src/questions/SameTree.kt) <br><sub>Kotlin &#8226; questions</sub> |  Given the roots of two binary trees p and q, write a function to check if they are the same or not. <br> [Source](https://leetcode.com/problems/same-tree/) |
 |  [MaxDepthOfBinaryTree](src/questions/MaxDepthOfBinaryTree.kt) <br><sub>Kotlin &#8226; questions</sub> | Given the root of a binary tree, return its maximum depth. A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node. <br> [Source](https://leetcode.com/problems/maximum-depth-of-binary-tree/) |
 |  [ValidPalindrome](src/questions/ValidPalindrome.kt) <br><sub>Kotlin &#8226; questions</sub> | Given a string s, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases. |
 |  [PlusOne](src/questions/PlusOne.kt) <br><sub>Kotlin &#8226; questions</sub> | You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's. Increment the large integer by one and return the resulting array of digits. <br> [Source](https://leetcode.com/problems/plus-one/) |
@@ -213,7 +213,7 @@ Collection of Data Structures and Algorithms solutions
 |  [forward_sum_of_nodes_of_linked_list](python/codinginterview/forward_sum_of_nodes_of_linked_list.py) <br><sub>Python &#8226; codinginterview</sub> | (6 -> 1 -> 7) + (2 -> 9). That is 617 + 029 = 6 -> 4 -> 6 |
 |  [find_intersection_between_two_linked_list](python/codinginterview/find_intersection_between_two_linked_list.py) <br><sub>Python &#8226; codinginterview</sub> | Find intersection between two linked list |
 |  [zero_matrix](python/codinginterview/zero_matrix.py) <br><sub>Python &#8226; codinginterview</sub> | Make INPLACE row and column of a matrix 0 iff that row contains a 0 |
-|  [one_or_zero_edits_away](python/codinginterview/one_or_zero_edits_away.py) <br><sub>Python &#8226; codinginterview</sub> |  |
+|  [one_or_zero_edits_away](python/codinginterview/one_or_zero_edits_away.py) <br><sub>Python &#8226; codinginterview</sub> | 199. One Away: There are three types of edits that can be performed on strings: insert a character, remove a character, or replace a character. Given two strings, write a function to check if they are one edit(or zero edits) away. |
 |  [node](python/codinginterview/shared/node.py) <br><sub>Python &#8226; shared</sub> |  |
 |  [linked_list](python/codinginterview/shared/linked_list.py) <br><sub>Python &#8226; shared</sub> |  |
 |  [reversed_linked_list](python/codinginterview/shared/reversed_linked_list.py) <br><sub>Python &#8226; shared</sub> |  |

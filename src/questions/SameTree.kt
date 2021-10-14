@@ -1,5 +1,6 @@
 package questions
 
+import _utils.UseCommentAsDocumentation
 import questions.common.TreeNode
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
@@ -10,6 +11,7 @@ import kotlin.test.assertTrue
  *
  * [Source](https://leetcode.com/problems/same-tree/)
  */
+@UseCommentAsDocumentation
 private fun isSameTree(p: TreeNode?, q: TreeNode?): Boolean {
     return TreeNode.isSameAs(p, q)
 }

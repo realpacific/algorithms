@@ -1,7 +1,7 @@
 from typing import List
 
 
-def subsort(array: List[int]):
+def sub_sort(array: List[int]):
     # Get the subsection where the elements are not sorted
     left_ordered_till = 0
     right_ordered_till = 0
@@ -37,4 +37,6 @@ def subsort(array: List[int]):
 
 
 if __name__ == '__main__':
-    subsort([1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19])
+    arr = [1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19]
+    sub_sort(arr)
+    print(arr)
