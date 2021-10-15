@@ -211,7 +211,7 @@ if __name__ == "__main__":
                     docs = strategy(content, filename_).extract_docs()
             if docs is not None:
                 docs = remove_empty_lines(docs)
-                content_ += f"|  [{filename_}]({path}) <br><sub>{lang[ext_]} &#8226; {key}</sub> | {docs} |\n"
+                content_ += f"|  [{filename_}]({path}) <br><sub>{lang[ext_]} &#8226; {key}</sub> | <sup>{docs}</sup> |\n"
                 if len(docs) == 0:
                     undocumented_files.append(path)
 
