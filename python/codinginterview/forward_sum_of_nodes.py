@@ -33,7 +33,7 @@ def add(l1_: Node, l2_: Node) -> Tuple[int, Node]:
     return 1 if value > 9 else 0, new_node
 
 
-def forward_sum_of_nodes_of_linked_list(l1_: BaseLinkedList, l2_: BaseLinkedList):
+def forward_sum_of_nodes(l1_: BaseLinkedList, l2_: BaseLinkedList):
     """
      (6 -> 1 -> 7) + (2 -> 9). That is 617 + 029 = 6 -> 4 -> 6
      """
@@ -69,4 +69,4 @@ if __name__ == "__main__":
     l2.add(Node(2))
     print('__________')
 
-    assert __collect_node_value(forward_sum_of_nodes_of_linked_list(l1, l2)[1]) == 646
+    assert __collect_node_value(forward_sum_of_nodes(l1, l2)[1]) == 646

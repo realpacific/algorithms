@@ -28,7 +28,7 @@ def _ltrim_by(list_: LinkedList, trim_amount):
     return current
 
 
-def find_intersection_between_two_linked_list(l1: LinkedList, l2: LinkedList):
+def find_intersection_linked_list(l1: LinkedList, l2: LinkedList):
     """
     Find intersection between two linked list
     """
@@ -78,11 +78,11 @@ if __name__ == "__main__":
     list_2.add(Node(12))
     list_2.add(intersection_node)
 
-    assert find_intersection_between_two_linked_list(list_1, list_2) is intersection_node
+    assert find_intersection_linked_list(list_1, list_2) is intersection_node
 
     l3 = LinkedList()
     l4 = LinkedList()
-    assert find_intersection_between_two_linked_list(l3, l4) is None
+    assert find_intersection_linked_list(l3, l4) is None
 
     l3.add(Node(5))
     l3.add(Node(6))
@@ -90,4 +90,4 @@ if __name__ == "__main__":
     l4.add(Node(7))
     l4.add(Node(7))
     l4.add(Node(7))
-    assert find_intersection_between_two_linked_list(l3, l4) is None
+    assert find_intersection_linked_list(l3, l4) is None
