@@ -14,7 +14,7 @@ fun <T> assertIterableSame(expected: Iterable<T>, actual: Iterable<T>) {
     }
     expected.forEachIndexed { index, t ->
         require(t == actual.elementAt(index)) {
-            "Failed (expected=${expected.toList()}, actual=${actual.toList()})."
+            "Failed \nexpected=${expected.toList()},\nactual  =${actual.toList()}"
         }
     }
 }
