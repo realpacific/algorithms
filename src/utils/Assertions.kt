@@ -3,7 +3,9 @@
 package utils
 
 import _utils.SkipDocumentation
+import java.lang.AssertionError
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 @SkipDocumentation
 
@@ -40,4 +42,20 @@ infix fun <T> T?.shouldBe(value: T?) {
         is Array<*> -> assertIterableSame(actual = this.toList(), expected = (value as Array<*>).toList())
         else -> assertEquals(value, this)
     }
+}
+
+
+infix fun <T> T?.shouldBeOneOf(values: Iterable<T?>) {
+    require(values.count() > 0)
+    var isGood = false
+    for (i in values) {
+        try {
+            this shouldBe i
+            isGood = true
+            break
+        } catch (e: AssertionError) {
+            isGood = false
+        }
+    }
+    assertTrue(isGood, "$this does not match any values in $values")
 }
