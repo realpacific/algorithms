@@ -12,21 +12,23 @@ class ClassInvoker<T, A>(private val methodNames: List<String>, val argsExtracto
         val klass = Class.forName("questions.$klassName")
         val klassInstance = klass.getConstructor().newInstance()
         for (i in 1..methodNames.lastIndex) {
-            klass.methods.find { it.name == methodNames[i] }!!.let {
-                val argument = argsExtractor(args[i])
-                if (argument == null) {
-                    val invoke = it.invoke(klassInstance)
-                    if (expectedAnswers != null) {
-                        println("position $i $klassName#${it.name}(); result=$invoke – expected=${expectedAnswers[i]}")
-                        invoke shouldBe expectedAnswers[i]
-                    }
-
+            val method = klass.methods.find { it.name == methodNames[i] }!!
+            val argument = argsExtractor(args[i])
+            if (argument == null) {
+                val invoke = method.invoke(klassInstance)
+                if (expectedAnswers != null) {
+                    println("position $i $klassName#${method.name}()=$invoke; expected=${expectedAnswers[i]}")
+                    invoke shouldBe expectedAnswers[i]
                 } else {
-                    val invoke = it.invoke(klassInstance, argument)
-                    if (expectedAnswers != null) {
-                        println("position $i $klassName#${it.name}($argument); result=$invoke – expected=${expectedAnswers[i]}")
-                        invoke shouldBe expectedAnswers[i]
-                    }
+                    println("position $i $klassName#${method.name}()=$invoke")
+                }
+            } else {
+                val invoke = method.invoke(klassInstance, argument)
+                if (expectedAnswers != null) {
+                    println("position $i $klassName#${method.name}($argument)=$invoke; expected=${expectedAnswers[i]}")
+                    invoke shouldBe expectedAnswers[i]
+                } else {
+                    println("position $i $klassName#${method.name}()=$invoke")
                 }
             }
         }
