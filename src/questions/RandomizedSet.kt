@@ -4,14 +4,17 @@ import _utils.UseCommentAsDocumentation
 import questions.common.ClassInvoker
 import utils.shouldBe
 import utils.shouldBeOneOf
-import kotlin.random.Random
 
 /**
- *
+ *Implement the RandomizedSet class:
+ * * `RandomizedSet()` Initializes the RandomizedSet object.
+ * * `bool insert(int val)` Inserts an item val into the set if not present. Returns true if not present, false otherwise.
+ * * `bool remove(int val)` Removes an item val from the set if present. Returns true if the item was present, false otherwise.
+ * * `int getRandom()` Returns a random element from the current set of elements.
  * [Source](https://leetcode.com/problems/insert-delete-getrandom-o1/)
  */
 @UseCommentAsDocumentation
-class RandomizedSet() {
+private class RandomizedSet {
     private var array = Array<Int?>(5) { null }
     private val charToIndex = mutableMapOf<Int, Int>()
     private var lastInsertedAt = -1

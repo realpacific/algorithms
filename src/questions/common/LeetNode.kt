@@ -11,6 +11,10 @@ import _utils.SkipDocumentation
 class LeetNode(var `val`: Int) {
     var next: LeetNode? = null
 
+    override fun toString(): String {
+        return "LeetNode(${`val`})"
+    }
+
     fun toList(): List<Int> {
         val list = mutableListOf<Int>()
         var current: LeetNode? = this
