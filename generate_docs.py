@@ -14,8 +14,25 @@ Collection of Data Structures and Algorithms solutions
 """
 
 footer = """
- ___
- <sub>This README was auto-generated during pre-commit.</sub>
+___
+<sub>This README was auto-generated during pre-commit.</sub>
+ 
+##### IntelliJ Live Template
+```
+import _utils.UseCommentAsDocumentation
+
+/**
+ * $END$
+ * [Source](https://leetcode.com/problems/$camelCase$/)
+*/
+@UseCommentAsDocumentation
+private fun solution() {
+}
+    
+fun main() {
+}
+```
+where `camelCase`=`lowercaseAndDash(fileName())`
 """
 
 register_headers: Dict[str, List[str]] = {}

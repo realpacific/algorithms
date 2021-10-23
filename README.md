@@ -251,5 +251,22 @@ Collection of Data Structures and Algorithms solutions
 |  [base_linked_list](python/codinginterview/shared/base_linked_list.py) <br><sub>Python &#8226; shared</sub> | <sup></sup> |
 |  [circular_linked_list](python/codinginterview/shared/circular_linked_list.py) <br><sub>Python &#8226; shared</sub> | <sup></sup> |
 
- ___
- <sub>This README was auto-generated during pre-commit.</sub>
+___
+<sub>This README was auto-generated during pre-commit.</sub>
+ 
+##### IntelliJ Live Template
+```
+import _utils.UseCommentAsDocumentation
+
+/**
+ * $END$
+ * [Source](https://leetcode.com/problems/$camelCase$/)
+*/
+@UseCommentAsDocumentation
+private fun solution() {
+}
+    
+fun main() {
+}
+```
+where `camelCase`=`lowercaseAndDash(fileName())`
