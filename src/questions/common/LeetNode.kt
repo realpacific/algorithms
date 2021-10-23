@@ -36,5 +36,9 @@ class LeetNode(var `val`: Int) {
             }
             return node
         }
+
+        fun from(value: Int, vararg others: Int): LeetNode {
+            return from(intArrayOf(value, *others.toTypedArray().toIntArray()))
+        }
     }
 }

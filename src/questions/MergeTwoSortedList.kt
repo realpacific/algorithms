@@ -1,7 +1,9 @@
 package questions
 
 import _utils.UseCommentAsDocumentation
+import algorithmdesignmanualbook.print
 import utils.assertIterableSame
+import utils.shouldBe
 
 
 private class ListNode(var `val`: Int) {
@@ -15,7 +17,7 @@ private class ListNode(var `val`: Int) {
         var current: ListNode? = this
         val result = mutableListOf<Int>()
         while (current != null) {
-            result.add(this.`val`)
+            result.add(current.`val`)
             current = current.next
         }
         return result
@@ -63,18 +65,17 @@ private fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? {
 }
 
 fun main() {
-    assertIterableSame(
-        expected = ListNode.from(1, 1, 2, 3, 4, 4).toList(),
-        actual = mergeTwoLists(ListNode.from(1, 2, 4), ListNode.from(1, 3, 4))?.also { it.print() }?.toList()!!
-    )
+    mergeTwoLists(
+        ListNode.from(1, 2, 4), ListNode.from(1, 3, 4)
+    )!!.toList() shouldBe ListNode.from(1, 1, 2, 3, 4, 4).toList()
 
     assertIterableSame(
-        expected = ListNode.from(1, 1, 1, 2, 2, 2).toList(),
-        actual = mergeTwoLists(ListNode.from(1, 1, 2), ListNode.from(1, 1, 2))?.also { it.print() }?.toList()!!
+        expected = ListNode.from(1, 1, 1, 1, 2, 2).toList(),
+        actual = mergeTwoLists(ListNode.from(1, 1, 2), ListNode.from(1, 1, 2))!!.toList()
     )
 
     assertIterableSame(
         expected = ListNode.from(1, 2, 2).toList(),
-        actual = mergeTwoLists(ListNode.from(1, 2), ListNode.from(2))?.also { it.print() }?.toList()!!
+        actual = mergeTwoLists(ListNode.from(1, 2), ListNode.from(2))!!.toList()
     )
 }

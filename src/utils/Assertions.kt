@@ -3,7 +3,6 @@
 package utils
 
 import _utils.SkipDocumentation
-import java.lang.AssertionError
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
@@ -15,9 +14,10 @@ fun <T> assertIterableSame(expected: Iterable<T>, actual: Iterable<T>) {
         "Size mismatch (expected=${expected.toList()}, actual=${actual.toList()})."
     }
     expected.forEachIndexed { index, t ->
-        require(t == actual.elementAt(index)) {
+        assertEquals(
+            t, actual.elementAt(index),
             "Failed \nexpected=${expected.toList()},\nactual  =${actual.toList()}"
-        }
+        )
     }
 }
 
