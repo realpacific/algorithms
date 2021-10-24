@@ -7,7 +7,7 @@ import utils.shouldBe
  * Given an integer numRows, return the first numRows of Pascal's triangle.
  * In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:
  *
- * <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" height="150" width="150">
+ * <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" height="150" width="150"/>
  * [Source](https://leetcode.com/problems/pascals-triangle/)
  */
 @UseCommentAsDocumentation
