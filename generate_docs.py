@@ -4,7 +4,7 @@ import re
 from typing import Dict, List, Union, Type
 from abc import ABC, abstractmethod
 
-ignore_filenames = {'__init__.py', 'generate_docs.py', 'Assertions.kt', 'PrintUtils.java', 'Utilities.kt'}
+ignore_filenames = {'__init__.py', 'write_docs.py', 'generate_docs.py'}
 
 header = """
 # algorithms :robot:
