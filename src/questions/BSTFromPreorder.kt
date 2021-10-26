@@ -1,5 +1,6 @@
 package questions
 
+import _utils.UseCommentAsDocumentation
 import questions.common.TreeNode
 import kotlin.test.assertTrue
 
@@ -11,6 +12,7 @@ import kotlin.test.assertTrue
  *
  * [Source](https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/)
  */
+@UseCommentAsDocumentation
 private fun bstFromPreorder(preorder: IntArray): TreeNode? {
     val node = TreeNode(preorder[0])
     for (i in 1..preorder.lastIndex) {

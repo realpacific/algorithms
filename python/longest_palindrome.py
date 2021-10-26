@@ -1,4 +1,4 @@
-def longesPalindrome(s):
+def longest_palindrome(s):
     longest_one = ""
     window = 1
 
@@ -22,11 +22,11 @@ def is_palindrome(s):
 
 
 if __name__ == "__main__":
-    # assert (longesPalindrome("lababa") == "aba")
-    longesPalindrome("lababa")
+    # assert (longest_palindrome("lababa") == "aba")
+    longest_palindrome("lababa")
     print("---------------")
-    longesPalindrome("labaaba")
-    longesPalindrome("zznitinzx")
-    longesPalindrome("xxxabazzlevexxxxx")
-    longesPalindrome("a")
-    longesPalindrome("ac")
+    longest_palindrome("labaaba")
+    longest_palindrome("zznitinzx")
+    longest_palindrome("xxxabazzlevexxxxx")
+    longest_palindrome("a")
+    longest_palindrome("ac")

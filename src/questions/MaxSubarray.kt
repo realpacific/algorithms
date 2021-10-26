@@ -6,7 +6,7 @@ import utils.shouldBe
 /**
  * Given an integer array nums, find the contiguous subarray (containing at least one number)
  * which has the largest sum and return its sum.
- * [Source](https://leetcode.com/problems/maximum-subarray/) | [Solution](https://leetcode.com/problems/maximum-subarray/discuss/20396/Easy-Python-Way)
+ * [Source](https://leetcode.com/problems/maximum-subarray/) – [Solution](https://leetcode.com/problems/maximum-subarray/discuss/20396/Easy-Python-Way)
  */
 @UseCommentAsDocumentation
 private fun maxSubArray(nums: IntArray): Int {

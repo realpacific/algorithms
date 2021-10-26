@@ -8,7 +8,7 @@ import utils.shouldBe
  * connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.
  * Return the maximum area of an island in grid. If there is no island, return 0.
  * <img src="https://assets.leetcode.com/uploads/2021/05/01/maxarea1-grid.jpg" height="150" width="150"/>
- * intArrayOf(Source)(https://leetcode.com/problems/max-area-of-island)
+ * [Source](https://leetcode.com/problems/max-area-of-island)
  */
 @UseCommentAsDocumentation
 private fun maxAreaOfIsland(grid: Array<IntArray>): Int {
