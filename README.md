@@ -1,7 +1,7 @@
 
 # algorithms :robot:
 
-Collection of Data Structures and Algorithms solutions
+A collection of solution to the data structure and algorithm problems
 
 ### Table of Contents
 
@@ -82,7 +82,7 @@ Collection of Data Structures and Algorithms solutions
 |  [AVLTree](src/algorithmsinanutshell/AVLTree.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> | <sup>Always a balanced tree https://www.youtube.com/watch?v=jDM6_TnYIqE <br> To delete a non-leaf/non-root node, remove it and find the right most descendant and put it there. The child of right most descendant will replace the old position of rightmost descendant <br> Since there are fixed number of rotation, it can be considered as O(1) <br> Other variations of tree are <br>* n-way tree like B-trees <br>* red-black tree with more relaxed rotation rules and enforces height of one branch isn't greater than 2x other branch</sup> |
 |  [Graph](src/algorithmsinanutshell/Graph.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> | <sup></sup> |
 |  [TreeTraversal](src/algorithmsinanutshell/TreeTraversal.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> | <sup></sup> |
-|  [GraphTraversal](src/algorithmsinanutshell/GraphTraversal.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> | <sup>Depth First Traversal <br>Breadth First Traversal</sup> |
+|  [GraphTraversal](src/algorithmsinanutshell/GraphTraversal.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> | <sup>Depth First Traversal <br/>Breadth First Traversal</sup> |
 |  [DijkstraAlgorithm](src/algorithmsinanutshell/DijkstraAlgorithm.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> | <sup></sup> |
 |  [PrimMinSpanningTreeAlgorithm](src/algorithmsinanutshell/PrimMinSpanningTreeAlgorithm.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> | <sup>Prim Algorithm starts from min cost edge and then selects the next small cost edge while maintaining the connection with first edge. <br> This can be modeled using [PriorityQueue] sorted using [Edge] w.r.t its weight</sup> |
 |  [FloydWarshallAlgorithm](src/algorithmsinanutshell/FloydWarshallAlgorithm.kt) <br><sub>Kotlin &#8226; algorithmsinanutshell</sub> | <sup># All pair shortest path algorithm <br> While Dijkstra Shortest Path algorithm helps find shortest path between start and end vertex, [FloydWarshallAlgorithm] finds the shortest path between all vertices in a [graph] <br> [Source](https://www.youtube.com/watch?v=oNI0rf2P9gE)</sup> |

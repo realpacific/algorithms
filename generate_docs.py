@@ -9,7 +9,7 @@ ignore_filenames = {'__init__.py', 'write_docs.py', 'generate_docs.py'}
 header = """
 # algorithms :robot:
 
-Collection of Data Structures and Algorithms solutions
+A collection of solution to the data structure and algorithm problems
 
 """
 
@@ -38,7 +38,7 @@ where `camelCase`=`lowercaseAndDash(fileName())`
 register_headers: Dict[str, List[str]] = {}
 
 
-def find_files_with_extension(extension: str):
+def __find_files_with_extension(extension: str):
     for file_path_ in glob.glob(extension, recursive=True):
         if re.match('python/venv/*', file_path_):
             continue
@@ -55,7 +55,12 @@ def find_files_with_extension(extension: str):
         register_headers[title] = register_headers[title]
 
 
-def write_markdown(content: str):
+__find_files_with_extension('**/*.java')
+__find_files_with_extension('**/*.kt')
+__find_files_with_extension('**/*.py')
+
+
+def __write_markdown(content: str):
     f.write(header)
     f.write(content)
     f.write(footer)
@@ -131,13 +136,13 @@ class KotlinDocsStrategy(DocsStrategy):
 
             if line.startswith(f'import _utils.Document'):
                 occurrence = re.findall(r'@Document\("(.*)"\)', self.content)
-                return " <br>".join(occurrence)
+                return " <br/>".join(occurrence)
             has_read_from_comments_annotation = False
             if line.startswith(f'import _utils.UseCommentAsDocumentation'):
                 has_read_from_comments_annotation = True
 
             if re.match(f'(private |public |)class {self.filename}*', line) \
-                    or re.match(f'(private |public |)fun {function_case(filename_)}', line) \
+                    or re.match(f'(private |public |)fun {function_case(self.filename)}', line) \
                     or re.match(f'(private |public |)object {self.filename}*', line) \
                     or re.match(f'@UseCommentAsDocumentation', line.strip()):
                 docs_start = index
@@ -201,9 +206,6 @@ def remove_empty_lines(string):
 
 
 if __name__ == "__main__":
-    find_files_with_extension('**/*.java')
-    find_files_with_extension('**/*.kt')
-    find_files_with_extension('**/*.py')
     content_ = '### Table of Contents\n\n'
     paths: List[str]
     content_ += f"| Filename | Description |\n"
@@ -222,10 +224,10 @@ if __name__ == "__main__":
             [filename_, ext_] = file.split('.')
             docs = None
             with open(path, "r") as f:
-                content = f.read()
+                file_text = f.read()
                 strategy = docs_strategy.get(ext_)
                 if strategy is not None:
-                    docs = strategy(content, filename_).extract_docs()
+                    docs = strategy(file_text, filename_).extract_docs()
             if docs is not None:
                 docs = remove_empty_lines(docs)
                 content_ += f"|  [{filename_}]({path}) <br><sub>{lang[ext_]} &#8226; {key}</sub> | <sup>{docs}</sup> |\n"
@@ -233,7 +235,7 @@ if __name__ == "__main__":
                     undocumented_files.append(path)
 
     with open("README.md", "w") as f:
-        write_markdown(content_)
+        __write_markdown(content_)
     print(f'Undocumented files: {len(undocumented_files)}')
     with open("UNDOCUMENTED.txt", "w") as file:
         file.write('\n'.join(undocumented_files))
