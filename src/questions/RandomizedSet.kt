@@ -14,7 +14,7 @@ import utils.shouldBeOneOf
  * [Source](https://leetcode.com/problems/insert-delete-getrandom-o1/)
  */
 @UseCommentAsDocumentation
-private class RandomizedSet {
+class RandomizedSet {
     private var array = Array<Int?>(5) { null }
     private val charToIndex = mutableMapOf<Int, Int>()
     private var lastInsertedAt = -1
