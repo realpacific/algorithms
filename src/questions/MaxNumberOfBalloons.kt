@@ -42,7 +42,7 @@ fun maxNumberOfBalloons(text: String): Int {
     text.forEach {
         strategy[it]?.invoke()
     }
-    return balloon.min()!!
+    return balloon.minByOrNull { it }!!
 }
 
 fun main() {

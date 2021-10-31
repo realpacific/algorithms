@@ -57,7 +57,7 @@ class DijkstraAlgorithm(val graph: Graph, private val startVertex: Vertex, priva
             println(it.first.padLeft() + " : " + it.second)
         }
 
-        val bestPath = connections.minBy { it.second }!!
+        val bestPath = connections.minByOrNull { it.second }!!
         println("Shortest path is $bestPath")
         return bestPath
     }
