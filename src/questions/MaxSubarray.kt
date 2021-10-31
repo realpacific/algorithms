@@ -15,7 +15,7 @@ private fun maxSubArray(nums: IntArray): Int {
             nums[i] += nums[i - 1] // mutate with sum of positives
         }
     }
-    return nums.max()!!
+    return nums.maxOrNull()!!
 }
 
 fun main() {

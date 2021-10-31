@@ -29,7 +29,7 @@ for i in $(git ls-files | grep .kt); do
     kotlinFileName="$filename"'Kt'
     kotlinFileName="${kotlinFileName#src/}"
     echo ">>>>> Executing file $kotlinFileName"
-    ./gradlew -PmainClass="$kotlinFileName" execClass
+    ./gradlew -PmainClass="$kotlinFileName" execClass -q -Dorg.gradle.console=plain --warning-mode=summary
   else
     echo ">>>>> Skipping $i"
   fi
@@ -41,7 +41,7 @@ for i in $(git ls-files | grep .java); do
   if [[ "$isMainClass" == "0" ]]; then
     echo ">>>>> Executing file $i"
     filename="${filename#src/}"
-    ./gradlew -PmainClass="$filename" execClass
+    ./gradlew -PmainClass="$filename" execClass -q -Dorg.gradle.console=plain --warning-mode=summary
   else
     echo ">>>>> Skipping $i"
   fi

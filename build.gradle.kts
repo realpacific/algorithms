@@ -1,6 +1,6 @@
 plugins {
-    `java-lang`
-    kotlin("jvm") version "1.4.21"
+    java
+    kotlin("jvm") version "1.5.31"
 }
 
 repositories {
@@ -17,17 +17,14 @@ sourceSets {
 
 buildscript {
     dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.21")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31")
     }
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.4.21")
-    implementation("org.jetbrains.kotlin:kotlin-test-junit:1.4.21")
-    implementation("org.jetbrains.kotlin:kotlin-test:1.4.21")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.5.31")
+    implementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
 }
-
-val failures = mutableListOf<String>()
 
 tasks.create("execClass", type = JavaExec::class) {
     val javaExec = this
