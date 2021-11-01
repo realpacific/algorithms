@@ -3,8 +3,9 @@ import glob
 import re
 from typing import Dict, List, Union, Type
 from abc import ABC, abstractmethod
+from generate_file_history import git_generate_history
 
-ignore_filenames = {'__init__.py', 'write_docs.py', 'generate_docs.py'}
+ignore_filenames = {'__init__.py', 'write_docs.py', 'generate_docs.py', 'generate_file_history.py'}
 
 header = """
 # algorithms :robot:
@@ -35,7 +36,7 @@ fun main() {
 where `camelCase`=`lowercaseAndDash(fileName())`
 """
 
-register_headers: Dict[str, List[str]] = {}
+register_headers = []
 
 
 def __find_files_with_extension(extension: str):
@@ -43,16 +44,11 @@ def __find_files_with_extension(extension: str):
         if re.match('python/venv/*', file_path_):
             continue
         splits = file_path_.split('/')
-        title = splits[len(splits) - 2]
-        if title not in register_headers:
-            register_headers[title] = []
-        filename = splits[len(splits) - 1]
+        filename = splits[-1]
 
         if filename in ignore_filenames:
             continue
-
-        register_headers[title].append(file_path_)
-        register_headers[title] = register_headers[title]
+        register_headers.append(file_path_)
 
 
 __find_files_with_extension('**/*.java')
@@ -212,27 +208,29 @@ if __name__ == "__main__":
     content_ += f"|  --- | --- |\n"
 
     undocumented_files = []
-    for (key, paths) in register_headers.items():
-        if len(paths) == 0:
-            continue
+    path_to_date_map: Dict[str, str] = git_generate_history()
 
-        # Reverse the string and sort
-        sorted_paths = sorted(paths, key=lambda x: x[::-1])
-        for path in sorted_paths:
-            split = path.split('/')
-            file = split[len(split) - 1]
-            [filename_, ext_] = file.split('.')
-            docs = None
-            with open(path, "r") as f:
-                file_text = f.read()
-                strategy = docs_strategy.get(ext_)
-                if strategy is not None:
-                    docs = strategy(file_text, filename_).extract_docs()
-            if docs is not None:
-                docs = remove_empty_lines(docs)
-                content_ += f"|  [{filename_}]({path}) <br><sub>{lang[ext_]} &#8226; {key}</sub> | <sup>{docs}</sup> |\n"
-                if len(docs) == 0:
-                    undocumented_files.append(path)
+    def sort_by_date(elem):
+        return path_to_date_map[elem]
+
+    path_sorted_by_date = sorted(register_headers, key=sort_by_date, reverse=True)
+    for path in path_sorted_by_date:
+        split = path.split('/')
+        file_name_with_extension = split[-1]
+        directory = split[-2]
+
+        filename_, ext_ = file_name_with_extension.split('.')
+        docs = None
+        with open(path, "r") as f:
+            file_text = f.read()
+            strategy = docs_strategy.get(ext_)
+            if strategy is not None:
+                docs = strategy(file_text, filename_).extract_docs()
+        if docs is not None:
+            docs = remove_empty_lines(docs)
+            content_ += f"|  [{filename_}]({path}) <br><sub>{lang[ext_]} &#8226; {directory}</sub> | <sup>{docs}</sup> |\n"
+            if len(docs) == 0:
+                undocumented_files.append(path)
 
     with open("README.md", "w") as f:
         __write_markdown(content_)
