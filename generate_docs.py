@@ -4,6 +4,7 @@ import re
 from typing import Dict, List, Union, Type
 from abc import ABC, abstractmethod
 from generate_file_history import git_generate_history
+from datetime import datetime
 
 ignore_filenames = {'__init__.py', 'write_docs.py', 'generate_docs.py', 'generate_file_history.py'}
 
@@ -210,8 +211,10 @@ if __name__ == "__main__":
     undocumented_files = []
     path_to_date_map: Dict[str, str] = git_generate_history()
 
+
     def sort_by_date(elem):
-        return path_to_date_map[elem]
+        return path_to_date_map.get(elem, datetime.now().strftime('%Y-%m-%d-%H:%M:%S'))
+
 
     path_sorted_by_date = sorted(register_headers, key=sort_by_date, reverse=True)
     for path in path_sorted_by_date:
