@@ -3,9 +3,9 @@
 package utils
 
 import _utils.SkipDocumentation
-import java.util.*
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
+
 
 @SkipDocumentation
 
@@ -59,4 +59,15 @@ infix fun <T> T?.shouldBeOneOf(values: Iterable<T?>) {
         }
     }
     assertTrue(isGood, "$this does not match any values in $values")
+}
+
+fun <T, U> assertAllWithArgs(expected: T, argsProducer: () -> U, vararg block: (U) -> T) {
+    require(block.isNotEmpty())
+    val results = block.map {
+        val cloned = argsProducer.invoke()
+        it.invoke(cloned)
+    }
+    results.forEach {
+        it shouldBe expected
+    }
 }

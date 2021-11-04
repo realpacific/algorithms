@@ -1,7 +1,7 @@
 package questions
 
 import _utils.UseCommentAsDocumentation
-import utils.shouldBe
+import utils.assertAllWithArgs
 
 /**
  * Given an integer array nums, find the contiguous subarray (containing at least one number)
@@ -18,7 +18,42 @@ private fun maxSubArray(nums: IntArray): Int {
     return nums.maxOrNull()!!
 }
 
+private fun maxSubArrayII(nums: IntArray): Int {
+    var best = 0
+    var sum = 0
+    for (i in 0..nums.lastIndex) {
+        sum = maxOf(nums[i], nums[i] + sum)
+        best = maxOf(best, sum)
+    }
+    return best
+}
+
+private fun maxSubArrayIII(nums: IntArray): Int {
+    var best = 0
+    for (i in 0..nums.lastIndex) {
+        var sum = 0
+        for (j in i..nums.lastIndex) {
+            sum += nums[j]
+            best = maxOf(best, sum)
+        }
+    }
+    return best
+}
+
+
 fun main() {
-    maxSubArray(intArrayOf(-2, 1, -3, 4, -1, 2, 1, -5, 4)) shouldBe 6
-    maxSubArray(intArrayOf(5, 4, -1, 7, 8)) shouldBe 23
+    assertAllWithArgs(
+        6,
+        argsProducer = { intArrayOf(-2, 1, -3, 4, -1, 2, 1, -5, 4) },
+        ::maxSubArray,
+        ::maxSubArrayII,
+        ::maxSubArrayIII
+    )
+    assertAllWithArgs(
+        23,
+        argsProducer = { intArrayOf(5, 4, -1, 7, 8) },
+        ::maxSubArray,
+        ::maxSubArrayII,
+        ::maxSubArrayIII
+    )
 }
