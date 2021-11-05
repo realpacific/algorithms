@@ -27,7 +27,9 @@ fun <T> assertArraysSame(expected: Array<T>, actual: Array<T>) {
 }
 
 fun <T> assertIterableSameInAnyOrder(expected: Iterable<T>, actual: Iterable<T>) {
-    require(expected.count() == actual.count())
+    require(expected.count() == actual.count()) {
+        "Size mismatch (expected=${expected.toList()}, actual=${actual.toList()})."
+    }
     expected.forEach { t ->
         require(actual.contains(t)) {
             "Failed (expected=${expected.toList()}, actual=${actual.toList()})."
