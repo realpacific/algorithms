@@ -15,20 +15,24 @@ class ClassInvoker<T, A>(private val methodNames: List<String>, val argsExtracto
             val method = klass.methods.find { it.name == methodNames[i] }!!
             val argument = argsExtractor(args[i])
             if (argument == null) {
-                val invoke = method.invoke(klassInstance)
+                val answer = method.invoke(klassInstance)
                 if (expectedAnswers != null) {
-                    println("position $i $klassName#${method.name}()=$invoke; expected=${expectedAnswers[i]}")
-                    invoke shouldBe expectedAnswers[i]
+                    println("position $i $klassName#${method.name}()=$answer; expected=${expectedAnswers[i]}")
+                    answer shouldBe expectedAnswers[i]
                 } else {
-                    println("position $i $klassName#${method.name}()=$invoke")
+                    println("position $i $klassName#${method.name}()=$answer")
                 }
             } else {
-                val invoke = method.invoke(klassInstance, argument)
-                if (expectedAnswers != null) {
-                    println("position $i $klassName#${method.name}($argument)=$invoke; expected=${expectedAnswers[i]}")
-                    invoke shouldBe expectedAnswers[i]
+                val answer = if (argument!!::class.java.isArray) {
+                    method.invoke(klassInstance, *(argument as IntArray).toTypedArray())
                 } else {
-                    println("position $i $klassName#${method.name}()=$invoke")
+                    method.invoke(klassInstance, argument)
+                }
+                if (expectedAnswers != null) {
+                    println("position $i $klassName#${method.name}($argument)=$answer; expected=${expectedAnswers[i]}")
+                    answer shouldBe expectedAnswers[i]
+                } else {
+                    println("position $i $klassName#${method.name}()=$answer")
                 }
             }
         }
