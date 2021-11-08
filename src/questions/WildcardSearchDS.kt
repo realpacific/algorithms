@@ -1,3 +1,5 @@
+package questions
+
 import _utils.UseCommentAsDocumentation
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
