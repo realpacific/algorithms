@@ -5,7 +5,7 @@ import utils.shouldBe
 
 /**
  * Reverse bits of a given 32 bits unsigned integer.
- * [Source](https://leetcode.com/problems/reverse-bits/) | [Solution](https://leetcode.com/problems/reverse-bits/discuss/54746/Java-Solution-and-Optimization)
+ * [Source](https://leetcode.com/problems/reverse-bits/) – [Solution](https://leetcode.com/problems/reverse-bits/discuss/54746/Java-Solution-and-Optimization)
  */
 @UseCommentAsDocumentation
 fun reverseBits(n: Int): Int {

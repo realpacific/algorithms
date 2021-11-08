@@ -6,7 +6,7 @@ import utils.shouldBe
 /**
  * Given an integer array nums, find a contiguous non-empty subarray within the array that has the largest product,
  * and return the product.
- * [Source](https://leetcode.com/problems/maximum-product-subarray/) | [Solution](https://leetcode.com/problems/maximum-product-subarray/discuss/48302/2-Passes-scan-beats-99)
+ * [Source](https://leetcode.com/problems/maximum-product-subarray/) – [Solution](https://leetcode.com/problems/maximum-product-subarray/discuss/48302/2-Passes-scan-beats-99)
  */
 @UseCommentAsDocumentation
 private fun maxProduct(nums: IntArray): Int {
