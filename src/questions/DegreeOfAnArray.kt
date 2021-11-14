@@ -1,5 +1,6 @@
 package questions
 
+import _utils.UseCommentAsDocumentation
 import utils.shouldBe
 import java.util.*
 
@@ -9,6 +10,7 @@ import java.util.*
  *
  * [Source](https://leetcode.com/problems/degree-of-an-array/)
  */
+@UseCommentAsDocumentation
 private fun findShortestSubArray(nums: IntArray): Int {
     val counts = TreeMap<Int, MutableList<Int>>()
     val priorityList = PriorityQueue<ValueWithOccurrence> { o1, o2 -> o2.count - o1.count }
