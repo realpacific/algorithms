@@ -13,6 +13,8 @@ header = """
 
 A collection of solution to the data structure and algorithm problems
 
+[View web version](https://prashantbarahi.com.np/docs/algorithms/intro) | [View by tags](https://prashantbarahi.com.np/docs/tags/) 
+
 """
 
 footer = """
