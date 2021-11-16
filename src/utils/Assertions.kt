@@ -3,6 +3,7 @@
 package utils
 
 import _utils.SkipDocumentation
+import java.lang.Exception
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
@@ -15,10 +16,19 @@ fun <T> assertIterableSame(expected: Iterable<T>, actual: Iterable<T>) {
         "Size mismatch (expected=${expected.toList()}, actual=${actual.toList()})."
     }
     expected.forEachIndexed { index, t ->
-        assertEquals(
-            t, actual.elementAt(index),
-            "Failed \nexpected=${expected.toList()},\nactual  =${actual.toList()}"
-        )
+        if (t!!::class.java.isArray) {
+            // handle array of arrays recursively
+            assertIterableSame(
+                tryInvokeToList(t) as List<*>,
+                tryInvokeToList(actual.elementAt(index)) as List<*>
+            )
+        } else {
+            assertEquals(
+                t, actual.elementAt(index),
+                "Failed \nexpected=${expected.toList()},\nactual  =${actual.toList()}"
+            )
+        }
+
     }
 }
 
@@ -80,11 +90,15 @@ infix fun <T> T?.shouldBeOneOf(values: Iterable<T?>) {
 private fun tryInvokeToList(obj: Any?): Any? {
     if (obj == null) return obj
     if (obj::class.java.isArray) {
-        val list = Class.forName("kotlin.collections.ArraysKt")
-            .getMethod("toList", obj!!::class.java)
-            .also { it.isAccessible = true }
-            .invoke(null, obj)
-        return list as List<*>
+        return try {
+            val list = Class.forName("kotlin.collections.ArraysKt")
+                .getMethod("toList", obj!!::class.java)
+                .also { it.isAccessible = true }
+                .invoke(null, obj)
+            list as List<*>
+        } catch (e: Exception) {
+            obj
+        }
     }
     return obj
 }
