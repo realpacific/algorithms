@@ -24,6 +24,7 @@ buildscript {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.5.31")
     implementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.31")
 }
 
 tasks.create("execClass", type = JavaExec::class) {

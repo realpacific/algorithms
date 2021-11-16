@@ -60,7 +60,33 @@ infix fun <T> T?.shouldBeOneOf(values: Iterable<T?>) {
             isGood = false
         }
     }
-    assertTrue(isGood, "$this does not match any values in $values")
+    val messageBuilder: (String, String) -> String = { actual: String, expected: String ->
+        "$actual does not match any values in $expected"
+    }
+    if (this!!::class.java.isArray) {
+        val list = Class.forName("kotlin.collections.ArraysKt")
+            .getMethod("toList", this!!::class.java)
+            .also { it.isAccessible = true }
+            .invoke(null, this)
+        assertTrue(
+            isGood,
+            messageBuilder(list.toString(), values.map { tryInvokeToList(it) }.toList().toString())
+        )
+    } else {
+        assertTrue(isGood, messageBuilder(this.toString(), values.toList().toString()))
+    }
+}
+
+private fun tryInvokeToList(obj: Any?): Any? {
+    if (obj == null) return obj
+    if (obj::class.java.isArray) {
+        val list = Class.forName("kotlin.collections.ArraysKt")
+            .getMethod("toList", obj!!::class.java)
+            .also { it.isAccessible = true }
+            .invoke(null, obj)
+        return list as List<*>
+    }
+    return obj
 }
 
 fun <T, U> assertAllWithArgs(expected: T, argsProducer: () -> U, vararg block: (U) -> T) {
