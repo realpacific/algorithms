@@ -47,7 +47,7 @@ fun <T> assertIterableSameInAnyOrder(expected: Iterable<T>, actual: Iterable<T>)
     }
 }
 
-infix fun <T> T?.shouldBe(value: T?) {
+infix fun <T> T?.shouldBe(value: T?): T? {
     when (this) {
         is CharArray -> assertIterableSame(actual = this.toList(), expected = (value as CharArray).toList())
         is IntArray -> assertIterableSame(actual = this.toList(), expected = (value as IntArray).toList())
@@ -55,6 +55,8 @@ infix fun <T> T?.shouldBe(value: T?) {
         is Array<*> -> assertIterableSame(actual = this.toList(), expected = (value as Array<*>).toList())
         else -> assertEquals(value, this)
     }
+    // for chain-ability
+    return this
 }
 
 
