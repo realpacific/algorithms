@@ -36,12 +36,12 @@ fun <T> assertArraysSame(expected: Array<T>, actual: Array<T>) {
     assertIterableSame(expected = expected.toList(), actual = actual.toList())
 }
 
-fun <T> assertIterableSameInAnyOrder(expected: Iterable<T>, actual: Iterable<T>) {
+fun <T : Comparable<T>> assertIterableSameInAnyOrder(expected: Iterable<T>, actual: Iterable<T>) {
     require(expected.count() == actual.count()) {
         "Size mismatch (expected=${expected.toList()}, actual=${actual.toList()})."
     }
-    expected.forEach { t ->
-        require(actual.contains(t)) {
+    for (i in 0 until expected.count()) {
+        require(actual.contains(expected.elementAt(i)) && expected.contains(actual.elementAt(i))) {
             "Failed (expected=${expected.toList()}, actual=${actual.toList()})."
         }
     }
