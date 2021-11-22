@@ -1,7 +1,6 @@
 package algorithmdesignmanualbook.sorting
 
-import algorithmdesignmanualbook.print
-import kotlin.test.assertTrue
+import utils.shouldBe
 
 /**
  * NO need to sort all the items.
@@ -14,86 +13,60 @@ import kotlin.test.assertTrue
  */
 private fun fastMedian(array: IntArray, low: Int, high: Int, medianIndex: Int): Int {
     val j = partition(array, low, high)
-    return if (j - low == medianIndex - 1) {
+    return if (j - low == medianIndex) {
         array[j]
-    } else if (j - low > medianIndex - 1) {
+    } else if (j - low > medianIndex) {
         fastMedian(array, low, j - 1, medianIndex)
     } else {
         fastMedian(array, j + 1, high, medianIndex - j - 1 + low)
     }
 }
 
-
-/**
- * Sort the list first and then return the element at mid index
- */
-private fun slowMedian(array: IntArray): Int {
-    return array[midpointIndex(array)]
-}
-
 private fun quickSort(array: IntArray, low: Int, high: Int) {
     if (low < high) {
         val j = partition(array, low, high)
         quickSort(array, low, j)
-        quickSort(array, j + 1, j)
+        quickSort(array, j + 1, high)
     }
 }
 
 private fun partition(array: IntArray, low: Int, high: Int): Int {
+    fun swap(index1: Int, index2: Int) {
+        val temp = array[index1]
+        array[index1] = array[index2]
+        array[index2] = temp
+    }
+
     val pivot = array[low]
-    println("Partitioning on ${array.toList()} on $pivot")
     var i = low
     var j = high
 
-    while (i < j) {
-        while (array[i] <= pivot) {
-            i++
-        }
-        while (array[j] > pivot) {
-            j--
-        }
-        if (i < j) {
-            swap(array, i, j)
-        }
-    }
-    swap(array, low, j)
+    do {
+        while (array[i] <= pivot) i++
+        while (array[j] > pivot) j--
+        if (i < j) swap(i, j)
+    } while (i < j)
+    swap(low, j)
     return j
 }
 
-private fun swap(array: IntArray, index1: Int, index2: Int) {
-    val temp = array[index1]
-    array[index1] = array[index2]
-    array[index2] = temp
-}
-
 fun midpointIndex(array: IntArray): Int {
-    return array.size / 2
+    return (array.size / 2)
 }
 
 fun main() {
     run {
-        println("Input 1")
-        val input1 = intArrayOf(9, 1, 0, 2, 3, 4, 6, 8, 7, 10, 5)
-        quickSort(input1, 0, input1.lastIndex)
-        assertTrue {
-            input1.print()
-            slowMedian(input1).print() == 5
-        }
-    }
-    run {
-        println("Input 2")
-        val input2 = intArrayOf(9, 1, 0, 2, 3, 4, 6, 8, 7, 10, 5)
-        fastMedian(input2, 0, input2.lastIndex, midpointIndex(input2))
+        val original = intArrayOf(9, 1, 0, 2, 3, 4, 6, 8, 7, 10, 5)
+        val expected = original.sorted().toIntArray()
+        val quickSortInput = original.clone()
+        quickSort(quickSortInput, 0, original.lastIndex)
+        quickSortInput shouldBe expected
+
+        fastMedian(original, 0, original.lastIndex, midpointIndex(original)) shouldBe 5
     }
 
     run {
-        println("Input 3")
-
-        val input3 = intArrayOf(-90, 11, 30, 44, 20, 12, 22, -10, 1, 8, 90, 7, 10, 5)
-        assertTrue {
-            val med3 = fastMedian(input3, 0, input3.lastIndex, midpointIndex(input3))
-            quickSort(input3, 0, input3.lastIndex)
-            slowMedian(input3).print() == med3.print()
-        }
+        val original = intArrayOf(-90, 11, 30, 44, 20, 12, 22, -10, 1, 8, 90, 7, 10)
+        fastMedian(original, 0, original.lastIndex, midpointIndex(original)) shouldBe 11
     }
 }
