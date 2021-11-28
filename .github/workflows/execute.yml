@@ -48,7 +48,14 @@ jobs:
       - name: Fail if not empty
         run: |
           touch agg-logs.txt
-          ls -la ~/logs
+
+          if [ -d "~/logs" ]
+          then
+            ls -la ~/logs
+          else
+            # If no error occurred, then no logs file is generated
+            exit 0;
+          fi
           for i in ~/logs/*/*.txt; do
             echo "Reading logs $i"
             if [ -s "$i" ]; then
