@@ -4,12 +4,16 @@ import _utils.SkipDocumentation
 import utils.shouldBe
 
 @SkipDocumentation
-class ClassInvoker<T, A>(private val methodNames: List<String>, val argsExtractor: (T) -> A?) {
+class ClassInvoker<T, A>(
+    private val methodNames: List<String>,
+    private val classLocation: String = "questions",
+    val argsExtractor: (T) -> A?
+) {
     fun invoke(args: List<T>, expectedAnswers: List<Any?>? = null) {
         require(methodNames.size == args.size)
         require(methodNames.isNotEmpty())
         val klassName = methodNames.first()
-        val klass = Class.forName("questions.$klassName")
+        val klass = Class.forName("$classLocation.$klassName")
         val klassInstance = klass.getConstructor().newInstance()
         for (i in 1..methodNames.lastIndex) {
             val method = klass.methods.find { it.name == methodNames[i] }!!

@@ -3,7 +3,6 @@
 package utils
 
 import _utils.SkipDocumentation
-import java.lang.Exception
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
@@ -12,9 +11,11 @@ import kotlin.test.assertTrue
 
 
 fun <T> assertIterableSame(expected: Iterable<T>, actual: Iterable<T>) {
-    require(expected.count() == actual.count()) {
+    assertEquals(
+        expected = expected.count(),
+        actual = actual.count(),
         "Size mismatch (expected=${expected.toList()}, actual=${actual.toList()})."
-    }
+    )
     expected.forEachIndexed { index, t ->
         if (t!!::class.java.isArray) {
             // handle array of arrays recursively
@@ -37,22 +38,27 @@ fun <T> assertArraysSame(expected: Array<T>, actual: Array<T>) {
 }
 
 fun <T : Comparable<T>> assertIterableSameInAnyOrder(expected: Iterable<T>, actual: Iterable<T>) {
-    require(expected.count() == actual.count()) {
+    assertEquals(
+        expected = expected.count(),
+        actual = actual.count(),
         "Size mismatch (expected=${expected.toList()}, actual=${actual.toList()})."
-    }
+    )
     for (i in 0 until expected.count()) {
-        require(actual.contains(expected.elementAt(i)) && expected.contains(actual.elementAt(i))) {
+        assertTrue(
+            actual.contains(expected.elementAt(i)) && expected.contains(actual.elementAt(i)),
             "Failed (expected=${expected.toList()}, actual=${actual.toList()})."
-        }
+        )
     }
 }
 
 infix fun <T> T?.shouldBe(value: T?): T? {
-    when (this) {
-        is CharArray -> assertIterableSame(actual = this.toList(), expected = (value as CharArray).toList())
-        is IntArray -> assertIterableSame(actual = this.toList(), expected = (value as IntArray).toList())
-        is List<*> -> assertIterableSame(actual = this.toList(), expected = (value as List<*>).toList())
-        is Array<*> -> assertIterableSame(actual = this.toList(), expected = (value as Array<*>).toList())
+    when {
+        this == null -> assertEquals(value, this)
+        this is CharArray -> assertIterableSame(actual = this.toList(), expected = (value as CharArray).toList())
+        this is IntArray -> assertIterableSame(actual = this.toList(), expected = (value as IntArray).toList())
+        this is List<*> -> assertIterableSame(actual = this.toList(), expected = (value as List<*>).toList())
+        this is Array<*> -> assertIterableSame(actual = this.toList(), expected = (value as Array<*>).toList())
+        this!!::class.java.isArray -> throw NotImplementedError("Array assertion for ${this!!::class.java.simpleName} is not implemented.")
         else -> assertEquals(value, this)
     }
     // for chain-ability
@@ -105,6 +111,9 @@ private fun tryInvokeToList(obj: Any?): Any? {
     return obj
 }
 
+/**
+ * Perform assertions on multiple [block] against [expected] using value produced by [argsProducer] as argument of [block]
+ */
 fun <T, U> assertAllWithArgs(expected: T, argsProducer: () -> U, vararg block: (U) -> T) {
     require(block.isNotEmpty())
     val results = block.map {

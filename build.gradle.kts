@@ -13,6 +13,11 @@ sourceSets {
             srcDir("src")
         }
     }
+    this.test {
+        java {
+            srcDir("test")
+        }
+    }
 }
 
 buildscript {
@@ -25,6 +30,14 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.5.31")
     implementation("org.jetbrains.kotlin:kotlin-test:1.5.31")
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.31")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")!!
+        .because("For writing tests for assertion methods")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.5.31")!!
+        .because("For writing tests for assertion methods")
+}
+
+tasks.getByName<Test>("test") {
+    useJUnitPlatform()
 }
 
 tasks.create("execClass", type = JavaExec::class) {
