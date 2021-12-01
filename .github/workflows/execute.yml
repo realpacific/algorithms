@@ -8,6 +8,8 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 8
+      - name: Execute test of assertion methods
+        run: ./gradlew test
       - name: Execute .kt and .java files
         run: ./run.sh
       - name: Store artifacts
