@@ -9,6 +9,7 @@ A collection of solution to the data structure and algorithm problems
 
 | Filename | Description |
 |  --- | --- |
+|  [RestoreIPAddresses](src/questions/RestoreIPAddresses.kt) <br><sub>Kotlin &#8226; questions</sub> | <sup>A valid IP address consists of exactly four integers separated by single dots. Each integer is between 0 and 255 (inclusive) and cannot have leading zeros. Given a string s containing only digits, return all possible valid IP addresses that can be formed by inserting dots into s. You are not allowed to reorder or remove any digits in s. You may return the valid IP addresses in any order. <br> [Source](https://leetcode.com/problems/restore-ip-addresses/)</sup> |
 |  [ReverseWords](src/questions/ReverseWords.kt) <br><sub>Kotlin &#8226; questions</sub> | <sup> You are given a character array containing a set of words separated by whitespace. Your task is to modify that character array so that the words all appear in reverse order. Do this without using any extra space.</sup> |
 |  [GeneratePermutations](src/handbook/GeneratePermutations.kt) <br><sub>Kotlin &#8226; handbook</sub> | <sup>Given array of integers, generate its permutations.</sup> |
 |  [GenerateSubsets](src/handbook/GenerateSubsets.kt) <br><sub>Kotlin &#8226; handbook</sub> | <sup>Bit method – Each subset of n elements can be represented as sequences of n bits <br/>Backtrack method</sup> |
