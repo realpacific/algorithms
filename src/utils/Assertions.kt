@@ -41,7 +41,7 @@ fun <T : Comparable<T>> assertIterableSameInAnyOrder(expected: Iterable<T>, actu
     assertEquals(
         expected = expected.count(),
         actual = actual.count(),
-        "Size mismatch (expected=${expected.toList()}, actual=${actual.toList()})."
+        "Size mismatch (\nexpected=${expected.sorted().toList()},\nactual  =${actual.sorted().toList()}\n)."
     )
     for (i in 0 until expected.count()) {
         assertTrue(
