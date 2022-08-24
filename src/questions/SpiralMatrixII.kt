@@ -6,6 +6,7 @@ import utils.assertIterableSame
 
 /**
  *  Given a positive integer n, generate an n x n matrix filled with elements from 1 to n^2 in spiral order.
+ *
  *  <img src="https://assets.leetcode.com/uploads/2020/11/13/spiraln.jpg" height="150" width="150"/>
  */
 @UseCommentAsDocumentation
